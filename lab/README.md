@@ -1,12 +1,10 @@
 
 
-These instructions are for participants of the **instructor-led** Workshop "SESSIONNAME" at Microsoft AI Tour 2026.  Register to attend in a city near you at [Microsoft AI Tour](https://aitour.microsoft.com/).
+These instructions are for participants of the **instructor-led** Workshop Building Agentic Solutions with Copilot Studio at Microsoft AI Tour 2026.  Register to attend in a city near you at [Microsoft AI Tour](https://aitour.microsoft.com/).
 
 ## Lab Overview
 
-In this hands-on workshop, you’ll learn to ....
-
-If you're not a workshop participant at AI Tour, try this code yourself at ....
+This hands-on session with Microsoft Copilot Studio guides you through the full agent lifecycle—from purpose-driven design to advanced capabilities. Learn how to build, integrate, automate, and deploy a fully functional agent using tools like Agent Flows and MCP. Walk away with practical skills to customize agents for real-world business needs.
 
 ## Pre-Requisites
 
