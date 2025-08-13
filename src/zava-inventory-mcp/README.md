@@ -42,15 +42,14 @@ Retrieves a specific product by its ID.
 - **Returns**: Product details or error if not found
 - **Use case**: Get detailed information about a specific product
 
-#### `add_product(name: str, category: str, price: float, sku: str, description: str)`
-Adds a new product to the inventory system.
+#### `add_product(name: str, category: str, price: float, description: str)`
+Adds a new product to the inventory system with auto-generated SKU.
 - **Parameters**:
   - `name` - Product name
   - `category` - Product category
   - `price` - Product price
-  - `sku` - Product SKU/code
-  - `description` - Product description
-- **Returns**: Success confirmation with new product details
+  - `description` - Product description (optional)
+- **Returns**: Success confirmation with new product details including auto-generated SKU
 - **Use case**: Add new products to the catalog
 
 #### `remove_product(product_id: int)`
@@ -156,18 +155,22 @@ curl http://localhost:3000/
 ## 📁 Project Structure
 
 ```
-inventory-mcp/
+zava-inventory-mcp/
 ├── src/
 │   ├── server.py          # Main MCP server
 │   ├── requirements.txt   # Python dependencies
-│   └── Dockerfile         # Docker configuration
+│   ├── Dockerfile         # Docker configuration
+│   └── __pycache__/       # Python cache files
 ├── data/
 │   ├── products.json      # Product catalog
 │   ├── stores.json        # Store locations
 │   └── inventory.json     # Inventory tracking
-├── .env.example           # Environment template
-├── README.md             # This file
-└── docker-compose.yml    # Docker Compose configuration
+├── .azure/                # Azure deployment configuration
+├── .venv/                 # Python virtual environment
+├── .dockerignore          # Docker ignore file
+├── azure.yaml             # Azure deployment configuration
+├── docker-compose.yml     # Docker Compose configuration
+└── README.md              # This file
 ```
 
 ## 🌍 Sample Data
@@ -177,32 +180,7 @@ The system comes pre-loaded with:
 - **10 Stores**: Located in major cities worldwide (New York, London, Tokyo, Paris, Sydney, Rio de Janeiro, Singapore, Berlin, Toronto, Seoul)
 - **34 Inventory Records**: Realistic distribution of products across stores
 
-## 🔧 API Examples
-
-### Get All Products
-```bash
-curl http://localhost:3000/api/products
-```
-
-### Check Store Inventory
-```bash
-curl http://localhost:3000/api/inventory/store/1
-```
-
-### Add New Product
-```bash
-curl -H "Content-Type: application/json" \
-     -d '{
-       "name": "Smart Watch",
-       "category": "Electronics",
-       "price": 299.99,
-       "sku": "SW-001",
-       "description": "Advanced fitness tracking smartwatch"
-     }' \
-     http://localhost:3000/api/products
-```
-
-## 🐳 Docker Support
+##  Docker Support
 
 ```bash
 # Build and run with Docker Compose
