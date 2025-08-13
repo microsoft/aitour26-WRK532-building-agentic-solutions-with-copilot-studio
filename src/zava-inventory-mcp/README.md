@@ -185,11 +185,10 @@ The system comes pre-loaded with:
 
 ##  Docker Support
 
-```bash
-# Build and run with Docker Compose
-docker-compose up --build
+Build and run with Docker Compose. The server will be available at http://localhost:3000.
 
-# The server will be available at http://localhost:3000
+```bash
+docker-compose up --build
 ```
 
 ## 📈 Use Cases
