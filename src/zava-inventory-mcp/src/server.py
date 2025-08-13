@@ -403,8 +403,7 @@ def list_inventory_by_store(store_id: int):
                 "id": item['id'],
                 "storeId": item['storeId'],
                 "productId": product_id,
-                "quantity": item['quantity'],
-                "lastUpdated": item['lastUpdated']
+                "quantity": item['quantity']
             }
             
             if product_details:
@@ -493,8 +492,7 @@ def list_inventory_by_product(product_id: int):
                 "id": item['id'],
                 "storeId": store_id,
                 "productId": item['productId'],
-                "quantity": item['quantity'],
-                "lastUpdated": item['lastUpdated']
+                "quantity": item['quantity']
             }
             
             if store_details:
@@ -592,8 +590,7 @@ def get_inventory_by_product_and_store(product_id: int, store_id: int):
             "success": True,
             "inventory": {
                 "id": inventory_item['id'],
-                "quantity": inventory_item['quantity'],
-                "lastUpdated": inventory_item['lastUpdated']
+                "quantity": inventory_item['quantity']
             }
         }
 
