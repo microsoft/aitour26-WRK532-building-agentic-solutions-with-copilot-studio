@@ -120,36 +120,42 @@ Updates inventory quantity for a specific product at a specific store.
 
 ##  Quick Start
 
-### 1. Installation
+### 1. Prerequisites
+
+Before getting started, ensure you have the following installed on your system:
+
+- **Python 3.8+**: The MCP server requires Python 3.8 or higher
+  - Download from [python.org](https://www.python.org/downloads/)
+  - Verify installation: `python --version`
+
+- **Git**: For cloning the repository
+  - Download from [git-scm.com](https://git-scm.com/)
+  - Verify installation: `git --version`
+
+- **Optional - Docker**: For containerized deployment
+  - Download from [docker.com](https://www.docker.com/get-started)
+  - Verify installation: `docker --version`
+
+### 2. Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd inventory-mcp
+git clone https://github.com/microsoft/aitour26-WRK532-building-agents-with-copilot-studio.git
+cd aitour26-WRK532-building-agents-with-copilot-studio/src/zava-inventory-mcp
 
 # Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+python -m venv .venv
+# On Windows:
+.venv\Scripts\activate
+# On Linux/macOS:
+source .venv/bin/activate
 
 # Install dependencies
 pip install -r src/requirements.txt
 ```
 
-### 2. Start the Server
+### 3. Start the Server
 ```bash
-# Development mode
 python src/server.py
-
-# Production mode
-RUNNING_IN_PRODUCTION=true python src/server.py
-```
-
-### 3. Test the Server
-```bash
-# Health check
-curl http://localhost:3000/health
-
-# View available endpoints
-curl http://localhost:3000/
 ```
 
 ## 📁 Project Structure
@@ -157,20 +163,17 @@ curl http://localhost:3000/
 ```
 zava-inventory-mcp/
 ├── src/
-│   ├── server.py          # Main MCP server
+│   ├── server.py          # Main MCP server implementation
 │   ├── requirements.txt   # Python dependencies
-│   ├── Dockerfile         # Docker configuration
-│   └── __pycache__/       # Python cache files
+│   └── Dockerfile         # Docker configuration for containerization
 ├── data/
-│   ├── products.json      # Product catalog
-│   ├── stores.json        # Store locations
-│   └── inventory.json     # Inventory tracking
-├── .azure/                # Azure deployment configuration
-├── .venv/                 # Python virtual environment
-├── .dockerignore          # Docker ignore file
-├── azure.yaml             # Azure deployment configuration
-├── docker-compose.yml     # Docker Compose configuration
-└── README.md              # This file
+│   ├── products.json      # Product catalog with sample data
+│   ├── stores.json        # Store locations worldwide
+│   └── inventory.json     # Inventory tracking across all stores
+├── .dockerignore          # Docker ignore patterns
+├── azure.yaml             # Azure Developer CLI configuration
+├── docker-compose.yml     # Docker Compose for local development
+└── README.md              # Project documentation (this file)
 ```
 
 ## 🌍 Sample Data
@@ -196,25 +199,6 @@ docker-compose up --build
 - **Supply Chain**: Monitor product distribution across locations
 - **Analytics**: Generate reports on product performance by location
 - **Customer Service**: Check product availability for customers
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🆘 Support
-
-For questions or issues:
-1. Review the health endpoints at `/health` and `/`
-2. Check server logs for detailed error messages
-3. Visit `/docs` for interactive API documentation
 
 ---
 
