@@ -1,0 +1,240 @@
+[
+    {
+        "id": 1,
+        "storeId": 1,
+        "productId": 1,
+        "quantity": 25,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 2,
+        "storeId": 1,
+        "productId": 2,
+        "quantity": 12,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 3,
+        "storeId": 1,
+        "productId": 3,
+        "quantity": 50,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 4,
+        "storeId": 1,
+        "productId": 4,
+        "quantity": 18,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 5,
+        "storeId": 1,
+        "productId": 5,
+        "quantity": 30,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 6,
+        "storeId": 2,
+        "productId": 1,
+        "quantity": 20,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 7,
+        "storeId": 2,
+        "productId": 3,
+        "quantity": 35,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 8,
+        "storeId": 2,
+        "productId": 6,
+        "quantity": 8,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 9,
+        "storeId": 2,
+        "productId": 7,
+        "quantity": 22,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 10,
+        "storeId": 3,
+        "productId": 1,
+        "quantity": 15,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 11,
+        "storeId": 3,
+        "productId": 4,
+        "quantity": 25,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 12,
+        "storeId": 3,
+        "productId": 8,
+        "quantity": 15,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 13,
+        "storeId": 3,
+        "productId": 9,
+        "quantity": 75,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 14,
+        "storeId": 4,
+        "productId": 2,
+        "quantity": 8,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 15,
+        "storeId": 4,
+        "productId": 5,
+        "quantity": 20,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 16,
+        "storeId": 4,
+        "productId": 7,
+        "quantity": 18,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 17,
+        "storeId": 5,
+        "productId": 3,
+        "quantity": 40,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 18,
+        "storeId": 5,
+        "productId": 8,
+        "quantity": 12,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 19,
+        "storeId": 5,
+        "productId": 10,
+        "quantity": 20,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 20,
+        "storeId": 6,
+        "productId": 1,
+        "quantity": 30,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 21,
+        "storeId": 6,
+        "productId": 6,
+        "quantity": 10,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 22,
+        "storeId": 6,
+        "productId": 9,
+        "quantity": 50,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 23,
+        "storeId": 7,
+        "productId": 2,
+        "quantity": 6,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 24,
+        "storeId": 7,
+        "productId": 4,
+        "quantity": 20,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 25,
+        "storeId": 7,
+        "productId": 7,
+        "quantity": 15,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 26,
+        "storeId": 8,
+        "productId": 3,
+        "quantity": 25,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 27,
+        "storeId": 8,
+        "productId": 5,
+        "quantity": 18,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 28,
+        "storeId": 8,
+        "productId": 10,
+        "quantity": 12,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 29,
+        "storeId": 9,
+        "productId": 1,
+        "quantity": 22,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 30,
+        "storeId": 9,
+        "productId": 6,
+        "quantity": 5,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 31,
+        "storeId": 9,
+        "productId": 8,
+        "quantity": 10,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 32,
+        "storeId": 10,
+        "productId": 4,
+        "quantity": 28,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 33,
+        "storeId": 10,
+        "productId": 9,
+        "quantity": 45,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    },
+    {
+        "id": 34,
+        "storeId": 10,
+        "productId": 10,
+        "quantity": 16,
+        "lastUpdated": "2025-08-13T10:30:00Z"
+    }
+]
