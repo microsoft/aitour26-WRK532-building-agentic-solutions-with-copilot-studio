@@ -43,7 +43,7 @@ definitions:
       error:
         type: object
 paths:
-  /mcp:
+  /mcp/:
     post:
       summary: Zava Inventory MCP
       responses:
