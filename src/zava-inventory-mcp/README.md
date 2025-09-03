@@ -124,13 +124,11 @@ Updates inventory quantity for a specific product at a specific store.
 
 Before getting started, ensure you have the following installed on your system:
 
-- **Python 3.8+**: The MCP server requires Python 3.8 or higher
-  - Download from [python.org](https://www.python.org/downloads/)
-  - Verify installation: `python --version`
-
-- **Git**: For cloning the repository
-  - Download from [git-scm.com](https://git-scm.com/)
-  - Verify installation: `git --version`
+| Prerequisite            | Purpose/Notes                                         | Download Link                                      |
+|------------------------|------------------------------------------------------|----------------------------------------------------|
+| Python 3.8+            | Required to run the MCP server                       | [python.org](https://www.python.org/downloads/)    |
+| Git                    | For cloning the repository                           | [git-scm.com](https://git-scm.com/)                |
+| Visual Studio Code     | Needed for dev tunnels setup      | [code.visualstudio.com](https://code.visualstudio.com/) |
 
 ### 2. Installation
 ```bash
@@ -214,7 +212,7 @@ To add an existing MCP connector to your agent in Microsoft Copilot Studio, foll
 1. Select Add a tool.
 1. Select Model Context Protocol. A list of MCP connectors is displayed.
 1. Select the Zava Inventory MCP from the list.
-1. Authorize the connection, entering any information that is needed.
+1. Create the connection by entering the same API key you used in the [API Key Authentication](#3-api-key-authentication) section.
 1. When you're done, select Add to agent to proceed.
 
 Once added, the MCP server tools will appear under Tools for your agent.
