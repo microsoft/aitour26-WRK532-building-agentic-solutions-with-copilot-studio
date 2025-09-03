@@ -29,7 +29,7 @@ The green text with the +++icon+++ can be clicked on and will be typed automatic
 
 ===
 
-## 1 - Build the Agent Foundation
+## 1 - Build your agent
 
 To start, you're going to setup the foundation for your agent in Copilot Studio.
 
@@ -100,7 +100,19 @@ Congratulations! You have the foundation setup for your agent. Now you can add t
 
 ===
 
-## 2 - Connecting to the MCP Server
+## 2 - Extend your agent with knowledge
+
+===
+
+## 3 - Add an agent flow
+
+The agent needs to handle Zava's complex business rules that include multi-stage approvals and conditional logic. This requires that we use Agent Flow approval capabilities which we'll add in this step.
+
+1. Do this first
+
+===
+
+## 4 - Connect to an MCP Server
 
 In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management. The Zava Inventory Management MCP consists of a bunch of tools that you can use:
 
@@ -218,15 +230,7 @@ We are going to fix this error in the next steps.
 
 ===
 
-## 3 - Creating the Order Approval Agent Flow
-
-The agent needs to handle Zava's complex business rules that include multi-stage approvals and conditional logic. This requires that we use Agent Flow approval capabilities which we'll add in this step.
-
-1. Do this first
-
-===
-
-## 4 - Test and Publish Your Agent
+## 5 - Test and Publish Your Agent
 
 Now that you have confirmed your agent is working as expected let’s publish the agent. We'll publish to the demo website which simulates what your agent would look like if it was published to a public website.
 
