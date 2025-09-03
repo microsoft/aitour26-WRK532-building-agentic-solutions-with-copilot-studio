@@ -44,23 +44,17 @@ By the end of this session, learners will be able to:
 
 ## Content Owners
 
-<!-- TODO: Add yourself as a content owner
-1. Change the src in the image tag to {your github url}.png
-2. Change INSERT NAME HERE to your name
-3. Change the github url in the final href to your url. -->
 
 <table>
 <tr>
-    <td align="center"><a href="http://github.com/aprildunnam">
-        <img src="https://github.com/aprildunnam.png" width="100px;" alt="April Dunnam"/><br />
-        <sub><b> April Dunnam</b></sub></a><br />
-            <a href="https://github.com/aprildunnam" title="talk">📢</a>
+    <td align="center"><a href="https://github.com/aprildunnam">
+        <img src="https://avatars.githubusercontent.com/u/20760857?v=4" width="100px;" alt="April DunnamE"
+"/><br />
+        <sub><b> April Dunnam
+</b></sub></a><br />
+            <a href="https://github.com/aprildunnam" title="talk">📢</a> 
     </td>
-    <td align="center"><a href="http://github.com/laskewitz">
-        <img src="https://github.com/laskewitz.png" width="100px;" alt="Daniel Laskewitz"/><br />
-        <sub><b>Daniel Laskewitz</b></sub></a><br />
-            <a href="https://github.com/laskewitz" title="talk">📢</a>
-    </td>
+  
 </tr></table>
 
 ##
