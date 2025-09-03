@@ -54,7 +54,12 @@ By the end of this session, learners will be able to:
 </b></sub></a><br />
             <a href="https://github.com/aprildunnam" title="talk">📢</a> 
     </td>
-  
+
+    <td align="center"><a href="http://github.com/laskewitz">
+        <img src="https://github.com/laskewitz.png" width="100px;" alt="Daniel Laskewitz"/><br />
+        <sub><b>Daniel Laskewitz</b></sub></a><br />
+            <a href="https://github.com/laskewitz" title="talk">📢</a>
+    </td>
 </tr></table>
 
 ##
