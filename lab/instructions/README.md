@@ -50,51 +50,51 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. If you see a welcome screen like is shown below, select the country/region that you’re in from the dropdown and select Get Started
 
-    ![pic2.png](./images/pic2.png)
+    ![pic2.png](./assets/pic2.png)
 
 1. If you see a welcome message as shown in the screenshot below, select Skip.
 
-    ![step6.png](./images/step6.png)
+    ![step6.png](./assets/step6.png)
 
 1. Click the Environment drop down in the top right and then select the Dev environment ENV{LAB_INSTANCE_ID}
 
-    ![create.png](./images/step3.png)
+    ![create.png](./assets/step3.png)
 
 1. In the left nav click **+ Create** button to start creating a new agent
 
-    ![create.png](./images/CreateLeftNav.png)
+    ![create.png](./assets/CreateLeftNav.png)
 
 1. Click **New agent**
 
-    ![create-new-agent.png](./images/NewAgent.png)
+    ![create-new-agent.png](./assets/NewAgent.png)
 
 1. While we could use natural language to setup the agent for this exercise, we will skip directly to the configuration Click the Skip to configure button
 
-    ![step9.jpg](./images/step9.jpg)
+    ![step9.jpg](./assets/step9.jpg)
 
 1. In the name field, type +++Zava Order Support+++ and then click the **Create** button
 
-    ![AgentName.png](./images/AgentName.png)
+    ![AgentName.png](./assets/AgentName.png)
 
 1. Now we need to confirm and configure some settings for our agent. To do that, select the **Settings** button in the top right hand corner
 
-    ![step14.png](./images/SettingsButton.png)
+    ![step14.png](./assets/SettingsButton.png)
 
 1. In the Generative AI tab, confirm that **Generative Orchestration** is set to **Yes** and turn **Connected Agents** to **On** then select **Save**
 
-    ![AgentTest.png](./images/OrchestrationSettings.png)
+    ![AgentTest.png](./assets/OrchestrationSettings.png)
 
 1. Select the **Security** tab in the left navigation
 
-    ![AgentTest.png](./images/SecurityTabLeftNav.png)
+    ![AgentTest.png](./assets/SecurityTabLeftNav.png)
 
 1. Select **Authentication**
 
-    ![AgentTest.png](./images/SelectAuthentication.png)
+    ![AgentTest.png](./assets/SelectAuthentication.png)
 
 1. Select **No Authentication** and select the **Save** button to apply the settings.
 
-    ![AgentTest.png](./images/AuthenticationSettings.png)
+    ![AgentTest.png](./assets/AuthenticationSettings.png)
 
 Congratulations! You have the foundation setup for your agent. Now you can add tools and knowledge.
 
@@ -236,19 +236,19 @@ Now that you have confirmed your agent is working as expected let’s publish th
 
 1. Click the **Publish** button in the top right-hand corner
 
-    ![AgentPublish.png](./images/AgentPublish.png)
+    ![AgentPublish.png](./assets/AgentPublish.png)
 
 1. Click the **Publish** button to publish your agent
 
-    ![publish-agent.png](./images/publish-agent.png)
+    ![publish-agent.png](./assets/publish-agent.png)
 
     The following dialog will be displayed you can close this and your agent will finish publishing in the background
 
-    ![publishing-agent.png](./images/publishing-agent.png)
+    ![publishing-agent.png](./assets/publishing-agent.png)
 
 1. Now that it’s published, we need to make this available to use within Microsoft Teams. Select the **Channels** tab in the top menu
 
-   ![AgentChannels.png](./images/AgentChannels.png)
+   ![AgentChannels.png](./assets/AgentChannels.png)
 
 Congratulations! You’ve now built and published an agent!
 
