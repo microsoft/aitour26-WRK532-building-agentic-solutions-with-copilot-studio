@@ -47,14 +47,11 @@ By the end of this session, learners will be able to:
 
 <table>
 <tr>
-    <td align="center"><a href="https://github.com/aprildunnam">
-        <img src="https://avatars.githubusercontent.com/u/20760857?v=4" width="100px;" alt="April DunnamE"
-"/><br />
-        <sub><b> April Dunnam
-</b></sub></a><br />
-            <a href="https://github.com/aprildunnam" title="talk">📢</a> 
+    <td align="center"><a href="http://github.com/aprildunnam">
+        <img src="https://github.com/aprildunnam.png" width="100px;" alt="April Dunnam"/><br />
+        <sub><b> April Dunnam</b></sub></a><br />
+            <a href="https://github.com/aprildunnam" title="talk">📢</a>
     </td>
-
     <td align="center"><a href="http://github.com/laskewitz">
         <img src="https://github.com/laskewitz.png" width="100px;" alt="Daniel Laskewitz"/><br />
         <sub><b>Daniel Laskewitz</b></sub></a><br />
