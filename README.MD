@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
 <p align="center">
 <img src="img/Banner-MS-AI-Tour-26.png" alt="decorative banner" width="1200"/>
 </p>
@@ -40,10 +42,6 @@ By the end of this session, learners will be able to:
 | Azure AI Foundry Community Discord | [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)| Connect with the Azure AI Foundry Community! |
 | Learn at AI Tour | [https://aka.ms/LearnAtAITour](https://aka.ms/LearnAtAITour?ocid=AITour26_resourcecenter_cnl) | Continue learning on Microsoft Learn |
 
-### 🌐 Multi-Language Support
-
-*languages will go here when its time to localize*
-
 ## Content Owners
 
 <!-- TODO: Add yourself as a content owner
@@ -53,19 +51,15 @@ By the end of this session, learners will be able to:
 
 <table>
 <tr>
-    <td align="center"><a href="http://github.com/mikekinsman">
-        <img src="https://github.com/mikekinsman.png" width="100px;" alt="INSERT NAME HERE"
-"/><br />
-        <sub><b> INSERT NAME HERE
-</b></sub></a><br />
-            <a href="https://github.com/mikekinsman" title="talk">📢</a>
+    <td align="center"><a href="http://github.com/aprildunnam">
+        <img src="https://github.com/aprildunnam.png" width="100px;" alt="April Dunnam"/><br />
+        <sub><b> April Dunnam</b></sub></a><br />
+            <a href="https://github.com/aprildunnam" title="talk">📢</a>
     </td>
-    <td align="center"><a href="http://github.com/mikekinsman">
-        <img src="https://github.com/mikekinsman.png" width="100px;" alt="INSERT NAME HERE
-"/><br />
-        <sub><b>INSERT NAME HERE
-</b></sub></a><br />
-            <a href="https://github.com/mikekinsman" title="talk">📢</a>
+    <td align="center"><a href="http://github.com/laskewitz">
+        <img src="https://github.com/laskewitz.png" width="100px;" alt="Daniel Laskewitz"/><br />
+        <sub><b>Daniel Laskewitz</b></sub></a><br />
+            <a href="https://github.com/laskewitz" title="talk">📢</a>
     </td>
 </tr></table>
 
