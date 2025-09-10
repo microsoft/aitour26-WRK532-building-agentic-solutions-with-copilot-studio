@@ -12,38 +12,41 @@ If you will be delivering this session, check the [session-delivery-sources](./s
 
 ### Session Description
 
-This hands-on session with Microsoft Copilot Studio guides you through the full agent lifecycle — from purpose-driven design to advanced capabilities. Learn how to build, integrate, automate, and deploy a fully functional agent using tools like Agent Flows and MCP. Walk away with practical skills to customize agents for real-world business needs.
+This 75-minute hands-on workshop with Microsoft Copilot Studio guides you through building agentic solutions with Copiilot Studio. You'll learn how to build, integrate, automate, and deploy a fully functional agent using tools like Agent Flows and MCP. You'll walk away with practical skills to customize agents for real-world business needs.
 
 ### 🧠 Learning Outcomes
 
 By the end of this session, learners will be able to:
 
--  
--
--
+- Create an agent from scratch in Copilot Studio
+- Know when and how to integrate Agents Flows
+- Understand MCP and how to integrate MCP Severs with agents
+- See how to test and deploy an agent
 
 ### 💻 Technologies Used
 
-1.
-1.
-1.
+- Microsoft Copilot Studio
+- Agent Flows
+- MCP
 
 ### 🔗 Session Resources
 
-| Resources          | Links                             | Description        |
-|:-------------------|:----------------------------------|:-------------------|
-| Additional Resources for this session | [https://learn.microsoft.com](https://learn.microsoft.com?ocid=AITour26_resourcecenter_cnl) | Links specific to this session |
+| Resource | Path |
+|---|---:|
+| Presenter Guide (full) | [session-delivery-resources/readme.md](session-delivery-resources/readme.md)
+| Slides | [WRK532_Presentation.pptx](https://assetsmanagement952e.blob.core.windows.net/assets/WRK532%20Building%20agentic%20solutions%20with%20Copilot%20Studio/WRK532_Presentation_V1.0.pptx) |
+| TTT Video | [WRK532-Full-Session.mp4](https://assetsmanagement952e.blob.core.windows.net/assets/WRK532%20Building%20agentic%20solutions%20with%20Copilot%20Studio/WRK532_Delivery_V1.0.mp4) |
 
 ### 📚 Continued Learning Resources
 
 | Resources          | Links                             | Description        |
 |:-------------------|:----------------------------------|:-------------------|
+| Copilot Studio Resources | [https://aka.ms/copilotstudio-getstarted](https://aka.ms/copilotstudio-getstarted)
 | AI Tour 2026 Resource Center | [https://aka.ms/AITour26-Resource-Center](https://aka.ms/AITour26-Resource-Center?ocid=AITour26_resourcecenter_cnl) | Links to all repos for AI Tour 26 Sessions |
 | Azure AI Foundry Community Discord | [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)| Connect with the Azure AI Foundry Community! |
 | Learn at AI Tour | [https://aka.ms/LearnAtAITour](https://aka.ms/LearnAtAITour?ocid=AITour26_resourcecenter_cnl) | Continue learning on Microsoft Learn |
 
 ## Content Owners
-
 
 <table>
 <tr>
