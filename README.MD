@@ -35,7 +35,7 @@ By the end of this session, learners will be able to:
 |---|---:|
 | Presenter Guide (full) | [session-delivery-resources/readme.md](session-delivery-resources/readme.md)
 | Slides | [WRK532_Presentation.pptx](https://assetsmanagement952e.blob.core.windows.net/assets/WRK532%20Building%20agentic%20solutions%20with%20Copilot%20Studio/WRK532_Presentation_V1.0.pptx) |
-| TTT Video | [WRK532-Full-Session.mp4](https://assetsmanagement952e.blob.core.windows.net/assets/WRK532%20Building%20agentic%20solutions%20with%20Copilot%20Studio/WRK532_Delivery_V1.0.mp4) |
+| Full Session Recording | [Recording](https://youtu.be/emavMkhFPew) |
 
 ### 📚 Continued Learning Resources
 
