@@ -13,7 +13,7 @@ Prior to delivering the workshop please:
 | Resources          | Links                            | Description |
 |-------------------|----------------------------------|-------------------|
 | Workshop Slide Deck      |  [Presentation](https://assetsmanagement952e.blob.core.windows.net/assets/WRK532%20Building%20agentic%20solutions%20with%20Copilot%20Studio/WRK532_Presentation_V1.0.pptx)  | Presentation slides for this workshop with presenter notes and embedded demo video |
-| Session Recording    |  [Recording](https://assetsmanagement952e.blob.core.windows.net/assets/WRK532%20Building%20agentic%20solutions%20with%20Copilot%20Studio/WRK532_Delivery_V1.0.mp4) | Full Session Recording |
+| Session Recording    |  [Recording](https://youtu.be/emavMkhFPew) | Full Session Recording |
 
 ## 🚀Get Started
 
