@@ -5,7 +5,6 @@ import logging
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from starlette.responses import JSONResponse, PlainTextResponse
-import os
 from dotenv import load_dotenv
 
 
@@ -13,7 +12,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_KEY = os.environ['MCP_API_KEY']
+# API Key is hardcoded for simplicity - in production, use environment variables or secure vaults
+API_KEY = "AITour2026!"
 
 # endregion
 
