@@ -14,8 +14,8 @@ By the end of this workshop, you'll have practical experience with:
 
 ## Workshop Scenario
 
-You are a solutions architect tasked with modernizing the customer service experience for Zava Retail Store, a beloved regional retailer serving suburban communities.
-Currently, customers call or email to check inventory, place orders, and track shipments—creating bottlenecks for both customers and staff. Your mission is to build an intelligent Inventory Assistant that can:
+You are a solutions architect tasked with modernizing the customer service experience for Zava Retail Store, a regional retailer serving suburban communities.
+Currently, customers call or email to check inventory, place orders, and track shipments which creates bottlenecks for both customers and staff. Your mission is to build an intelligent Inventory Assistant that can:
 
 - Answer product availability questions instantly
 - Guide customers through the ordering process
@@ -23,7 +23,7 @@ Currently, customers call or email to check inventory, place orders, and track s
 - Handle order modifications and cancellations
 - Escalate complex issues to human agents when needed
 
-The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: <+++@lab.VirtualMachine>(WRK530).Password+++
+The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: <+++@lab.VirtualMachine>(WRK532).Password+++
 
 > [!note] To ensure text is entered accurately avoid interacting or clicking in the VM until the text has finished being typed
 
@@ -68,51 +68,61 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![create-new-agent.png](./assets/NewAgent.png)
 
-1. While we could use natural language to setup the agent for this exercise, we will skip directly to the configuration Click the Skip to configure button
+1. While we could use natural language to setup the agent for this exercise, we will skip and configure it manually by selecting the **Configure** tab.
 
-    ![step9.jpg](./assets/step9.jpg)
+    ![step9.jpg](./assets/ConfigreTab.png)
 
 1. In the name field, type +++Zava Order Support+++ and then click the **Create** button
 
-    ![AgentName.png](./assets/AgentName.png)
+    ![AgentName.png](./assets/ConfigureName.png)
 
-1. Now we need to confirm and configure some settings for our agent. To do that, select the **Settings** button in the top right hand corner
+1. Now that our agent is created, we need to equip it with knowledge so it can answer questions about our company background, shipping policies, etc. This information is stored in two PDF documents which you need to download, the [Zava FAQ Doc](./assets/zava_faq.pdf) and [Zava Policies Doc](./assets/zava_returns_shipping_policy.pdf).
 
-    ![step14.png](./assets/SettingsButton.png)
+1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
-1. In the Generative AI tab, confirm that **Generative Orchestration** is set to **Yes** and turn **Connected Agents** to **On** then select **Save**
+    ![AddKnowledge.png](./assets/AddKnowledgeBtn.png)
 
-    ![AgentTest.png](./assets/OrchestrationSettings.png)
+1. Drag and drop the [Zava FAQ Doc](./assets/zava_faq.pdf) and [Zava Policies Doc](./assets/zava_returns_shipping_policy.pdf) files you downloaded in the step above into the canvas
 
-1. Select the **Security** tab in the left navigation
+    ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
-    ![AgentTest.png](./assets/SecurityTabLeftNav.png)
+1. Verify the files are added and select **Add to Agent**
 
-1. Select **Authentication**
+    ![AddToAgent.png](./assets/UploadedFiles.png)
 
-    ![AgentTest.png](./assets/SelectAuthentication.png)
+1. You'll know your files are ready to use when you see the **Ready** checkbox next to each file.
 
-1. Select **No Authentication** and select the **Save** button to apply the settings.
+    ![Ready.png](./assets/Ready.png)
 
-    ![AgentTest.png](./assets/AuthenticationSettings.png)
+1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the Instructions section and select the **Edit** button and paste in the following instructions:
 
-Congratulations! You have the foundation setup for your agent. Now you can add tools and knowledge.
+> Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
+Your behavior:
+Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains.
+When you answer, provide a citation (which document and section) whenever possible.
+If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?”
+Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them.
+Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
+
+Click **Save**
+
+![SaveInstructions.png](./assets/SaveInstructions.png)
+
+1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
+
+> What is your return policy?
+
+![TestBefore.png](./assets/TestBeforeEnter.png)
+
+1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
+
+![TestAfter.png](./assets/TestAfter.png)
+
+Congratulations! You have setup an agent that can answer questions about static data from files! Next ,we'll integrate it with an MCP server.
 
 ===
 
-## 2 - Extend your agent with knowledge
-
-===
-
-## 3 - Add an agent flow
-
-The agent needs to handle Zava's complex business rules that include multi-stage approvals and conditional logic. This requires that we use Agent Flow approval capabilities which we'll add in this step.
-
-1. Do this first
-
-===
-
-## 4 - Connect to an MCP Server
+## 2 - Connect to an MCP Server
 
 In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management. The Zava Inventory Management MCP consists of a bunch of tools that you can use:
 
@@ -230,9 +240,37 @@ We are going to fix this error in the next steps.
 
 ===
 
-## 5 - Test and Publish Your Agent
+## 3 - Add an agent flow
+
+The agent needs to handle Zava's complex business rules that include multi-stage approvals and conditional logic. This requires that we use Agent Flow approval capabilities which we'll add in this step.
+
+1. Do this first
+
+===
+
+## 4 - Test and Publish Your Agent
 
 Now that you have confirmed your agent is working as expected let’s publish the agent. We'll publish to the demo website which simulates what your agent would look like if it was published to a public website.
+
+1. Now we need to confirm and configure some settings for our agent. To do that, select the **Settings** button in the top right hand corner
+
+    ![step14.png](./assets/AgentSettingsBtn.png)
+
+1. In the Generative AI tab, confirm that **Generative Orchestration** is set to **Yes** and turn **Connected Agents** to **On** then select **Save**
+
+    ![AgentTest.png](./assets/OrchestrationSettings.png)
+
+1. Select the **Security** tab in the left navigation
+
+    ![AgentTest.png](./assets/SecurityTabLeftNav.png)
+
+1. Select **Authentication**
+
+    ![AgentTest.png](./assets/SelectAuthentication.png)
+
+1. Select **No Authentication** and select the **Save** button to apply the settings.
+
+    ![AgentTest.png](./assets/AuthenticationSettings.png)
 
 1. Click the **Publish** button in the top right-hand corner
 
