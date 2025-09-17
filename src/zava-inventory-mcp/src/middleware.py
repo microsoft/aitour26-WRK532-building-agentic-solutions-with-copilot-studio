@@ -35,14 +35,14 @@ class AuthMiddleware(BaseHTTPMiddleware):
                 return JSONResponse({"error": "🔒 Authentication Failed ⛔"}, status_code=401)
             else:
                 return PlainTextResponse("🔒 Authentication Failed ⛔", status_code=401)
-        # Check if CLIENT_API_KEY matches API_KEY
-        if not API_KEY or not CLIENT_API_KEY:
+        # Check if auth_header matches API_KEY
+        if not API_KEY or not auth_header:
             accept = request.headers.get("accept", "")
             if "application/json" in accept:
                 return JSONResponse({"error": "🔒 Authentication Failed ⛔"}, status_code=401)
             else:
                 return PlainTextResponse("🔒 Authentication Failed ⛔", status_code=401)
-        if CLIENT_API_KEY != API_KEY:
+        if auth_header != API_KEY:
             accept = request.headers.get("accept", "")
             if "application/json" in accept:
                 return JSONResponse({"error": "🔒 Authentication Failed ⛔"}, status_code=401)

@@ -738,18 +738,17 @@ async def root(request) -> PlainTextResponse:
 # region MCP Server Startup
 
 if __name__ == "__main__":
-    logging.info("\u2139\ufe0f  Visit http://localhost:3000 to access the Zava Inventory 📦 MCP Server 🧠.")
     if os.getenv("RUNNING_IN_PRODUCTION") == "1":
         # Production mode with multiple workers for better performance
         uvicorn.run(
             "server:app",  # Pass as import string
-            host="0.0.0.0",
+            host="127.0.0.1",
             port=3000,
             workers=(multiprocessing.cpu_count() * 2) + 1,
             timeout_keep_alive=300  # Increased for SSE connections
         )
     else:
         # Development mode with a single worker for easier debugging
-        uvicorn.run("server:app", host="0.0.0.0", port=3000, reload=True)
+        uvicorn.run("server:app", host="127.0.0.1", port=3000, reload=True)
 
 # endregion

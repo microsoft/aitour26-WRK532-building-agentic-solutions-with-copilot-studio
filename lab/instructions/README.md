@@ -96,27 +96,27 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the Instructions section and select the **Edit** button and paste in the following instructions:
 
-> Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
-Your behavior:
-Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains.
-When you answer, provide a citation (which document and section) whenever possible.
-If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?”
-Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them.
-Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
+    > Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
+    Your behavior:
+    Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains.
+    When you answer, provide a citation (which document and section) whenever possible.
+    If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?”
+    Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them.
+    Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
 
-Click **Save**
+    Click **Save**
 
-![SaveInstructions.png](./assets/SaveInstructions.png)
+    ![SaveInstructions.png](./assets/SaveInstructions.png)
 
 1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
 
-> What is your return policy?
+    > What is your return policy?
 
-![TestBefore.png](./assets/TestBeforeEnter.png)
+    ![TestBefore.png](./assets/TestBeforeEnter.png)
 
 1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
 
-![TestAfter.png](./assets/TestAfter.png)
+    ![TestAfter.png](./assets/TestAfter.png)
 
 Congratulations! You have setup an agent that can answer questions about static data from files! Next ,we'll integrate it with an MCP server.
 
@@ -174,18 +174,6 @@ This will open the Zava Inventory Management MCP server in Visual Studio Code. A
     pip install -r src/requirements.txt
     ```
 
-### Setup local environment variable for authentication
-
-The Zava MCP Server uses API key authentication to avoid that people can get to the data that gets accessed by the MCP Server. In this case, the MCP Server is using a local environment variable called `MCP_API_KEY`. Later in this lab, the MCP Server will match the value of the environment variable with the incoming request from Microsoft Copilot Studio.
-
-Let's setup the local environment variable now.
-
-1. Run the following command to set the value of the `MCP_API_KEY` environment variable to `AI-tour-25`.
-
-    ```bash
-    $env:MCP_API_KEY = "AI-tour-26"
-    ```
-
 ### Run the MCP Server
 
 1. Now it's time to run the MCP Server. Use the following command to start the Zava Inventory MCP Server.
@@ -197,6 +185,8 @@ Let's setup the local environment variable now.
 After running the MCP Server, you're not there yet. The MCP Server is only running locally right now, so you need to make sure the MCP Server is available through a public URL. This is a requirement for Microsoft Copilot Studio. Because it's a cloud service, it's not able to reach your localhost.
 
 ### Configure a dev tunnel
+
+To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
 
 In the terminal at the bottom of Visual Studio Code, there are a couple of tabs:
 
@@ -224,7 +214,7 @@ In the terminal at the bottom of Visual Studio Code, there are a couple of tabs:
     Now your browser will be opened with the MCP Server running. The following message should be displayed:
     `The Zava Inventory 📦 MCP Server 🧠 is running`
 
-1. In the address bar, add `/MCP` behind the address and hit **Enter**
+1. In the address bar, add `/mcp` behind the address and hit **Enter**
 
     Now your browser will display an error, because in the browser we didn't add the API Key.
     `🔒 Authentication Failed ⛔`
@@ -236,7 +226,97 @@ We are going to fix this error in the next steps.
 1. Open your browser and go back to the environment where you create the agent earlier
 1. Open your agent
 1. In the top navigation, select **Tools**
-1.
+1. Select **+ Add a tool**
+1. Select **+ New tool**
+1. Select **Model Context Protocol**
+1. Enter the **Name**:
+
+      ```text
+      Zava Inventory MCP
+      ```
+
+1. Enter the **Description**:
+
+      ```text
+      Zava Inventory MCP
+      ```
+
+1. Enter the **Server URL**. This should be the URL you opened from the ports tab in Visual Studio Code without the `https://` in front of it and with the `/mcp` behind it. For example: `something-3000.something.devtunnels.ms/mcp`.
+1. For *Authentication*, select **API key**
+1. Leave the *type* on *Header* and for *Header name* add the following value:
+
+      ```text
+      authorization
+      ```
+
+      ![Create MCP Tool](./assets/CreateMCPTool.png)
+
+1. Check if all the values are correct and if so, select **Create** to add the MCP Server
+
+    This will take a while, since in the background it is creating a custom connector for the MCP Server.
+
+1. When it's done, select **Not connected** and **Create new connection**
+1. Enter the **API Key**:
+
+      ```text
+      AITour2026!
+      ```
+
+1. Select **Add to agent**
+
+    ![Add to agent](./assets/AddToAgent.png)
+
+    Now it's time to test the agent with the MCP Server!
+
+1. Select the **Map** icon in the top right corner of the *Test your agent* panel to activate the *Activity map*. This will help you understand what is happening when you are sending and receiving messages in the *Test your agent* panel.
+
+    ![Activity Map](./assets/ActivityMap.png)
+
+1. Now, enter the following message and send it in the *Test your agent* panel:
+
+      ```text
+      List the Zava Stores
+      ```
+
+    This should show you a whole bunch of Zava Stores as an answer in the *Test your agent* panel:
+
+    ![List Zava Stores test pane](./assets/ListZavaStores.png)
+
+    And on the left in the *Activity map*, you can see that the Zava Inventory MCP has been initialized and the *get_stores* tool has been triggered by our message. When you click on the *get_stores* tool, you're even able to see the output that the agent got from the MCP server. This means our agent made that text into the formatted output we saw in the *Test your agent* panel.
+
+    ![Activity Map after asking to list the Zava Stores.](./assets/ListZavaStoresActivityMap.png)
+
+    Let's experiment a bit more with the other tools as well.
+
+1. Send the following message to your agent via the *Test your agent* panel:
+
+      ```text
+      List the available products in the Zava Amsterdam store
+      ```
+
+    You will see the available products in the Zava Amsterdam store in the *Test your agent* panel:
+
+    ![List Available Products in the Zava Amsterdam store in the test pane](./assets/ListAvailableProductsZavaAmsterdam.png)
+
+    Now you can see in the *Activity map* more tools have been triggered. The *get_stores* tool has been triggered again, because it needs it for the *list_inventory_by_store* tool. This really shows the power of MCP: when used correctly, it can do a lot of calls for you, without having to build a flow for it or to give it more instructions.
+
+    ![Activity Map after asking to list the available products in the Zava Amsterdam store.](./assets/ListAvailableProductsZavaAmsterdamActivityMap.png)
+
+    But now - we only did get actions, wouldn't it be good to also add something?
+
+1. Send the following message to your agent via the *Test your agent* panel:
+
+    ```text
+    Please add the following Zava Store:
+    Zava Chicago
+    1597 Virginia Street, Chicago, Illinois, IL 60618
+    ```
+
+    ![Add Zava store via message](./assets/AddZavaStore.png)
+
+    As you can see, we didn't add United States to the message, but it automatically added that based on the details in the message.
+
+    ![Add Zava store activity map](./assets/AddZavaStoreActivityMap.png)
 
 ===
 

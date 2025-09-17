@@ -11,7 +11,7 @@
     "name": "Zava Berlin",
     "city": "Berlin",
     "country": "Germany",
-    "address": "123 Hauptstra\u00c3\u0178e 45, 10115 Berlin"
+    "address": "123 Hauptstrasse 45, 10115 Berlin"
   },
   {
     "id": 3,
@@ -25,7 +25,7 @@
     "name": "Zava Frankfurt",
     "city": "Frankfurt",
     "country": "Germany",
-    "address": "246 Mainzer Landstra\u00dfe, Innenstadt, 60326 Frankfurt"
+    "address": "246 Mainzer Landstrasse, Innenstadt, 60326 Frankfurt"
   },
   {
     "id": 5,
