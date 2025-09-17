@@ -318,6 +318,8 @@ We are going to fix this error in the next steps.
 
     ![Add Zava store activity map](./assets/AddZavaStoreActivityMap.png)
 
+This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools.
+
 ===
 
 ## 3 - Add an agent flow
