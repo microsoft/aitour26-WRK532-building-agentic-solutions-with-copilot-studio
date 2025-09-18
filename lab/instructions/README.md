@@ -23,7 +23,9 @@ Currently, customers call or email to check inventory, place orders, and track s
 - Handle order modifications and cancellations
 - Escalate complex issues to human agents when needed
 
-The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: <+++@lab.VirtualMachine>(WRK532).Password+++
+The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: +++@lab.VirtualMachine(WRK532).Password+++
+
+<+++@lab.VirtualMachine>(WRK532).Password+++
 
 > [!note] To ensure text is entered accurately avoid interacting or clicking in the VM until the text has finished being typed
 
