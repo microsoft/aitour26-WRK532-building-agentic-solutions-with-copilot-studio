@@ -37,7 +37,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open Microsoft Edge and navigate to
 
-    +++<https://copilotstudio.microsoft.com+++>
+    `https://copilotstudio.microsoft.com`
 
 1. Log in with
 
