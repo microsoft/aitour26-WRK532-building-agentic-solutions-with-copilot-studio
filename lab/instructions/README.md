@@ -214,13 +214,13 @@ In the terminal at the bottom of Visual Studio Code, there are a couple of tabs:
 
 1. Select **Open**
 
-    Now your browser will be opened with the MCP Server running. The following message should be displayed:
-    `The Zava Inventory 📦 MCP Server 🧠 is running`
+    Now your browser will be opened with the MCP Server running. The following message should be displayed:  
+    The Zava Inventory 📦 MCP Server 🧠 is running
 
 1. In the address bar, add `/mcp` behind the address and hit **Enter**
 
-    Now your browser will display an error, because in the browser we didn't add the API Key.
-    `🔒 Authentication Failed ⛔`
+    Now your browser will display an error, because in the browser we didn't add the API Key.  
+    🔒 Authentication Failed ⛔
 
 We are going to fix this error in the next steps.
 
