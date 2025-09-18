@@ -96,17 +96,18 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the Instructions section and select the **Edit** button and paste in the following instructions:
 
-    > Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
+```Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
     Your behavior:
     Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains.
     When you answer, provide a citation (which document and section) whenever possible.
     If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?”
     Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them.
     Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
+```
 
-    Click **Save**
+Click **Save**
 
-    ![SaveInstructions.png](./assets/SaveInstructions.png)
+![SaveInstructions.png](./assets/SaveInstructions.png)
 
 1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
 
@@ -318,15 +319,54 @@ We are going to fix this error in the next steps.
 
     ![Add Zava store activity map](./assets/AddZavaStoreActivityMap.png)
 
-This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools.
+This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools in the MCP Server.
 
 ===
 
 ## 3 - Add an agent flow
 
-The agent needs to handle Zava's complex business rules that include multi-stage approvals and conditional logic. This requires that we use Agent Flow approval capabilities which we'll add in this step.
+Customers and store staff sometimes ask for discounts. Zava’s policy is to only grant a discount when the item isn’t low in stock and a manager signs off. This makes a great use case for an Agent Flow.
 
-1. Do this first
+1. Scroll down to the Tools section and select **New Tool**
+    ![New Tool](./assets/NewTool.png)
+
+1. Select **New Tool** in the dialog
+
+    ![New Tool](./assets/NewTool2.png)
+
+1. Select **Agent Flow**
+
+    ![Agent Flow](./assets/AgentFlowBtn.png)
+
+1. Select the **plus button** between the when an agent calls a flow and respond to agent.
+
+    ![Plus Button](./assets/PlusBtn.png)
+
+1. Scroll down to the Human in the Loop section and select the **Start and Wait for Approval**.
+
+    ![Zava Inventory](./assets/StartWaitForApproval.png)
+
+1. In the Approval Type dropdown select **Approve/Reject - First to Respond**
+
+    ![First to respond](./assets/ApprovalType.png)
+
+1. For the Title input put ```Approve New Store Onboarding```
+
+    ![Approve New Onboarding](./assets/ApprovalTitle.png)
+
+1. For the Assigned To enter your username
+
+    ![Approval Assigned To](./assets/ApprovalAssignedTo.png)
+
+1. Now we need to be sure we can pass relevant information about the new store to the flow to include in our approval request. To do that we need to scroll up and select the **When an agent calls a flow** trigger and select **Add Input**
+
+    ![Approval Assigned To](./assets/AddInput.png)
+
+1. Select **Text** from the list of input options
+
+    ![Text Input](./assets/TextInput.png)
+
+1. ddd
 
 ===
 
