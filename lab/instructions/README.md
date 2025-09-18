@@ -25,8 +25,6 @@ Currently, customers call or email to check inventory, place orders, and track s
 
 The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: `@lab.VirtualMachine(WRK532).Password`
 
-<+++@lab.VirtualMachine>(WRK532).Password+++
-
 > [!note] To ensure text is entered accurately avoid interacting or clicking in the VM until the text has finished being typed
 
 ===
@@ -42,13 +40,13 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 1. Log in with
 
     <!-- markdownlint-disable-next-line MD034 -->
-    **Username:** +++@lab.CloudCredential(CSBatch1).UserPrincipalName+++
+    **Username:** `@lab.CloudCredential(CSBatch1).UserPrincipalName`
 
     <!-- markdownlint-disable-next-line MD034 -->
-    **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
+    **Password:** `@lab.CloudCredential(CSBatch1).Password`
 
     <!-- markdownlint-disable-next-line MD034 -->
-    **Temporary Access Password:** +++@lab.Variable(TAP)+++
+    **Temporary Access Password:** `@lab.Variable(TAP)`
 
 1. If you see a welcome screen like is shown below, select the country/region that you’re in from the dropdown and select Get Started
 
