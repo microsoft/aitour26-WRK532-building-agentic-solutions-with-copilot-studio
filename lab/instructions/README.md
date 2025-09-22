@@ -23,7 +23,7 @@ Currently, customers call or email to check inventory, place orders, and track s
 - Handle order modifications and cancellations
 - Escalate complex issues to human agents when needed
 
-The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: +++@lab.VirtualMachine(WRK532).Password+++
+The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: <+++@lab.VirtualMachine>(WRK532).Password+++
 
 > [!note] To ensure text is entered accurately avoid interacting or clicking in the VM until the text has finished being typed
 
@@ -35,7 +35,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open Microsoft Edge and navigate to
 
-    +++https://copilotstudio.microsoft.com+++
+    +++<https://copilotstudio.microsoft.com+++>
 
 1. Log in with
 
@@ -96,7 +96,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the Instructions section and select the **Edit** button and paste in the following instructions:
 
-```Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
+```text
+Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
     Your behavior:
     Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains.
     When you answer, provide a citation (which document and section) whenever possible.
@@ -142,21 +143,24 @@ In this part, you will learn about how to run a Model Context Protocol (MCP) ser
 | Inventory management | Get inventory for a specific product at a specific store |
 | Inventory management | Update the quantity for a product at a store |
 
-The MCP server is available on `C:\src\zava-inventory-mcp\`.
+The MCP server is available on **D:\LabFiles\zava-inventory-mcp**.
 
 ### Open the MCP Server in Visual Studio Code
 
 1. Open Visual Studio Code by selecting Visual Studio Code in the taskbar
 1. Select **File > Open Folder**
-1. Navigate to `C:\src\zava-inventory-mcp`
+1. Navigate to **D:\LabFiles\zava-inventory-mcp**
 1. Select **Select Folder**
+1. You will see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
+
+    ![Trust authors](./assets/TrustAuthors.png)
 
 This will open the Zava Inventory Management MCP server in Visual Studio Code. After this, we will install the dependencies so that we can run the server locally.
 
 ### Install dependencies
 
 1. Open the terminal by selecting **Terminal > New Terminal**
-1. Navigate to `C:\src\zava-inventory-mcp`
+1. Make sure you are in the following folder: **D:\LabFiles\zava-inventory-mcp**
 1. Create a new virtual environment by running the following command:
 
     ```bash

@@ -1,2 +1,6 @@
 mcp==1.12.4
 uvicorn==0.35.0
+PyJWT==1.7.1
+requests>=2.0.0
+python-dotenv>=0.21.0
+starlette>=0.27.0
