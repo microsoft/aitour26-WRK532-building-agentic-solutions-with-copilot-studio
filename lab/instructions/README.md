@@ -2,16 +2,6 @@
 
 In this 75-minute hands-on workshop, you'll experience the complete journey of building an intelligent agent using Microsoft Copilot Studio. Through a practical inventory and order management scenario, you'll learn how to create a sophisticated AI assistant capable of handling real-world business operations.
 
-## What You'll Learn
-
-By the end of this workshop, you'll have practical experience with:
-
-- **Agent Design & Architecture**: Understanding how to design purpose-driven agents that solve specific business problems
-- **Knowledge Integration**: Adding and managing knowledge bases to make your agent contextually aware
-- **Advanced Automation**: Building Agent Flows to handle deterministic, complex, multi-step business processes
-- **External System Integration**: Connecting your agent to external services using Model Context Protocol (MCP) servers
-- **Production Deployment**: Publishing and configuring your agent for real-world use
-
 ## Workshop Scenario
 
 You are a solutions architect tasked with modernizing the customer service experience for Zava Retail Store, a regional retailer serving suburban communities.
