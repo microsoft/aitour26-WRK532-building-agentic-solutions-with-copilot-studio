@@ -155,9 +155,9 @@ The MCP server folder contains several key files that make up the MCP Server:
 
 #### Data files
 
-- **data/products.json**: Sample product data with 11 products
-- **data/stores.json**: Sample store data with 19 store locations
-- **data/inventory.json**: Sample inventory records with 84 stock entries
+- **data/products.json**: Sample product data with products
+- **data/stores.json**: Sample store data with store locations
+- **data/inventory.json**: Sample inventory records with stock entries
 
 Now, let's install the dependencies so that we can run the server locally.
 
