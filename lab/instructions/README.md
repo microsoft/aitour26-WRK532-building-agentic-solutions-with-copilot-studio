@@ -145,13 +145,13 @@ In this part, you will learn about how to run a Model Context Protocol (MCP) ser
 | Inventory management | Get inventory for a specific product at a specific store |
 | Inventory management | Update the quantity for a product at a store |
 
-The MCP server is available on **D:\LabFiles\zava-inventory-mcp**.
+The MCP server is available on **D:\LabFiles\ZavaInventoryMCP**.
 
 ### Open the MCP Server in Visual Studio Code
 
 1. Open Visual Studio Code by selecting Visual Studio Code in the taskbar
 1. Select **File > Open Folder**
-1. Navigate to **D:\LabFiles\zava-inventory-mcp**
+1. Navigate to **D:\LabFiles\ZavaInventoryMCP**
 1. Select **Select Folder**
 1. You will see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
 
@@ -162,7 +162,7 @@ This will open the Zava Inventory Management MCP server in Visual Studio Code. A
 ### Install dependencies
 
 1. Open the terminal by selecting **Terminal > New Terminal**
-1. Make sure you are in the following folder: **D:\LabFiles\zava-inventory-mcp**
+1. Make sure you are in the following folder: **D:\LabFiles\ZavaInventoryMCP**
 1. Create a new virtual environment by running the following command:
 
     ```bash
