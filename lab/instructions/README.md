@@ -194,28 +194,55 @@ After running the MCP Server, you're not there yet. The MCP Server is only runni
 
 To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
 
-In the terminal at the bottom of Visual Studio Code, there are a couple of tabs:
+In the terminal at the bottom of Visual Studio Code, we are going to configure a dev tunnel.
 
-- Problems
-- Output
-- Debug Console
-- Terminal
-- Ports
-- Spell Checker
-- Azure
+1. Select the **+** in the top right corner of the terminal
 
-1. Select the tab **Ports**
-1. Select **Forward a Port**
-1. Enter `3000` in the port field and press **Enter**
-1. Right click on the line of your forwarded port and select **Port Visibility > Public**
+    ![Add terminal](./assets/AddTerminal.png)
 
-    Now you made your server available to the outside world.
+    This will open a new terminal, so that we don't stop our running server.
 
-1. Hover over the **Forwarded Address** and select the 🌐 icon
+1. Run the following command to login to the dev tunnel service
 
-    This will prompt you if you want Code to open an external website.
+    ```bash
+    devtunnel login
+    ```
 
-1. Select **Open**
+1. In the pop-up that will appear, select **Work or School account** and select **Continue**
+1. Log in with
+
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Username:** +++@lab.CloudCredential(CSBatch1).Username+++
+
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
+
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Temporary Access Password:** +++@lab.Variable(TAP)+++
+
+1. Run the following command to create the devtunnel:
+
+    ```bash
+    devtunnel create -a
+    ```
+
+    Copy the output of the new dev tunnel. This is the **tunnel ID** of the dev tunnel which we need in the following commands.
+
+<!-- markdownlint-disable-next-line MD033 -->
+1. Replace **<tunnel-id>** with the **tunnel ID** you just copied and run the following command to open port 3000 for the dev tunnel:
+
+    ```bash
+    devtunnel port create <tunnel-id> -p 3000
+    ```
+
+<!-- markdownlint-disable-next-line MD033 -->
+1. Replace **<tunnel-id>** with the **tunnel ID** you just copied and run the following command to host the dev tunnel:
+
+    ```bash
+    devtunnel host <tunnel-id>
+    ```
+
+1.
 
     Now your browser will be opened with the MCP Server running. The following message should be displayed:  
     The Zava Inventory 📦 MCP Server 🧠 is running
