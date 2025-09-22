@@ -36,7 +36,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open Microsoft Edge and navigate to
 
-    +++<https://copilotstudio.microsoft.com+++>
+    <!-- markdownlint-disable-next-line MD034 -->
+    +++https://copilotstudio.microsoft.com+++
 
 1. Log in with
 
@@ -209,7 +210,7 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     ```
 
 1. In the pop-up that will appear, select **Work or School account** and select **Continue**
-1. Log in with
+1. Log in with:
 
     <!-- markdownlint-disable-next-line MD034 -->
     **Username:** +++@lab.CloudCredential(CSBatch1).Username+++
