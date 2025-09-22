@@ -128,27 +128,7 @@ Congratulations! You have setup an agent that can answer questions about static 
 
 ## 2 - Connect to an MCP Server
 
-In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management. The Zava Inventory Management MCP consists of a bunch of tools that you can use:
-
-| Name | Description |
-|---|---|
-| get_products | List all products |
-| get_product_by_id | Retrieve a product by its ID |
-| add_product | Add a new product (auto-generates SKU) |
-| update_product | Update an existing product's details |
-| remove_product | Remove a product |
-| get_stores | List all stores |
-| get_store_by_id | Retrieve a store by its ID |
-| add_store | Add a new store |
-| update_store | Update an existing store's details |
-| remove_store | Remove a store |
-| list_inventory_by_store | Get inventory for a store (with product details) |
-| list_inventory_by_product | Get inventory for a product across stores (with store details and totals) |
-| get_inventory_by_product_and_store | Get inventory for a specific product at a specific store |
-| update_inventory_by_product_and_store | Update the quantity for a product at a store |
-| create_inventory_record | Create a new inventory record for a product at a store |
-
-The MCP server is available on **D:\LabFiles\ZavaInventoryMCP**.
+In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management that provides tools for managing products (like get_products and add_product), stores (such as get_stores and add_store), and inventory operations (including list_inventory_by_store). The MCP server is available on **D:\LabFiles\ZavaInventoryMCP**.
 
 ### Open the MCP Server in Visual Studio Code
 
