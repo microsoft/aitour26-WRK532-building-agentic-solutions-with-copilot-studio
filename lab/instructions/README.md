@@ -210,7 +210,8 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     devtunnel create -a
     ```
 
-    Copy the output of the new dev tunnel. This is the **tunnel ID** of the dev tunnel which we need in the following commands.
+<!-- markdownlint-disable-next-line MD033 -->
+    You will get a message like this: Set default tunnel to **X**. **X** is the **tunnel ID** of the dev tunnel which we need in the following commands.
 
 <!-- markdownlint-disable-next-line MD033 -->
 1. Replace **<tunnel-id>** with the **tunnel ID** you just copied and run the following command to open port 3000 for the dev tunnel:
