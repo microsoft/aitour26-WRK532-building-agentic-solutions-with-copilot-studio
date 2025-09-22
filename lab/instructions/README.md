@@ -140,7 +140,26 @@ In this part, you will learn about how to run a Model Context Protocol (MCP) ser
 
     ![Trust authors](./assets/TrustAuthors.png)
 
-This will open the Zava Inventory Management MCP server in Visual Studio Code. After this, we will install the dependencies so that we can run the server locally.
+This will open the Zava Inventory Management MCP server in Visual Studio Code. Let's explore the MCP Server to see what files are in there.
+
+### Explore the Zava Inventory Management MCP Server
+
+The MCP server folder contains several key files that make up the MCP Server:
+
+#### Source files
+
+- **src/server.py**: The main MCP server implementation with all tools for products, stores, and inventory
+- **src/helpers.py**: Utility functions for data loading and JSON file operations
+- **src/middleware.py**: Authentication middleware for API key validation
+- **src/requirements.txt**: Python dependencies needed to run the server
+
+#### Data files
+
+- **data/products.json**: Sample product data with 11 products
+- **data/stores.json**: Sample store data with 19 store locations
+- **data/inventory.json**: Sample inventory records with 84 stock entries
+
+Now, let's install the dependencies so that we can run the server locally.
 
 ### Install dependencies
 
