@@ -227,9 +227,24 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     devtunnel host <tunnel-id>
     ```
 
-1.
+    This will give you the following message:  
 
-    Now your browser will be opened with the MCP Server running. The following message should be displayed:  
+    <!-- markdownlint-disable-next-line MD033 -->
+    Connect via browser: <https://x1xfwcnn.uks1.devtunnels.ms:3000>, <https://x1xfwcnn-3000.uks1.devtunnels.ms>
+    <!-- markdownlint-disable-next-line MD033 -->
+    Inspect network activity: <https://x1xfwcnn-3000-inspect.uks1.devtunnels.ms>
+    Ready to accept connections for tunnel: fun-plane-k31vr03.uks1
+
+1. Open the first URL after connect via browser by using **ctrl + click**
+
+    Now your browser will be opened and you will see a warning like this:
+
+    ![Dev Tunnel Continue](./assets/DevTunnelContinue.png)
+
+1. Select **Continue**
+
+    Now, the following message should be displayed:  
+
     The Zava Inventory 📦 MCP Server 🧠 is running
 
 1. In the address bar, add `/mcp` behind the address and hit **Enter**
