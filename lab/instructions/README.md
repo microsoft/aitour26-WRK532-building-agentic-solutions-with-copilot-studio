@@ -23,7 +23,8 @@ Currently, customers call or email to check inventory, place orders, and track s
 - Handle order modifications and cancellations
 - Escalate complex issues to human agents when needed
 
-The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: <+++@lab.VirtualMachine>(WRK532).Password+++
+<!-- markdownlint-disable-next-line MD034 -->
+The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: +++@lab.VirtualMachine(WRK532).Password+++
 
 > [!note] To ensure text is entered accurately avoid interacting or clicking in the VM until the text has finished being typed
 
@@ -347,9 +348,9 @@ Now that we’ve got an agent that can answer questions from knowledge and integ
 
     ![Ready.png](./assets/WarrantyKnowledgeReady.png)
 
-Now that we have the Warranty Claim knowledge source added, we want to build our AI Prompt to exract information from the claim.
+Now that we have the Warranty Claim knowledge source added, we want to build our AI Prompt to extract information from the claim.
 
-1. Scroll down to the Tools section and seelct **Add tool**
+1. Scroll down to the Tools section and select **Add tool**
 
     ![Add Tool](./assets/NewTool.png)
 
@@ -387,13 +388,13 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
 1. Name this variable **Warranty Claim** and put in the following text in the **Sample data** input:
 
-```text
-Help me process this warranty claim from this customer: Alex Morgan (alex.morgan@example.com, +1 (555) 012-7784, prefers email). Address: 123 Maple Lane, Tulsa, OK 74104. Product is a Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close—used under normal conditions. Please evaluate against our warranty policy and advise approval/denial and next steps (including RMA if applicable).
-```
+    ```text
+    Help me process this warranty claim from this customer: Alex Morgan (alex.morgan@example.com, +1 (555) 012-7784, prefers email). Address: 123 Maple Lane, Tulsa, OK 74104. Product is a Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close—used under normal conditions. Please evaluate against our warranty policy and advise approval/denial and next steps (including RMA if applicable).
+    ```
 
-Select the **close button**
+    Select the **close button**
 
-![InputFilled](./assets/InputFilled.png)
+    ![InputFilled](./assets/InputFilled.png)
 
 1. Select the **Output** dropdown and change it to **JSON** so we can get a structured response.
 
@@ -438,15 +439,15 @@ Fill with the details of the warranty claim pasted in the chat from the user.
 
 1. Paste in the following text below the instructions that are already in there.
 
-```text
-If someone asks about doing a warranty claim review, call the [add prompt here] tool to extract the claim details. Look up the extracted product category in the Warranty Policy Knowledge source and extract the following information:
-
-Coverage Window
-Exceptions Allowed(Yes or No if the warranty claim has any exceptions that allow it to be approved outside the warranty period)
-Warranty Policy (full details of the warranty policy fo rthat given product category, example: receipts required, allowed within 30 days, etc)
-
-Respond in the chat with all relevant details that were extracted.
-```
+    ```text
+    If someone asks about doing a warranty claim review, call the [add prompt here] tool to extract the claim details. Look up the extracted product category in the Warranty Policy Knowledge source and extract the following information:
+    
+    Coverage Window
+    Exceptions Allowed(Yes or No if the warranty claim has any exceptions that allow it to be approved outside the warranty period)
+    Warranty Policy (full details of the warranty policy fo rthat given product category, example: receipts required, allowed within 30 days, etc)
+    
+    Respond in the chat with all relevant details that were extracted.
+    ```
 
 ![Additional Details](./assets/EditINstructionsPrompt.png)
 
@@ -458,11 +459,11 @@ Respond in the chat with all relevant details that were extracted.
 1. Now it's time to test the end to end process.Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
 1. Paste in the following text in the test window:
 
-```text
-Help me process this warranty claim from customer Chris Bailey (chris.bailey@example.com, +1 (555) 014-9932, prefers phone). Address: 55 N Greenwood Ave, Tulsa, OK 74120. The product is an Ergonomic Office Chair (SKU EOC-002, serial EOC002-77412) purchased from Zava Tulsa on 2024-08-10, order A11992. The issue: the chair slowly sinks about two inches over an hour—the pneumatic lift isn’t holding. This was noticed after a few months. The customer has a receipt and can provide photos.
-```
+    ```text
+    Help me process this warranty claim from customer Chris Bailey (chris.bailey@example.com, +1 (555) 014-9932, prefers phone). Address: 55 N Greenwood Ave, Tulsa, OK 74120. The product is an Ergonomic Office Chair (SKU EOC-002, serial EOC002-77412) purchased from Zava Tulsa on 2024-08-10, order A11992. The issue: the chair slowly sinks about two inches over an hour—the pneumatic lift isn’t holding. This was noticed after a few months. The customer has a receipt and can provide photos.
+    ```
 
-Press **Enter**
+    Press **Enter**
 
 ![Additional Details](./assets/EditINstructionsPrompt.png)
 
