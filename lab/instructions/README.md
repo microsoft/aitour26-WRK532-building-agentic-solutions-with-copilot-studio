@@ -211,29 +211,26 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     ```
 
 <!-- markdownlint-disable-next-line MD033 -->
-    You will get a message like this: Set default tunnel to **X**. **X** is the **tunnel ID** of the dev tunnel which we need in the following commands.
-
-<!-- markdownlint-disable-next-line MD033 -->
-1. Replace **<tunnel-id>** with the **tunnel ID** you just copied and run the following command to open port 3000 for the dev tunnel:
+1. Run the following command to open port 3000 for the dev tunnel:
 
     ```bash
-    devtunnel port create <tunnel-id> -p 3000
+    devtunnel port create -p 3000
     ```
 
 <!-- markdownlint-disable-next-line MD033 -->
-1. Replace **<tunnel-id>** with the **tunnel ID** you just copied and run the following command to host the dev tunnel:
+1. Run the following command to host the dev tunnel:
 
     ```bash
-    devtunnel host <tunnel-id>
+    devtunnel host
     ```
 
     This will give you the following message:  
 
     <!-- markdownlint-disable-next-line MD033 -->
-    Connect via browser: <https://x1xfwcnn.uks1.devtunnels.ms:3000>, <https://x1xfwcnn-3000.uks1.devtunnels.ms>
+    Connect via browser: <https://x.devtunnels.ms:3000>, <https://x-3000.x.devtunnels.ms>
     <!-- markdownlint-disable-next-line MD033 -->
-    Inspect network activity: <https://x1xfwcnn-3000-inspect.uks1.devtunnels.ms>
-    Ready to accept connections for tunnel: fun-plane-k31vr03.uks1
+    Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
+    Ready to accept connections for tunnel: x.x
 
 1. Open the first URL after connect via browser by using **ctrl + click**
 
@@ -274,7 +271,7 @@ We are going to fix this error in the next steps.
       Zava Inventory MCP
       ```
 
-1. Enter the **Server URL**. This should be the URL you opened from the ports tab in Visual Studio Code without the `https://` in front of it and with the `/mcp` behind it. For example: `something-3000.something.devtunnels.ms/mcp`.
+1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the `https://` in front of it and with the `/mcp` behind it. For example: `x.devtunnels.ms/mcp`.
 1. For *Authentication*, select **API key**
 1. Leave the *type* on *Header* and for *Header name* add the following value:
 
