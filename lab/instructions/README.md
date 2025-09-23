@@ -363,7 +363,7 @@ This section was to help you understand how to use MCP in a Copilot Studio agent
 
 ## 3 - Add a Prompt for Warranty Claim Processing
 
-Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for live ops (stores/inventory CRUD), we’ll take it a step further: integrating an AI prompt to process warranty claims. Why? Because claims aren’t a single lookup—they’re a mini workflow. In this section, we’ll add a small Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields (customer/contact, product/SKU, purchase date → days since purchase, product category, issue category).
+Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for real time operations, we’ll take it a step further: integrating an AI prompt to process warranty claims. In this section, we’ll add a Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields and even intelligently classify the claim.
 
 1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
@@ -454,9 +454,12 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
     ![Additional Details](./assets/InputConfigureBtnPrompt.png)
 
 1. In the **Description** box, paste the following:
-Fill with the details of the warranty claim pasted in the chat from the user.
 
-    ![Additional Details](./assets/PromptDescriptionSave.png)
+```text
+Fill with the details of the warranty claim pasted in the chat from the user.
+```
+
+![Additional Details](./assets/PromptDescriptionSave.png)
 
 1. Click the **Save** button to save all of your changes.
 
@@ -508,7 +511,7 @@ You've just sucessfully added additional functionality to your agent to handle e
 
 ## 4 - Add an Agent Flow for Approving Warranty Claims
 
-Now that we have an AI prompt can classify warranty claims and extract key info, we’re going to wrap this process in a formal, approval path based off of certain conditions like if it's in the warranty period. This is exactly what Agent Flows are for: augmenting your agents with a configurable and predictable decision path. In this section, you’ll build an agent flow that reads the extracted fields, evaluates the policy conditions, and triggers an auto approval if those conditions are met.
+Now that we have an AI prompt that can classify warranty claims and extract key info, we’re going to wrap this process in a formal, approval path based off of certain conditions like if it's in the warranty period. This is exactly what Agent Flows are for: augmenting your agents with a configurable and predictable decision path. In this section, you’ll build an agent flow that reads the extracted fields, evaluates the policy conditions, and triggers an auto approval if those conditions are met.
 
 1. To create a new agent flow, scroll down to the Tools section and select **New Tool**
     ![New Tool](./assets/NewToolAgentFlow1.png)
@@ -533,19 +536,19 @@ Now that we have an AI prompt can classify warranty claims and extract key info,
 
     ![Text Input](./assets/FlowTriggerInputType.png)
 
-1. In the Text input type **Issue Category**
+1. In the Text input type ```Issue Category```
 
-    ![Product Input](./assets/FlowIssueCat.png)
+    ![Issue Category](./assets/FlowIssueCat.png)
 
 1. Select **Add an input**
 
-    ![Product Input](./assets/FlowIssueCatAddInput.png)
+    ![Add Input](./assets/FlowIssueCatAddInput.png)
 
 1. Select the **Text** option
 
     ![Text Input](./assets/FlowIssueCatText.png)
 
-1. In the Text input type **Purchase Date**
+1. In the Text input type ```Purchase Date```
 
     ![Product Input](./assets/FlowPurchaseDateFilled.png)
 
@@ -557,7 +560,7 @@ Now that we have an AI prompt can classify warranty claims and extract key info,
 
     ![Text Input](./assets/FlowPurDateNumb.png)
 
-1. In the Text input type **Coverage Window Days**
+1. In the Text input type ```Coverage Window Days```
 
     ![Product Input](./assets/FlowCovDayInputFilled.png)
 
@@ -569,7 +572,7 @@ Now that we have an AI prompt can classify warranty claims and extract key info,
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. In the **Name** field type **Approval Outcome**. And in the **Type** dropdown select **String**
+1. In the **Name** field type ```Approval Outcome```. And in the **Type** dropdown select **String**
 
     ![Approval Outcome Varable](./assets/FlowApprovalOutcomeVariable.png)
 
@@ -581,7 +584,7 @@ Now that we have an AI prompt can classify warranty claims and extract key info,
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. In the **Name** field type **Approval Message**. And in the **Type** dropdown select **String**
+1. In the **Name** field type ```Approval Message```. And in the **Type** dropdown select **String**
 
     ![Days Since Purchase Varable](./assets/FlowVar2FIlled.png)
 
@@ -593,7 +596,7 @@ Now that we have an AI prompt can classify warranty claims and extract key info,
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. In the **Name** field type **Days Since Purchase**. And in the **Type** dropdown select **Integer**
+1. In the **Name** field type ```Days Since Purchase```. And in the **Type** dropdown select **Integer**
 
     ![Days Since Purchase Varable](./assets/FlowDaysSincePurchase.png)
 
@@ -606,9 +609,9 @@ Now that we have an AI prompt can classify warranty claims and extract key info,
     ![Expression with Copilot](./assets/FlowCreateExpressionCopilot.png)
 
 1. In the box type the following:
-**Calculate the number of days difference between the current date and the Purchase Date Input**
+```Calculate the number of days difference between the current date and the Purchase Date Input```
 
-And select **Create Expression**
+Select **Create Expression**
 
 ![Expression with Copilot](./assets/FlowCreateExpBtn.png)
 
@@ -624,11 +627,7 @@ And select **Create Expression**
 
     ![Expression Filled](./assets/FlowPlusDayPurVar.png)
 
-1. Search for **condition** and select **Condition** under the control header.
-
-    ![Select Condition](./assets/FlowConditionSearch.png)
-
-1. Search for **condition** and select **Condition** under the control header.
+1. Search for ```condition``` and select **Condition** under the control header.
 
     ![Select Condition](./assets/FlowConditionSearch.png)
 
@@ -672,7 +671,7 @@ And select **Create Expression**
 
     ![Not Equal To](./assets/FlowConditionNotEqual.png)
 
-1. In the right text input type **Unknown**. Verify that your Condition action matches the screenshot below.
+1. In the right text input type ```Unknown```. Verify that your Condition action matches the screenshot below.
 
     ![Condition Filled](./assets/FlowConditionFilled.png)
 
@@ -684,7 +683,7 @@ And select **Create Expression**
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type **Auto-Approved**. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown cateogry and are within the coverage window.
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown cateogry and are within the coverage window.
 
     ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfig.png)
 
@@ -696,7 +695,7 @@ And select **Create Expression**
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type **The Warranty Claim has been reviewed and meets all requirements to be auto-approved**.
+1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and meets all requirements to be auto-approved```.
 
     ![Approval Message Config](./assets/FlowCondTrueVar2Config.png)
 
@@ -708,7 +707,7 @@ And select **Create Expression**
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type **Needs Exception Approval**. This will return back to the user informing them it couldn't be auto-approved and escalation is needed.
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Needs Exception Approval```. This will return back to the user informing them it couldn't be auto-approved and escalation is needed.
 
     ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfigFalse.png)
 
@@ -720,7 +719,7 @@ And select **Create Expression**
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type **The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.**.
+1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```.
 
     ![Approval Message Config](./assets/FlowCond2FalseConfig.png)
 
@@ -732,7 +731,7 @@ And select **Create Expression**
 
     ![Variable Filled](./assets/FlowRespondOutput1Type.png)
 
-1. Type **Approval Outcome** in the left text box. Click in the right text box and select the **lightning bolt** icon
+1. Type ```Approval Outcome``` in the left text box. Click in the right text box and select the **lightning bolt** icon
 
     ![Variable Filled](./assets/FlowRespondOutput1Lightning.png)
 
@@ -748,7 +747,7 @@ And select **Create Expression**
 
     ![Variable Filled](./assets/FlowResponseOutput2Type.png)
 
-1. Type **Approval Notes** in the left text box. Click in the right text box and select the **Lightning bolt** icon.
+1. Type ```Approval Notes``` in the left text box. Click in the right text box and select the **Lightning bolt** icon.
 
     ![Variable Filled](./assets/FlowResponseOutput2Lightning.png)
 
@@ -772,7 +771,7 @@ And select **Create Expression**
 
     ![Variable Filled](./assets/FlowEditBtn.png)
 
-1. Change the **Flow Name** to **Auto Approval Claims**. Put in **This agent flow evaluates a warranty claim against a condition to determine if it's eligible for auto-approval or needs escalation and returns a response to the agent.** for the description and click the **Save** button.
+1. Change the **Flow Name** to **Auto Approval Claims**. Put in ```This agent flow evaluates a warranty claim against a condition to determine if it's eligible for auto-approval or needs escalation and returns a response to the agent.``` for the description and click the **Save** button.
 
     ![Variable Filled](./assets/FlowName.png)
 
@@ -787,10 +786,6 @@ And select **Create Expression**
 1. Select the **Agents** tab in the left hand side to get back to your agent.
 
     ![Variable Filled](./assets/FlowAgentsTab.png)
-
-1. Select the **Zava Order Support** Agent
-
-    ![Variable Filled](./assets/SelectZavaAgent.png)
 
 1. Select the **Zava Order Support** Agent
 
@@ -820,7 +815,7 @@ And select **Create Expression**
 
     ![Variable Filled](./assets/FlowToolCustIssue.png)
 
-1. Type **Fill with the issue category extracted from the Claims Processing Tool** in the Description box
+1. Type ```Fill with the issue category extracted from the Claims Processing Tool``` in the Description box
 
     ![Variable Filled](./assets/FlowToolIssDesc.png)
 
@@ -828,7 +823,7 @@ And select **Create Expression**
 
     ![Variable Filled](./assets/FlowToolCustPurcDate.png)
 
-1. Type **Fill with the Purchase Date extracted from the Claims Processing Tool** in the Description box
+1. Type ```Fill with the Purchase Date extracted from the Claims Processing Tool``` in the Description box
 
     ![Variable Filled](./assets/FlowToolCustPurDateDesc.png)
 
@@ -836,7 +831,7 @@ And select **Create Expression**
 
     ![Variable Filled](./assets/FlowToolCustCoverage.png)
 
-1. Type **Fill with the numeric (in days) value of the Coverage Window extracted from the Warranty Policy** in the Description box
+1. Type ```Fill with the numeric (in days) value of the Coverage Window extracted from the Warranty Policy``` in the Description box
 
     ![Variable Filled](./assets/FlowToolCustDesc.png)
 
@@ -856,18 +851,18 @@ And select **Create Expression**
 
     ![Variable Filled](./assets/FlowInstructionsEditBtn.png)
 
-1. Remove the last line about "respond in chat...". Type **After all of the data is extracted, call the** and put a forward slash (/) so the tool selection screen comes up and select the **Claim Approval** tool.
+1. Remove the last line about "respond in chat...". Type ```After all of the data is extracted, call the``` and put a forward slash (/) so the tool selection screen comes up and select the **Claim Approval** tool.
 
     ![Variable Filled](./assets/InstructionsClaimApprovalToolSelection.png)
 
 1. Finish drafting the additional instructions by pasting in the following after the tool selection:
-**tool. Pass all the required info and return the approval outcome for the warranty claim and approval message to the user to finish the process. Inform the user that an approval process has been started and an answer should be given shortly while you are waiting for the approval to process.**.
+```tool. Pass all the required info and return the approval outcome for the warranty claim and approval message to the user to finish the process. Inform the user that an approval process has been started and an answer should be given shortly while you are waiting for the approval to process.```.
 
 Select the **Save** button in the instructions section when done.
 
 ![Variable Filled](./assets/FlowToolInstructionssave.png)
 
-You've just added an agent flow to handle warranty claim auto-approvals to your agent! Now all that's left to do is test and publish!
+You've just added an agent flow to handle warranty claim auto-approvals to your agent! Now all that's left to do is test.
 
 ===
 
@@ -877,7 +872,7 @@ Now that you've got the agent fully configured, it's time to test.
 
 1. Ensure that the **Test** button is selected and the Test pane shows. Type the following in the test window and press **Enter** to send in the prompt:
 
-**Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close. Used under normal conditions.**
+```Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close. Used under normal conditions.```
 
 ![Variable Filled](./assets/TestPrompt.png)
 
