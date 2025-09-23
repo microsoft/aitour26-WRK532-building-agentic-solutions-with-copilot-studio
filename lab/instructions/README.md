@@ -48,7 +48,15 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![step6.png](./assets/step6.png)
 
-1. Click the Environment drop down in the top right and then select the Dev environment ENV{LAB_INSTANCE_ID}
+1. If you see the below screen that says **Start building your agent**, click the **three dots (...)** in the upper right hand corner and select **Cancel Agent Creation**
+
+    ![Cancel Agent Creation](./assets/CancelAgentCreation.png)
+
+1. Select **Yes, continue**
+
+    ![Continue](./assets/YesContinue.png)
+
+1. Click the Environment drop down in the top right and then select the Dev environment @ENV{LAB_INSTANCE_ID}
 
     ![create.png](./assets/step3.png)
 
