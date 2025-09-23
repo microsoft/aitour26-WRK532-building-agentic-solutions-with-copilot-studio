@@ -817,13 +817,17 @@ And select **Create Expression**
 
 1. Select the **Overview** tab
 
-    ![Variable Filled](./assets/FlowToolOverview.png)
+    ![Variable Filled](./assets/FlowToolOverviewTabSelect.png)
 
 1. Select the **Instructions** section and select the **Edit** button
 
     ![Variable Filled](./assets/FlowInstructionsEditBtn.png)
 
-1. Remove the last line about "respond in chat...". Type **After all of the data is extracted, call the** and put a forward slash (/) so the tool selection screen comes up and select the **Claim Approval** tool.
+1. Type **After all of the data is extracted, call the** and put a forward slash (/) so the tool selection screen comes up and select the **Claim Approval** tool.
+
+    ![Variable Filled](./assets/InstructionsClaimApprovalToolSelection.png)
+
+1. Type **After all of the data is extracted, call the** and put a forward slash (/) so the tool selection screen comes up and select the **Claim Approval** tool.
 
     ![Variable Filled](./assets/InstructionsClaimApprovalToolSelection.png)
 
@@ -834,25 +838,83 @@ Select the **Save** button in the instructions section when done.
 
 ![Variable Filled](./assets/FlowToolInstructionssave.png)
 
-You've just added an agent flow to handle warranty claim auto-approvals to your agent! Now all that's left to do is test and publish!
-
 ===
 
-## 5 - Test Your Agent
+## 4 - Test and Publish Your Agent
 
 Now that you've got the agent fully configured, it's time to test.
 
 1. Ensure that the **Test** button is selected and the Test pane shows. Type the following in the test window and press **Enter** to send in the prompt:
 
-**Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close. Used under normal conditions.**
+**Help me process a warranty claim for customer Alex Morgan (alex.morgan@example.com, +1 (555) 012-7784; prefers email). Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close. Used under normal conditions.**
 
 ![Variable Filled](./assets/TestPrompt.png)
 
-1. Watch the Activity Pane and notice how the agent calls the Warranty Claim Processor Prompt, pulls in knowledge and calls the flow. Since it's using generative AI, your response may vary. The important thing is to confirm you see the **Auto Approval Claims** action get called in the Activity Map and you get a response. Feel free to test a different scenario where the purchase date is not within the warranty period, say 2024-09-30, and verify that you get a different outcome.
+1. Watch the Activity Pane and notice how the agent calls the Warranty Claim Processor Prompt, pulls in knowledge and calls the flow. The first time you test, you might receive this error. Select the link in the message to **Open Connection Manager**
 
-![Variable Filled](./assets/TestSuccess.png)
+![Variable Filled](./assets/TestOpenConnectionMgrBtn.png)
 
-Congratulations! You’ve now built and tested a Order Management Agent in Copilot Studio that can pull from knowledge, consume and write to internal data through MCP and integrates with AI Prompts and Agent Flows.
+1. In the new tab, select the **Connect** button
+
+![Variable Filled](./assets/TestConnectFlow.png)
+
+1. Select the **Submit** button in the dialog
+
+![Variable Filled](./assets/TestFlowConnectionSubmit.png)
+
+1. Close out of that tab and go back to your agent. Select the **Retry** button in the test pane
+
+![Variable Filled](./assets/TestRetryConnection.png)
+
+1. Now that the flow is running, you'll need to approve the item. Go to **https://outlook.office.com/mail/**. You should see an email asking for approval.
+
+![Variable Filled](./assets/TestApprovalEmail.png)
+
+1. Select the **Approve** button in the email and type in a comment of your choice then select the **Submit** button.
+
+![Variable Filled](./assets/TestApprovalEmailFilled.png)
+
+1. Go back to the browser tab with your agent
+
+![Variable Filled](./assets/TestApprovalEmailFilled.png)
+
+1. Now we need to confirm and configure some settings for our agent. To do that, select the **Settings** button in the top right hand corner
+
+    ![step14.png](./assets/AgentSettingsBtn.png)
+
+1. In the Generative AI tab, confirm that **Generative Orchestration** is set to **Yes** and turn **Connected Agents** to **On** then select **Save**
+
+    ![AgentTest.png](./assets/OrchestrationSettings.png)
+
+1. Select the **Security** tab in the left navigation
+
+    ![AgentTest.png](./assets/SecurityTabLeftNav.png)
+
+1. Select **Authentication**
+
+    ![AgentTest.png](./assets/SelectAuthentication.png)
+
+1. Select **No Authentication** and select the **Save** button to apply the settings.
+
+    ![AgentTest.png](./assets/AuthenticationSettings.png)
+
+1. Click the **Publish** button in the top right-hand corner
+
+    ![AgentPublish.png](./assets/AgentPublish.png)
+
+1. Click the **Publish** button to publish your agent
+
+    ![publish-agent.png](./assets/publish-agent.png)
+
+    The following dialog will be displayed you can close this and your agent will finish publishing in the background
+
+    ![publishing-agent.png](./assets/publishing-agent.png)
+
+1. Now that it’s published, we need to make this available to use within Microsoft Teams. Select the **Channels** tab in the top menu
+
+   ![AgentChannels.png](./assets/AgentChannels.png)
+
+Congratulations! You’ve now built and published an agent!
 
 ===
 
