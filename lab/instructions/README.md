@@ -2,16 +2,6 @@
 
 In this 75-minute hands-on workshop, you'll experience the complete journey of building an intelligent agent using Microsoft Copilot Studio. Through a practical inventory and order management scenario, you'll learn how to create a sophisticated AI assistant capable of handling real-world business operations.
 
-## What You'll Learn
-
-By the end of this workshop, you'll have practical experience with:
-
-- **Agent Design & Architecture**: Understanding how to design purpose-driven agents that solve specific business problems
-- **Knowledge Integration**: Adding and managing knowledge bases to make your agent contextually aware
-- **Advanced Automation**: Building Agent Flows to handle deterministic, complex, multi-step business processes
-- **External System Integration**: Connecting your agent to external services using Model Context Protocol (MCP) servers
-- **Production Deployment**: Publishing and configuring your agent for real-world use
-
 ## Workshop Scenario
 
 You are a solutions architect tasked with modernizing the customer service experience for Zava Retail Store, a regional retailer serving suburban communities.
@@ -36,7 +26,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open Microsoft Edge and navigate to
 
-    +++<https://copilotstudio.microsoft.com+++>
+    <!-- markdownlint-disable-next-line MD034 -->
+    +++https://copilotstudio.microsoft.com+++
 
 1. Log in with
 
@@ -127,41 +118,43 @@ Congratulations! You have setup an agent that can answer questions about static 
 
 ## 2 - Connect to an MCP Server
 
-In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management. The Zava Inventory Management MCP consists of a bunch of tools that you can use:
-
-| Category | Description |
-|---|---|
-| Product management | List all products |
-| Product management | Retrieve a product by its ID |
-| Product management | Add a new product (auto-generates SKU) |
-| Product management | Remove a product |
-| Store management | List all stores |
-| Store management | Retrieve a store by its ID |
-| Store management | Add a new store |
-| Store management | Remove a store |
-| Inventory management | Get inventory for a store (with product details) |
-| Inventory management | Get inventory for a product across stores (with store details and totals) |
-| Inventory management | Get inventory for a specific product at a specific store |
-| Inventory management | Update the quantity for a product at a store |
-
-The MCP server is available on **D:\LabFiles\zava-inventory-mcp**.
+In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management that provides tools for managing products (like get_products and add_product), stores (such as get_stores and add_store), and inventory operations (including list_inventory_by_store). The MCP server is available on **D:\LabFiles\ZavaInventoryMCP**.
 
 ### Open the MCP Server in Visual Studio Code
 
 1. Open Visual Studio Code by selecting Visual Studio Code in the taskbar
 1. Select **File > Open Folder**
-1. Navigate to **D:\LabFiles\zava-inventory-mcp**
+1. Navigate to **D:\LabFiles\ZavaInventoryMCP**
 1. Select **Select Folder**
 1. You will see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
 
     ![Trust authors](./assets/TrustAuthors.png)
 
-This will open the Zava Inventory Management MCP server in Visual Studio Code. After this, we will install the dependencies so that we can run the server locally.
+This will open the Zava Inventory Management MCP server in Visual Studio Code. Let's explore the MCP Server to see what files are in there.
+
+### Explore the Zava Inventory Management MCP Server
+
+The MCP server folder contains several key files that make up the MCP Server:
+
+#### Source files
+
+- **src/server.py**: The main MCP server implementation with all tools for products, stores, and inventory
+- **src/helpers.py**: Utility functions for data loading and JSON file operations
+- **src/middleware.py**: Authentication middleware for API key validation
+- **src/requirements.txt**: Python dependencies needed to run the server
+
+#### Data files
+
+- **data/products.json**: Sample product data with products
+- **data/stores.json**: Sample store data with store locations
+- **data/inventory.json**: Sample inventory records with stock entries
+
+Make sure to look around in these files to see what's going on in the server. Now, let's install the dependencies so that we can run the server locally.
 
 ### Install dependencies
 
 1. Open the terminal by selecting **Terminal > New Terminal**
-1. Make sure you are in the following folder: **D:\LabFiles\zava-inventory-mcp**
+1. Make sure you are in the following folder: **D:\LabFiles\ZavaInventoryMCP**
 1. Create a new virtual environment by running the following command:
 
     ```bash
@@ -194,30 +187,70 @@ After running the MCP Server, you're not there yet. The MCP Server is only runni
 
 To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
 
-In the terminal at the bottom of Visual Studio Code, there are a couple of tabs:
+In the terminal at the bottom of Visual Studio Code, we are going to configure a dev tunnel.
 
-- Problems
-- Output
-- Debug Console
-- Terminal
-- Ports
-- Spell Checker
-- Azure
+1. Select the **+** in the top right corner of the terminal
 
-1. Select the tab **Ports**
-1. Select **Forward a Port**
-1. Enter `3000` in the port field and press **Enter**
-1. Right click on the line of your forwarded port and select **Port Visibility > Public**
+    ![Add terminal](./assets/AddTerminal.png)
 
-    Now you made your server available to the outside world.
+    This will open a new terminal, so that we don't stop our running server.
 
-1. Hover over the **Forwarded Address** and select the 🌐 icon
+1. Run the following command to login to the dev tunnel service
 
-    This will prompt you if you want Code to open an external website.
+    ```bash
+    devtunnel login
+    ```
 
-1. Select **Open**
+1. In the pop-up that will appear, select **Work or School account** and select **Continue**
+1. Log in with:
 
-    Now your browser will be opened with the MCP Server running. The following message should be displayed:  
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Username:** +++@lab.CloudCredential(CSBatch1).Username+++
+
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
+
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Temporary Access Password:** +++@lab.Variable(TAP)+++
+
+1. Run the following command to create the devtunnel:
+
+    ```bash
+    devtunnel create -a
+    ```
+
+<!-- markdownlint-disable-next-line MD033 -->
+1. Run the following command to open port 3000 for the dev tunnel:
+
+    ```bash
+    devtunnel port create -p 3000
+    ```
+
+<!-- markdownlint-disable-next-line MD033 -->
+1. Run the following command to host the dev tunnel:
+
+    ```bash
+    devtunnel host
+    ```
+
+    This will give you the following message:  
+
+    <!-- markdownlint-disable-next-line MD033 -->
+    Connect via browser: <https://x.devtunnels.ms:3000>, <https://x-3000.x.devtunnels.ms>
+    <!-- markdownlint-disable-next-line MD033 -->
+    Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
+    Ready to accept connections for tunnel: x.x
+
+1. Open the first URL after connect via browser by using **ctrl + click**
+
+    Now your browser will be opened and you will see a warning like this:
+
+    ![Dev Tunnel Continue](./assets/DevTunnelContinue.png)
+
+1. Select **Continue**
+
+    Now, the following message should be displayed:  
+
     The Zava Inventory 📦 MCP Server 🧠 is running
 
 1. In the address bar, add `/mcp` behind the address and hit **Enter**
@@ -247,7 +280,7 @@ We are going to fix this error in the next steps.
       Zava Inventory MCP
       ```
 
-1. Enter the **Server URL**. This should be the URL you opened from the ports tab in Visual Studio Code without the `https://` in front of it and with the `/mcp` behind it. For example: `something-3000.something.devtunnels.ms/mcp`.
+1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the *https://* in front of it and with the */mcp* behind it. For example: *x.devtunnels.ms/mcp*.
 1. For *Authentication*, select **API key**
 1. Leave the *type* on *Header* and for *Header name* add the following value:
 
