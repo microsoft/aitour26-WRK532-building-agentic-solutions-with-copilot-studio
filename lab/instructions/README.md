@@ -76,13 +76,14 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![AgentName.png](./assets/ConfigureName.png)
 
-1. Now that our agent is created, we need to equip it with knowledge so it can answer questions about our company background, shipping policies, etc. This information is stored in two PDF documents which you need to download, the [Zava FAQ Doc](./assets/zava_faq.pdf) and [Zava Policies Doc](./assets/zava_returns_shipping_policy.pdf).
+    > [!NOTE]
+    > It could take a minute or two for the agent to fully configure. You'll see a message that says **Your agent is provisioned!** when it's ready.
 
-1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
+1. Now that our agent is created, we need to equip it with knowledge so it can answer questions about our company background, shipping policies, etc. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeBtn.png)
 
-1. Drag and drop the [Zava FAQ Doc](./assets/zava_faq.pdf) and [Zava Policies Doc](./assets/zava_returns_shipping_policy.pdf) files you downloaded in the step above into the canvas
+1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq** and **zava_returns_shipping_policy documents**.
 
     ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
@@ -94,16 +95,13 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![Ready.png](./assets/Ready.png)
 
+> [!NOTE]
+> The process of uploading the files can take around 5 minutes to complete.
+
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the Instructions section and select the **Edit** button and paste in the following instructions:
 
     ```text
-    Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
-        Your behavior:
-        Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains.
-        When you answer, provide a citation (which document and section) whenever possible.
-        If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?”
-        Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them.
-        Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
+    Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents. Your behavior: Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains. When you answer, provide a citation (which document and section) whenever possible. If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?” Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them. Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
     ```
 
     Click **Save**
@@ -112,13 +110,18 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
 
-    > What is your return policy?
+    ```text
+    What is your return policy?
+    ```
 
     ![TestBefore.png](./assets/TestBeforeEnter.png)
 
 1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
 
     ![TestAfter.png](./assets/TestAfter.png)
+
+    > [!TIP]
+    > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot above. That's ok and expected. The important thing here is to observe the Activity Map and how you can tell the agent is pulling from your knowledge.
 
 Congratulations! You have setup an agent that can answer questions about static data from files! Next ,we'll integrate it with an MCP server.
 
@@ -134,7 +137,7 @@ In this part, you will learn about how to run a Model Context Protocol (MCP) ser
 1. Select **File > Open Folder**
 1. Navigate to **D:\LabFiles\ZavaInventoryMCP**
 1. Select **Select Folder**
-1. You will see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
+1. You might see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
 
     ![Trust authors](./assets/TrustAuthors.png)
 
@@ -146,12 +149,16 @@ The MCP server folder contains several key files that make up the MCP Server:
 
 #### Source files
 
+Expand the **src** folder in the **Explorer** section on the left hand side and browse the source files.
+
 - **src/server.py**: The main MCP server implementation with all tools for products, stores, and inventory
 - **src/helpers.py**: Utility functions for data loading and JSON file operations
 - **src/middleware.py**: Authentication middleware for API key validation
 - **src/requirements.txt**: Python dependencies needed to run the server
 
 #### Data files
+
+Expand the **Data** folder to see what's in this folder.
 
 - **data/products.json**: Sample product data with products
 - **data/stores.json**: Sample store data with store locations
@@ -163,13 +170,13 @@ Make sure to look around in these files to see what's going on in the server. No
 
 1. Open the terminal by selecting **Terminal > New Terminal**
 1. Make sure you are in the following folder: **D:\LabFiles\ZavaInventoryMCP**
-1. Create a new virtual environment by running the following command:
+1. Create a new virtual environment by running the following command (press **Enter** after pasting in the terminal to run it):
 
     ```bash
     python -m venv .venv
     ```
 
-1. Now, you need to active the virtual environment. Run the following command to do that.
+1. Now, you need to activate the virtual environment. Run the following command to do that.
 
     ```bash
     .venv\Scripts\activate
@@ -220,6 +227,10 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
 
     <!-- markdownlint-disable-next-line MD034 -->
     **Temporary Access Password:** +++@lab.Variable(TAP)+++
+
+1. In the next screen where it asks if you want to automatically sign into all desktop apps on this device, select **No, this app only**
+
+    ![Sign In Apps](./assets/SignInApps.png)
 
 1. Run the following command to create the devtunnel:
 
@@ -293,7 +304,7 @@ We are going to fix this error in the next steps.
 1. Leave the *type* on *Header* and for *Header name* add the following value:
 
       ```text
-      authorization
+    authorization
       ```
 
       ![Create MCP Tool](./assets/CreateMCPTool.png)
@@ -303,11 +314,18 @@ We are going to fix this error in the next steps.
     This will take a while, since in the background it is creating a custom connector for the MCP Server.
 
 1. When it's done, select **Not connected** and **Create new connection**
+
+      ![MCP Connection](./assets/MCPConnection.png)
+
 1. Enter the **API Key**:
 
       ```text
-      AITour2026!
+    AITour2026!
       ```
+
+1. Select **Create**
+
+    ![Create Connection](./assets/MCPCreateConnection.png)
 
 1. Select **Add to agent**
 
