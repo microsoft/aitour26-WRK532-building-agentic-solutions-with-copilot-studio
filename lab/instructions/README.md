@@ -1,4 +1,4 @@
-## 1 - Build your agent
+# 1 - Build your agent
 
 To start, you're going to setup the foundation for your agent in Copilot Studio.
 
@@ -173,6 +173,8 @@ After running the MCP Server, you're not there yet. The MCP Server is only runni
 ### Configure a dev tunnel
 
 To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
+
+> [!Note] A dev tunnel creates a secure connection that exposes your local development server to the internet through a public URL. This allows cloud services like Copilot Studio to access your locally running MCP server.
 
 In the terminal at the bottom of Visual Studio Code, we are going to configure a dev tunnel.
 
@@ -509,7 +511,7 @@ Fill with the details of the warranty claim pasted in the chat from the user.
 
     ![Additional Details](./assets/EditINstructionsPrompt.png)
 
-You've just sucessfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
+You've just successfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
 
 ===
 
