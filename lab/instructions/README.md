@@ -291,7 +291,7 @@ We are going to fix this error in the next steps.
 
 1. When it's done, select **Not connected** and **Create new connection**
 
-      ![MCP Connection](./assets/MCPConnection.png)
+    ![MCP Connection](./assets/MCPConnection.png)
 
 1. Enter the **API Key**:
 
@@ -315,9 +315,9 @@ We are going to fix this error in the next steps.
 
 1. Now, enter the following message and send it in the *Test your agent* panel:
 
-      ```text
-      List the Zava Stores
-      ```
+    ```text
+    List the Zava Stores
+    ```
 
     This should show you a whole bunch of Zava Stores as an answer in the *Test your agent* panel:
 
@@ -331,9 +331,9 @@ We are going to fix this error in the next steps.
 
 1. Send the following message to your agent via the *Test your agent* panel:
 
-      ```text
-      List the available products in the Zava Amsterdam store
-      ```
+    ```text
+    List the available products in the Zava Amsterdam store
+    ```
 
     You will see the available products in the Zava Amsterdam store in the *Test your agent* panel:
 
