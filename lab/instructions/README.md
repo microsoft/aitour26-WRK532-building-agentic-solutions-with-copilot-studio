@@ -7,6 +7,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     <!-- markdownlint-disable-next-line MD034 -->
     +++https://copilotstudio.microsoft.com+++
 
+    ![Open Edge](./assets/OpenEdge.png)
+
 1. Log in with
 
     <!-- markdownlint-disable-next-line MD034 -->
@@ -18,25 +20,17 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     <!-- markdownlint-disable-next-line MD034 -->
     **Temporary Access Password:** +++@lab.Variable(TAP)+++
 
-1. If you see a welcome screen like is shown below, select the country/region that you’re in from the dropdown and select Get Started
+1. After logging in, you'll see a message letting you know it's configuring your developer environment. Wait until that finishes (shouldn't take more than a minute)
+
+    ![Dev Environment Setup](./assets/DevEnvSetup.png)
+
+1. If you see a welcome screen like is shown below, select the country/region that you’re in from the dropdown and select **Get Started**
 
     ![pic2.png](./assets/pic2.png)
 
-1. If you see a welcome message as shown in the screenshot below, select Skip.
+1. If you see a welcome message as shown in the screenshot below, select **Skip**.
 
     ![step6.png](./assets/step6.png)
-
-1. If you see the below screen that says **Start building your agent**, click the **three dots (...)** in the upper right hand corner and select **Cancel Agent Creation**
-
-    ![Cancel Agent Creation](./assets/CancelAgentCreation.png)
-
-1. Select **Yes, continue**
-
-    ![Continue](./assets/YesContinue.png)
-
-1. Click the Environment drop down in the top right and then select the Dev environment @ENV{LAB_INSTANCE_ID}
-
-    ![create.png](./assets/step3.png)
 
 1. In the left nav click **+ Create** button to start creating a new agent
 
@@ -57,7 +51,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     > [!NOTE]
     > It could take a minute or two for the agent to fully configure. You'll see a message that says **Your agent is provisioned!** when it's ready.
 
-1. Now that our agent is created, we need to equip it with knowledge so it can answer questions about our company background, shipping policies, etc. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
+1. Now that your agent is created, you need to equip it with knowledge so it can answer questions about the company, shipping policies, etc. To do this, in your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeBtn.png)
 
@@ -367,13 +361,13 @@ This section was to help you understand how to use MCP in a Copilot Studio agent
 
 ## 3 - Add a Prompt for Warranty Claim Processing
 
-Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for real time operations, we’ll take it a step further: integrating an AI prompt to process warranty claims. In this section, we’ll add a Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields and even intelligently classify the claim.
+Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for real time operations, we’ll give the agent additional capabilities by integrating an AI prompt to process warranty claims. In this section, we’ll add a Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields and even intelligently classify the claim.
 
 1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeStep3.png)
 
-1. Download the [Zava Warranty Policy Doc](./assets/Zava_Warranty_Policy.pdf) and drag and drop it onto the canvas.
+1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_warranty_policy** document.
 
     ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
@@ -513,6 +507,8 @@ Fill with the details of the warranty claim pasted in the chat from the user.
 
 You've just sucessfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
 
+===
+
 ## 4 - Add an Agent Flow for Approving Warranty Claims
 
 Now that we have an AI prompt that can classify warranty claims and extract key info, we’re going to wrap this process in a formal, approval path based off of certain conditions like if it's in the warranty period. This is exactly what Agent Flows are for: augmenting your agents with a configurable and predictable decision path. In this section, you’ll build an agent flow that reads the extracted fields, evaluates the policy conditions, and triggers an auto approval if those conditions are met.
@@ -534,7 +530,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Select **Add an input**
 
-    ![New Tool](./assets/NewTool2.png)
+    ![Add Input](./assets/FlowAddInput1.png)
 
 1. Select the **Text** option
 
@@ -612,6 +608,12 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Expression with Copilot](./assets/FlowCreateExpressionCopilot.png)
 
+If you don't see the **Create Expression with Copilot** button you can copy and paste the following formula in the formula input.
+
+```text
+sub(int(div(sub(ticks(utcNow()), ticks(triggerBody()?['text_4'])),864000000000)),0)
+```
+
 1. In the box type the following:
 ```Calculate the number of days difference between the current date and the Purchase Date Input```
 
@@ -651,7 +653,7 @@ Select **Create Expression**
 
     ![Select Condition](./assets/FlowDayPurLight.png)
 
-1. Select the **Coverage Window** Variable
+1. Select the **Coverage Window Days** Variable
 
     ![Select Coverage Window](./assets/FlowCovWindowSelect.png)
 
@@ -721,7 +723,7 @@ Select **Create Expression**
 
 1. Search for **variable** and select the **Set Variable** action.
 
-    ![Set Variable](./assets/FlowYesSetVarSelect.png)
+    ![Set Variable](./assets/FlowNoSetVarSelect.png)
 
 1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```.
 
@@ -775,7 +777,19 @@ Select **Create Expression**
 
     ![Variable Filled](./assets/FlowEditBtn.png)
 
-1. Change the **Flow Name** to **Auto Approval Claims**. Put in ```This agent flow evaluates a warranty claim against a condition to determine if it's eligible for auto-approval or needs escalation and returns a response to the agent.``` for the description and click the **Save** button.
+1. Change the **Flow Name** to
+
+    ```text
+    Auto Approval Claims
+    ```
+
+1. In the **Description** input, type:
+
+    ```text
+    This agent flow evaluates a warranty claim against a condition to determine if it's eligible for auto-approval or needs escalation and returns a response to the agent.
+    ```
+
+1. Click the **Save** button.
 
     ![Variable Filled](./assets/FlowName.png)
 
@@ -819,7 +833,11 @@ Select **Create Expression**
 
     ![Variable Filled](./assets/FlowToolCustIssue.png)
 
-1. Type ```Fill with the issue category extracted from the Claims Processing Tool``` in the Description box
+1. In the **Description** text box, type
+
+     ```text
+     Fill with the issue category extracted from the Claims Processing Tool
+     ```
 
     ![Variable Filled](./assets/FlowToolIssDesc.png)
 
@@ -827,7 +845,11 @@ Select **Create Expression**
 
     ![Variable Filled](./assets/FlowToolCustPurcDate.png)
 
-1. Type ```Fill with the Purchase Date extracted from the Claims Processing Tool``` in the Description box
+1. In the **Description** text box, type
+
+     ```text
+     Fill with the Purchase Date extracted from the Claims Processing Tool
+     ```
 
     ![Variable Filled](./assets/FlowToolCustPurDateDesc.png)
 
@@ -835,7 +857,11 @@ Select **Create Expression**
 
     ![Variable Filled](./assets/FlowToolCustCoverage.png)
 
-1. Type ```Fill with the numeric (in days) value of the Coverage Window extracted from the Warranty Policy``` in the Description box
+1. In the **Description** text box, type
+
+     ```text
+     Fill with the numeric (in days) value of the Coverage Window extracted from the Warranty Policy
+     ```
 
     ![Variable Filled](./assets/FlowToolCustDesc.png)
 
