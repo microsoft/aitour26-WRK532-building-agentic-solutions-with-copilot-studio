@@ -1,4 +1,4 @@
-## 1 - Build your agent
+# 1 - Build your agent
 
 To start, you're going to setup the foundation for your agent in Copilot Studio.
 
@@ -174,6 +174,8 @@ After running the MCP Server, you're not there yet. The MCP Server is only runni
 
 To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
 
+> [!Note] A dev tunnel creates a secure connection that exposes your local development server to the internet through a public URL. This allows cloud services like Copilot Studio to access your locally running MCP server.
+
 In the terminal at the bottom of Visual Studio Code, we are going to configure a dev tunnel.
 
 1. Select the **+** in the top right corner of the terminal
@@ -232,7 +234,11 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
     Ready to accept connections for tunnel: x.x
 
-1. Open the first URL after connect via browser by using **ctrl + click**
+    > [!Alert] It's very important to select the URL that looks like this: <https://x-3000.x.devtunnels.ms>
+    >
+    > The other URL - with *:3000* in the URL - will give you errors later on.
+
+1. Open the second URL after connect via browser by using **ctrl + click**
 
     Now your browser will be opened and you will see a warning like this:
 
@@ -261,25 +267,25 @@ We are going to fix this error in the next steps.
 1. Select **Model Context Protocol**
 1. Enter the **Name**:
 
-      ```text
-      Zava Inventory MCP
-      ```
+    ```text
+    Zava Inventory MCP
+    ```
 
 1. Enter the **Description**:
 
-      ```text
-      Zava Inventory MCP
-      ```
+    ```text
+    MCP server that provides tools for managing Zava's product inventory, store locations, and stock operations across multiple retail locations.
+    ```
 
-1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the *https://* in front of it and with the */mcp* behind it. For example: *x.devtunnels.ms/mcp*.
+1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the *https://* in front of it and with the */mcp* behind it. For example: *x-3000.x.devtunnels.ms/mcp*.
 1. For *Authentication*, select **API key**
 1. Leave the *type* on *Header* and for *Header name* add the following value:
 
-      ```text
+    ```text
     authorization
-      ```
+    ```
 
-      ![Create MCP Tool](./assets/CreateMCPTool.png)
+    ![Create MCP Tool](./assets/CreateMCPTool.png)
 
 1. Check if all the values are correct and if so, select **Create** to add the MCP Server
 
@@ -287,7 +293,7 @@ We are going to fix this error in the next steps.
 
 1. When it's done, select **Not connected** and **Create new connection**
 
-      ![MCP Connection](./assets/MCPConnection.png)
+    ![MCP Connection](./assets/MCPConnection.png)
 
 1. Enter the **API Key**:
 
@@ -311,9 +317,9 @@ We are going to fix this error in the next steps.
 
 1. Now, enter the following message and send it in the *Test your agent* panel:
 
-      ```text
-      List the Zava Stores
-      ```
+    ```text
+    List the Zava Stores
+    ```
 
     This should show you a whole bunch of Zava Stores as an answer in the *Test your agent* panel:
 
@@ -327,9 +333,9 @@ We are going to fix this error in the next steps.
 
 1. Send the following message to your agent via the *Test your agent* panel:
 
-      ```text
-      List the available products in the Zava Amsterdam store
-      ```
+    ```text
+    List the available products in the Zava Amsterdam store
+    ```
 
     You will see the available products in the Zava Amsterdam store in the *Test your agent* panel:
 
@@ -501,7 +507,7 @@ Fill with the details of the warranty claim pasted in the chat from the user.
 
     ![Additional Details](./assets/WarrantyPolicyPromptTest.png)
 
-You've just sucessfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
+You've just successfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
 
 ===
 
