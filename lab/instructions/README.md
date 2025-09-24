@@ -265,9 +265,9 @@ We are going to fix this error in the next steps.
 1. Select **Model Context Protocol**
 1. Enter the **Name**:
 
-      ```text
-      Zava Inventory MCP
-      ```
+    ```text
+    Zava Inventory MCP
+    ```
 
 1. Enter the **Description**:
 
@@ -279,11 +279,11 @@ We are going to fix this error in the next steps.
 1. For *Authentication*, select **API key**
 1. Leave the *type* on *Header* and for *Header name* add the following value:
 
-      ```text
+    ```text
     authorization
-      ```
+    ```
 
-      ![Create MCP Tool](./assets/CreateMCPTool.png)
+    ![Create MCP Tool](./assets/CreateMCPTool.png)
 
 1. Check if all the values are correct and if so, select **Create** to add the MCP Server
 
