@@ -232,7 +232,11 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
     Ready to accept connections for tunnel: x.x
 
-1. Open the first URL after connect via browser by using **ctrl + click**
+    > [!Alert] It's very important to select the URL that looks like this: <https://x-3000.x.devtunnels.ms>
+    >
+    > The other URL - with *:3000* in the URL - will give you errors later on.
+
+1. Open the second URL after connect via browser by using **ctrl + click**
 
     Now your browser will be opened and you will see a warning like this:
 
@@ -268,10 +272,10 @@ We are going to fix this error in the next steps.
 1. Enter the **Description**:
 
       ```text
-      Zava Inventory MCP
+      MCP server that provides tools for managing Zava's product inventory, store locations, and stock operations across multiple retail locations.
       ```
 
-1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the *https://* in front of it and with the */mcp* behind it. For example: *x.devtunnels.ms/mcp*.
+1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the *https://* in front of it and with the */mcp* behind it. For example: *x-3000.x.devtunnels.ms/mcp*.
 1. For *Authentication*, select **API key**
 1. Leave the *type* on *Header* and for *Header name* add the following value:
 
