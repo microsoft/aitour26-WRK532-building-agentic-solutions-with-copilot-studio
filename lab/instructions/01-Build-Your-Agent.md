@@ -32,15 +32,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![step6.png](./assets/step6.png)
 
-1. In the left nav click **+ Create** button to start creating a new agent
-
-    ![create.png](./assets/CreateLeftNav.png)
-
-1. Click **New agent**
-
-    ![create-new-agent.png](./assets/NewAgent.png)
-
-1. While we could use natural language to setup the agent for this exercise, we will skip and configure it manually by selecting the **Configure** tab.
+1. You should get automatically routed to a screen to create your agent. While we could use natural language to setup the agent for this exercise, we will configure it manually by selecting the **Configure** tab.
 
     ![step9.jpg](./assets/ConfigreTab.png)
 
@@ -49,7 +41,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     ![AgentName.png](./assets/ConfigureName.png)
 
     > [!NOTE]
-    > It could take a minute or two for the agent to fully configure. You'll see a message that says **Your agent is provisioned!** when it's ready.
+    > It could take a minute or two for the agent to fully configure. You'll see a message that says your agent is provisioned when it's ready.
 
 1. Now that your agent is created, you need to equip it with knowledge so it can answer questions about the company, shipping policies, etc. To do this, in your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
@@ -70,7 +62,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 > [!NOTE]
 > The process of uploading the files can take around 5 minutes to complete.
 
-1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the Instructions section and select the **Edit** button and paste in the following instructions:
+1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the **Instructions** section and select the **Edit** button and paste in the following instructions:
 
     ```text
     Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents. Your behavior: Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains. When you answer, provide a citation (which document and section) whenever possible. If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?” Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them. Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.

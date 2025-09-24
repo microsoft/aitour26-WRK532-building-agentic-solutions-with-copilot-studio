@@ -82,7 +82,7 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     ![Add and Configure Button Prompt](./assets/AddConfigureBtnPrompt.png)
 
-1. Now we'll see the configuration screen where we can control specific settings for the prompt for use in our agent. The first thing we need to do is expand out the **Additional details** section and select the **Agent may use thsi tool at any time** radio button.
+1. Now we'll see the configuration screen where we can control specific settings for the prompt for use in our agent. The first thing we need to do is expand out the **Additional details** section and select the **Agent may use this tool at any time** radio button.
 
     ![Additional Details](./assets/PromptAdditionalDetails.png)
 
@@ -92,11 +92,11 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
 1. In the **Description** box, paste the following:
 
-    ```text
-    Fill with the details of the warranty claim pasted in the chat from the user.
-    ```
+```text
+Fill with the details of the warranty claim pasted in the chat from the user.
+```
 
-    ![Additional Details](./assets/PromptDescriptionSave.png)
+![Additional Details](./assets/PromptDescriptionSave.png)
 
 1. Click the **Save** button to save all of your changes.
 
@@ -122,14 +122,12 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
     Respond in the chat with all relevant details that were extracted.
     ```
 
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+1. Delete the **[add prompt here]** text and replace with a **forward slash (/)**. A menu will pop up where you'll see a **Tools** section. Expand that and select the **Warranty Claims Processing** prompt.
 
-1. Delete the [add prompt here] text and replace with a forward slash (/). A menu will pop up where you'll see a **Tools** section. Expand that and select the **Warranty Claims Processing** prompt.
-
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+    ![Additional Details](./assets/PromptInstructionsRevised.png)
 
 1. Click **Save** to save your new instructions.
-1. Now it's time to test the end to end process.Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
+1. Now it's time to test the end to end process. Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
 1. Paste in the following text in the test window:
 
     ```text
@@ -138,10 +136,8 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     Press **Enter**
 
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
-
 1. Watch the Activity Panel on the left hand side to see how the agent calls the prompt and passes in the information and does the check in the Warranty Policy knowledge source to find and return the necessary information.
 
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+    ![Additional Details](./assets/WarrantyPolicyPromptTest.png)
 
 You've just successfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
