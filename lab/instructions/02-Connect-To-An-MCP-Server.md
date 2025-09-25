@@ -128,12 +128,12 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     This will give you the following message:  
 
     <!-- markdownlint-disable-next-line MD033 -->
-    Connect via browser: <https://x.devtunnels.ms:3000>, <https://x-3000.x.devtunnels.ms>
+    Connect via browser: https<nolink>://x.devtunnels.ms:3000, https<nolink>:://x-3000.x.devtunnels.ms
     <!-- markdownlint-disable-next-line MD033 -->
-    Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
+    Inspect network activity: https<nolink>:://x-3000-inspect.x.devtunnels.ms
     Ready to accept connections for tunnel: x.x
 
-    > [!Alert] It's very important to select the URL that looks like this: <https://x-3000.x.devtunnels.ms>
+    > [!Alert] It's very important to select the URL that looks like this: https<nolink>://x-3000.x.devtunnels.ms
     >
     > The other URL - with *:3000* in the URL - will give you errors later on.
 

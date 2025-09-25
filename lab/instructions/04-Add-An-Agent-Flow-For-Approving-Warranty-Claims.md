@@ -61,7 +61,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Plus Button](./assets/PlusBtn.png)
 
-1. Search for **variable** and select **initialize variable**
+1. Search for ```variable``` and select **initialize variable**
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
@@ -73,7 +73,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Plus Button](./assets/FlowPlusSecondVar.png)
 
-1. Search for **variable** and select **initialize variable**
+1. Search for ```variable``` and select **initialize variable**
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
@@ -85,7 +85,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Days Since Purchase Varable](./assets/FlowVar2Plus.png)
 
-1. Search for **variable** and select **initialize variable**
+1. Search for ```variable``` and select **initialize variable**
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
@@ -182,7 +182,7 @@ Select **Create Expression**
 
     ![Yes Add](./assets/FlowYesAddBtn.png)
 
-1. Search for **variable** and select the **Set Variable** action.
+1. Search for ```variable``` and select the **Set Variable** action.
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
@@ -194,7 +194,7 @@ Select **Create Expression**
 
     ![Yes Add](./assets/FlowCondTruePlus2.png)
 
-1. Search for **variable** and select the **Set Variable** action.
+1. Search for ```variable``` and select the **Set Variable** action.
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
@@ -206,7 +206,7 @@ Select **Create Expression**
 
     ![False Condtion Add](./assets/FlowCondFalsePlus.png)
 
-1. Search for **variable** and select the **Set Variable** action.
+1. Search for ```variable``` and select the **Set Variable** action.
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
@@ -218,7 +218,7 @@ Select **Create Expression**
 
     ![Yes Add](./assets/FlowApprovalOutcomeConfigPlus.png)
 
-1. Search for **variable** and select the **Set Variable** action.
+1. Search for ```variable``` and select the **Set Variable** action.
 
     ![Set Variable](./assets/FlowNoSetVarSelect.png)
 

@@ -56,7 +56,7 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     ![Input](./assets/InputType.png)
 
-1. Name this variable **Warranty Claim** and put in the following text in the **Sample data** input:
+1. Name this variable ```Warranty Claim``` and put in the following text in the **Sample data** input:
 
     ```text
     Help me process this warranty claim from this customer: Alex Morgan (alex.morgan@example.com, +1 (555) 012-7784, prefers email). Address: 123 Maple Lane, Tulsa, OK 74104. Product is a Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close—used under normal conditions. Please evaluate against our warranty policy and advise approval/denial and next steps (including RMA if applicable).
