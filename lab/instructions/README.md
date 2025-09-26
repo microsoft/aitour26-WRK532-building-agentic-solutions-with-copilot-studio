@@ -1,26 +1,4 @@
-# @lab.Title
-
-In this 75-minute hands-on workshop, you'll experience the complete journey of building an intelligent agent using Microsoft Copilot Studio. Through a practical inventory and order management scenario, you'll learn how to create a sophisticated AI assistant capable of handling real-world business operations.
-
-## Workshop Scenario
-
-You are a solutions architect tasked with modernizing the customer service experience for Zava Retail Store, a regional retailer serving suburban communities.
-Currently, customers call or email to check inventory, place orders, and track shipments which creates bottlenecks for both customers and staff. Your mission is to build an intelligent Inventory Assistant that can:
-
-- Answer product availability questions instantly
-- Guide customers through the ordering process
-- Provide real-time inventory updates
-- Handle order modifications and cancellations
-- Escalate complex issues to human agents when needed
-
-<!-- markdownlint-disable-next-line MD034 -->
-The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: +++@lab.VirtualMachine(WRK532).Password+++
-
-> [!note] To ensure text is entered accurately avoid interacting or clicking in the VM until the text has finished being typed
-
-===
-
-## 1 - Build your agent
+# 1 - Build your agent
 
 To start, you're going to setup the foundation for your agent in Copilot Studio.
 
@@ -28,6 +6,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     <!-- markdownlint-disable-next-line MD034 -->
     +++https://copilotstudio.microsoft.com+++
+
+    ![Open Edge](./assets/OpenEdge.png)
 
 1. Log in with
 
@@ -40,17 +20,17 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     <!-- markdownlint-disable-next-line MD034 -->
     **Temporary Access Password:** +++@lab.Variable(TAP)+++
 
-1. If you see a welcome screen like is shown below, select the country/region that you’re in from the dropdown and select Get Started
+1. After logging in, you'll see a message letting you know it's configuring your developer environment. Wait until that finishes (shouldn't take more than a minute)
+
+    ![Dev Environment Setup](./assets/DevEnvSetup.png)
+
+1. If you see a welcome screen like is shown below, select the country/region that you’re in from the dropdown and select **Get Started**
 
     ![pic2.png](./assets/pic2.png)
 
-1. If you see a welcome message as shown in the screenshot below, select Skip.
+1. If you see a welcome message as shown in the screenshot below, select **Skip**.
 
     ![step6.png](./assets/step6.png)
-
-1. Click the Environment drop down in the top right and then select the Dev environment ENV{LAB_INSTANCE_ID}
-
-    ![create.png](./assets/step3.png)
 
 1. In the left nav click **+ Create** button to start creating a new agent
 
@@ -68,13 +48,14 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![AgentName.png](./assets/ConfigureName.png)
 
-1. Now that our agent is created, we need to equip it with knowledge so it can answer questions about our company background, shipping policies, etc. This information is stored in two PDF documents which you need to download, the [Zava FAQ Doc](./assets/zava_faq.pdf) and [Zava Policies Doc](./assets/zava_returns_shipping_policy.pdf).
+    > [!NOTE]
+    > It could take a minute or two for the agent to fully configure. You'll see a message that says **Your agent is provisioned!** when it's ready.
 
-1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
+1. Now that your agent is created, you need to equip it with knowledge so it can answer questions about the company, shipping policies, etc. To do this, in your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeBtn.png)
 
-1. Drag and drop the [Zava FAQ Doc](./assets/zava_faq.pdf) and [Zava Policies Doc](./assets/zava_returns_shipping_policy.pdf) files you downloaded in the step above into the canvas
+1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq** and **zava_returns_shipping_policy documents**.
 
     ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
@@ -86,16 +67,13 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![Ready.png](./assets/Ready.png)
 
+> [!NOTE]
+> The process of uploading the files can take around 5 minutes to complete.
+
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the Instructions section and select the **Edit** button and paste in the following instructions:
 
     ```text
-    Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents.
-        Your behavior:
-        Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains.
-        When you answer, provide a citation (which document and section) whenever possible.
-        If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?”
-        Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them.
-        Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
+    Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents. Your behavior: Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains. When you answer, provide a citation (which document and section) whenever possible. If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?” Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them. Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
     ```
 
     Click **Save**
@@ -104,13 +82,18 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
 
-    > What is your return policy?
+    ```text
+    What is your return policy?
+    ```
 
     ![TestBefore.png](./assets/TestBeforeEnter.png)
 
 1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
 
     ![TestAfter.png](./assets/TestAfter.png)
+
+    > [!TIP]
+    > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot above. That's ok and expected. The important thing here is to observe the Activity Map and how you can tell the agent is pulling from your knowledge.
 
 Congratulations! You have setup an agent that can answer questions about static data from files! Next ,we'll integrate it with an MCP server.
 
@@ -126,7 +109,7 @@ In this part, you will learn about how to run a Model Context Protocol (MCP) ser
 1. Select **File > Open Folder**
 1. Navigate to **D:\LabFiles\ZavaInventoryMCP**
 1. Select **Select Folder**
-1. You will see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
+1. You might see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
 
     ![Trust authors](./assets/TrustAuthors.png)
 
@@ -138,12 +121,16 @@ The MCP server folder contains several key files that make up the MCP Server:
 
 #### Source files
 
+Expand the **src** folder in the **Explorer** section on the left hand side and browse the source files.
+
 - **src/server.py**: The main MCP server implementation with all tools for products, stores, and inventory
 - **src/helpers.py**: Utility functions for data loading and JSON file operations
 - **src/middleware.py**: Authentication middleware for API key validation
 - **src/requirements.txt**: Python dependencies needed to run the server
 
 #### Data files
+
+Expand the **Data** folder to see what's in this folder.
 
 - **data/products.json**: Sample product data with products
 - **data/stores.json**: Sample store data with store locations
@@ -155,13 +142,13 @@ Make sure to look around in these files to see what's going on in the server. No
 
 1. Open the terminal by selecting **Terminal > New Terminal**
 1. Make sure you are in the following folder: **D:\LabFiles\ZavaInventoryMCP**
-1. Create a new virtual environment by running the following command:
+1. Create a new virtual environment by running the following command (press **Enter** after pasting in the terminal to run it):
 
     ```bash
     python -m venv .venv
     ```
 
-1. Now, you need to active the virtual environment. Run the following command to do that.
+1. Now, you need to activate the virtual environment. Run the following command to do that.
 
     ```bash
     .venv\Scripts\activate
@@ -186,6 +173,8 @@ After running the MCP Server, you're not there yet. The MCP Server is only runni
 ### Configure a dev tunnel
 
 To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
+
+> [!Note] A dev tunnel creates a secure connection that exposes your local development server to the internet through a public URL. This allows cloud services like Copilot Studio to access your locally running MCP server.
 
 In the terminal at the bottom of Visual Studio Code, we are going to configure a dev tunnel.
 
@@ -212,6 +201,10 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
 
     <!-- markdownlint-disable-next-line MD034 -->
     **Temporary Access Password:** +++@lab.Variable(TAP)+++
+
+1. In the next screen where it asks if you want to automatically sign into all desktop apps on this device, select **No, this app only**
+
+    ![Sign In Apps](./assets/SignInApps.png)
 
 1. Run the following command to create the devtunnel:
 
@@ -241,7 +234,11 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
     Ready to accept connections for tunnel: x.x
 
-1. Open the first URL after connect via browser by using **ctrl + click**
+    > [!Alert] It's very important to select the URL that looks like this: <https://x-3000.x.devtunnels.ms>
+    >
+    > The other URL - with *:3000* in the URL - will give you errors later on.
+
+1. Open the second URL after connect via browser by using **ctrl + click**
 
     Now your browser will be opened and you will see a warning like this:
 
@@ -270,36 +267,43 @@ We are going to fix this error in the next steps.
 1. Select **Model Context Protocol**
 1. Enter the **Name**:
 
-      ```text
-      Zava Inventory MCP
-      ```
+    ```text
+    Zava Inventory MCP
+    ```
 
 1. Enter the **Description**:
 
-      ```text
-      Zava Inventory MCP
-      ```
+    ```text
+    MCP server that provides tools for managing Zava's product inventory, store locations, and stock operations across multiple retail locations.
+    ```
 
-1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the *https://* in front of it and with the */mcp* behind it. For example: *x.devtunnels.ms/mcp*.
+1. Enter the **Server URL**. This should be the URL you opened earlier during the devtunnel steps without the *https://* in front of it and with the */mcp* behind it. For example: *x-3000.x.devtunnels.ms/mcp*.
 1. For *Authentication*, select **API key**
 1. Leave the *type* on *Header* and for *Header name* add the following value:
 
-      ```text
-      authorization
-      ```
+    ```text
+    authorization
+    ```
 
-      ![Create MCP Tool](./assets/CreateMCPTool.png)
+    ![Create MCP Tool](./assets/CreateMCPTool.png)
 
 1. Check if all the values are correct and if so, select **Create** to add the MCP Server
 
     This will take a while, since in the background it is creating a custom connector for the MCP Server.
 
 1. When it's done, select **Not connected** and **Create new connection**
+
+    ![MCP Connection](./assets/MCPConnection.png)
+
 1. Enter the **API Key**:
 
       ```text
-      AITour2026!
+    AITour2026!
       ```
+
+1. Select **Create**
+
+    ![Create Connection](./assets/MCPCreateConnection.png)
 
 1. Select **Add to agent**
 
@@ -313,9 +317,9 @@ We are going to fix this error in the next steps.
 
 1. Now, enter the following message and send it in the *Test your agent* panel:
 
-      ```text
-      List the Zava Stores
-      ```
+    ```text
+    List the Zava Stores
+    ```
 
     This should show you a whole bunch of Zava Stores as an answer in the *Test your agent* panel:
 
@@ -329,9 +333,9 @@ We are going to fix this error in the next steps.
 
 1. Send the following message to your agent via the *Test your agent* panel:
 
-      ```text
-      List the available products in the Zava Amsterdam store
-      ```
+    ```text
+    List the available products in the Zava Amsterdam store
+    ```
 
     You will see the available products in the Zava Amsterdam store in the *Test your agent* panel:
 
@@ -363,13 +367,13 @@ This section was to help you understand how to use MCP in a Copilot Studio agent
 
 ## 3 - Add a Prompt for Warranty Claim Processing
 
-Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for live ops (stores/inventory CRUD), we’ll take it a step further: integrating an AI prompt to process warranty claims. Why? Because claims aren’t a single lookup—they’re a mini workflow. In this section, we’ll add a small Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields (customer/contact, product/SKU, purchase date → days since purchase, product category, issue category).
+Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for real time operations, we’ll give the agent additional capabilities by integrating an AI prompt to process warranty claims. In this section, we’ll add a Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields and even intelligently classify the claim.
 
 1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeStep3.png)
 
-1. Download the [Zava Warranty Policy Doc](./assets/Zava_Warranty_Policy.pdf) and drag and drop it onto the canvas.
+1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_warranty_policy** document.
 
     ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
@@ -445,7 +449,7 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     ![Add and Configure Button Prompt](./assets/AddConfigureBtnPrompt.png)
 
-1. Now we'll see the configuration screen where we can control specific settings for the prompt for use in our agent. The first thing we need to do is expand out the **Additional details** section and select the **Agent may use thsi tool at any time** radio button.
+1. Now we'll see the configuration screen where we can control specific settings for the prompt for use in our agent. The first thing we need to do is expand out the **Additional details** section and select the **Agent may use this tool at any time** radio button.
 
     ![Additional Details](./assets/PromptAdditionalDetails.png)
 
@@ -454,9 +458,12 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
     ![Additional Details](./assets/InputConfigureBtnPrompt.png)
 
 1. In the **Description** box, paste the following:
-Fill with the details of the warranty claim pasted in the chat from the user.
 
-    ![Additional Details](./assets/PromptDescriptionSave.png)
+```text
+Fill with the details of the warranty claim pasted in the chat from the user.
+```
+
+![Additional Details](./assets/PromptDescriptionSave.png)
 
 1. Click the **Save** button to save all of your changes.
 
@@ -482,14 +489,12 @@ Fill with the details of the warranty claim pasted in the chat from the user.
     Respond in the chat with all relevant details that were extracted.
     ```
 
-![Additional Details](./assets/EditINstructionsPrompt.png)
+1. Delete the **[add prompt here]** text and replace with a **forward slash (/)**. A menu will pop up where you'll see a **Tools** section. Expand that and select the **Warranty Claims Processing** prompt.
 
-1. Delete the [add prompt here] text and replace with a forward slash (/). A menu will pop up where you'll see a **Tools** section. Expand that and select the **Warranty Claims Processing** prompt.
-
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+    ![Additional Details](./assets/PromptInstructionsRevised.png)
 
 1. Click **Save** to save your new instructions.
-1. Now it's time to test the end to end process.Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
+1. Now it's time to test the end to end process. Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
 1. Paste in the following text in the test window:
 
     ```text
@@ -498,17 +503,17 @@ Fill with the details of the warranty claim pasted in the chat from the user.
 
     Press **Enter**
 
-![Additional Details](./assets/EditINstructionsPrompt.png)
-
 1. Watch the Activity Panel on the left hand side to see how the agent calls the prompt and passes in the information and does the check in the Warranty Policy knowledge source to find and return the necessary information.
 
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+    ![Additional Details](./assets/WarrantyPolicyPromptTest.png)
 
-You've just sucessfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
+You've just successfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
+
+===
 
 ## 4 - Add an Agent Flow for Approving Warranty Claims
 
-Now that we have an AI prompt can classify warranty claims and extract key info, we’re going to wrap this process in a formal, approval path based off of certain conditions (is it in the warranty period, are there any exceptions, etc). This is exactly what Agent Flows are for: augmenting your agents with a configurable and predictable decision path. In this section, you’ll build an agent flow that reads the extracted fields, evaluates the policy conditions, triggers a one-click Approval step when needed, and returns a clear outcome.
+Now that we have an AI prompt that can classify warranty claims and extract key info, we’re going to wrap this process in a formal, approval path based off of certain conditions like if it's in the warranty period. This is exactly what Agent Flows are for: augmenting your agents with a configurable and predictable decision path. In this section, you’ll build an agent flow that reads the extracted fields, evaluates the policy conditions, and triggers an auto approval if those conditions are met.
 
 1. To create a new agent flow, scroll down to the Tools section and select **New Tool**
     ![New Tool](./assets/NewToolAgentFlow1.png)
@@ -522,100 +527,400 @@ Now that we have an AI prompt can classify warranty claims and extract key info,
     ![Agent Flow](./assets/AgentFlowBtn.png)
 
 1. You'll see two items on the screen, the trigger which kicks off the flow and the response which returns data back to the agent. The first thing we need to do is configure any inputs that we want to pass into our flow from the agent to use in the flow. To add these inputs, select the **When an agent calls the flow** trigger.
+
+    ![Flow](./assets/SelectFlowTrigger.png)
+
 1. Select **Add an input**
+
+    ![Add Input](./assets/FlowAddInput1.png)
+
 1. Select the **Text** option
-1. In the Text input type **Product**
-1. Select **Add an input** again
+
+    ![Text Input](./assets/FlowTriggerInputType.png)
+
+1. In the Text input type ```Issue Category```
+
+    ![Issue Category](./assets/FlowIssueCat.png)
+
+1. Select **Add an input**
+
+    ![Add Input](./assets/FlowIssueCatAddInput.png)
+
 1. Select the **Text** option
-1. In the Text input type **Product Category**
-1. Select **Add an input** again
-1. Select the **Text** option
-1. In the Text input type **Issue Category**
-1. Select **Add an input** again
-1. Select the **Text** option
-1. In the Text input type **Issue Description**
-1. Select **Add an input** again
-1. Select the **Text** option
-1. In the Text input type **Purchase Date**
-1. Select **Add an input** again
-1. Select the **Text** option
-1. In the Text input type **Coverage Window**
-1. Select **Add an input** again
-1. Select the **Text** option
-1. In the Text input type **Warranty Policy**
-1. Select the **plus button** between the when an agent calls a flow and respond to agent.
+
+    ![Text Input](./assets/FlowIssueCatText.png)
+
+1. In the Text input type ```Purchase Date```
+
+    ![Product Input](./assets/FlowPurchaseDateFilled.png)
+
+1. Select **Add an input**
+
+    ![Product Input](./assets/FlowPurDateAddInput.png)
+
+1. Select the **Number** option
+
+    ![Text Input](./assets/FlowPurDateNumb.png)
+
+1. In the Text input type ```Coverage Window Days```
+
+    ![Product Input](./assets/FlowCovDayInputFilled.png)
+
+1. You should see three inputs as configured below. Once you confirm your inputs match the screenshot below, click the arrow to hide this panel.
+
+    ![Inputs](./assets/FlowInputsConfig.png)
+
+1. Select the **plus button** between the when an agent calls a flow and respond to agent to add a new action.
 
     ![Plus Button](./assets/PlusBtn.png)
 
-1. Scroll down to the Human in the Loop section and select the **Start and Wait for Approval**.
+1. Search for **variable** and select **initialize variable**
 
-    ![Zava Inventory](./assets/StartWaitForApproval.png)
+    ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. In the Approval Type dropdown select **Approve/Reject - First to Respond**
+1. In the **Name** field type ```Approval Outcome```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
 
-    ![First to respond](./assets/ApprovalType.png)
+    ![Approval Outcome Varable](./assets/FlowVarApprovOutcome.png)
 
-1. For the Title input put ```Approve New Store Onboarding```
+1. Select the **plus button** again below the initialize variable action you just added
 
-    ![Approve New Onboarding](./assets/ApprovalTitle.png)
+    ![Plus Button](./assets/FlowPlusSecondVar.png)
 
-1. For the Assigned To enter your username
+1. Search for **variable** and select **initialize variable**
 
-    ![Approval Assigned To](./assets/ApprovalAssignedTo.png)
+    ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. Now we need to be sure we can pass relevant information about the new store to the flow to include in our approval request. To do that we need to scroll up and select the **When an agent calls a flow** trigger and select **Add Input**
+1. In the **Name** field type ```Approval Message```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
 
-    ![Approval Assigned To](./assets/AddInput.png)
+    ![Days Since Purchase Varable](./assets/FlowVarApprovalMessage.png)
 
-1. Select **Text** from the list of input options
+1. Select the **plus button** again below the initialize variable action you just added
 
-    ![Text Input](./assets/TextInput.png)
+    ![Days Since Purchase Varable](./assets/FlowVar2Plus.png)
 
-1. ddd
+1. Search for **variable** and select **initialize variable**
+
+    ![Initialize Variable](./assets/FlowInitializeVariable.png)
+
+1. In the **Name** field type ```Days Since Purchase```. And in the **Type** dropdown select **Integer**. 
+
+    ![Days Since Purchase Varable](./assets/FlowDaysSincePurchase.png)
+
+1. In the **Value** Input of the Initialize Variable, select the **Fx** Button.
+
+    ![Days Since Purchase Varable](./assets/FlowDaysPurcFx.png)
+
+1. Select the **Create Expression with Copilot** Button
+
+    ![Expression with Copilot](./assets/FlowCreateExpressionCopilot.png)
+
+If you don't see the **Create Expression with Copilot** button you can copy and paste the following formula in the formula input.
+
+```text
+sub(int(div(sub(ticks(utcNow()), ticks(triggerBody()?['text_4'])),864000000000)),0)
+```
+
+1. In the box type the following:
+```Calculate the number of days difference between the current date and the Purchase Date Input```
+
+Select **Create Expression**
+
+![Expression with Copilot](./assets/FlowCreateExpBtn.png)
+
+1. Verify the formula in the **Suggested expression** box and select the **OK** button.
+
+    ![OK Button](./assets/FlowCreateExpOK.png)
+
+1. Verify the formula is added to the expression box and select the **Add** button
+
+    ![Add Button](./assets/FlowCreateExpAdd.png)
+
+1. Verify the expression shows in the value input as shown below, and click the **arrow** to close out of this panel.
+
+    ![Verify and Close](./assets/FlowVarDaysConfig.png)
+
+1. Click the **Plus Button** below the initialize variable.
+
+    ![Expression Filled](./assets/FlowPlusDayPurVar.png)
+
+1. Search for ```condition``` and select **Condition** under the control header.
+
+    ![Select Condition](./assets/FlowConditionSearch.png)
+
+1. Now we need to fill out the conditions we want to check for. To do that, click in the first input and select the **lightning bolt** icon
+
+    ![Select Condition](./assets/FlowCondition1LightningBolt.png)
+
+1. Select the **Days Since Purchase** variable
+
+    ![Select Condition](./assets/FlowDaysSincePurchaseSelect.png)
+
+1. Select the **is less or equal to** dropdown
+
+    ![Select Condition](./assets/FlowDayPurLessEq.png)
+
+1. In the right text box select the **lightning bolt** icon.
+
+    ![Select Condition](./assets/FlowDayPurLight.png)
+
+1. Select the **Coverage Window Days** Input
+
+    ![Select Coverage Window](./assets/FlowCovWindowSelect.png)
+
+1. Your condition should look like the screenshot below. We need to add one more condtion to this. To do that, select the **New item** button.
+
+    ![New Condition](./assets/FlowCondNewItem.png)
+
+1. Select **Add Row**
+
+    ![Add Row](./assets/FlowCondAddRow.png)
+
+1. Select the **lightning bolt** icon in the left text input
+
+    ![Add Condition Lightning Bolt](./assets/FlowSecondConditionLightningBolt.png)
+
+1. Select the **Issue Category** input.
+
+    ![Issue Category](./assets/FlowIssueCategorySelect.png)
+
+1. Change the condition dropdown to **is not equal to**
+
+    ![Not Equal To](./assets/FlowConditionNotEqual.png)
+
+1. In the right text input type ```Unknown```. Verify that your Condition action matches the screenshot below. Click the **arrow** to close out of this panel.
+
+    ![Condition Filled](./assets/FlowConditionFilled.png)
+
+1. Now that we have our conditions we want to check for, we need to tell the flow what would happen if it meets those conditions and what to do if it doesn't. To do this, expand out the **True** dropdown and select the **Plus button**
+
+    ![Yes Add](./assets/FlowYesAddBtn.png)
+
+1. Search for **variable** and select the **Set Variable** action.
+
+    ![Set Variable](./assets/FlowYesSetVarSelect.png)
+
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown cateogry and are within the coverage window. Click the **arrow** to close out of this window.
+
+    ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfig.png)
+
+1. Now we want to fill in the approval notes. To do this, expand out the **True** dropdown and select the **Plus button**
+
+    ![Yes Add](./assets/FlowCondTruePlus2.png)
+
+1. Search for **variable** and select the **Set Variable** action.
+
+    ![Set Variable](./assets/FlowYesSetVarSelect.png)
+
+1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and meets all requirements to be auto-approved```. Click the **arrow** to close out of this window.
+
+    ![Approval Message Config](./assets/FlowCondTrueVar2Config.png)
+
+1. Now we need to tell the flow what to do if it doesn't meet these conditions. To configure this, expand the **False** section and select the **Plus Button**
+
+    ![False Condtion Add](./assets/FlowCondFalsePlus.png)
+
+1. Search for **variable** and select the **Set Variable** action.
+
+    ![Set Variable](./assets/FlowYesSetVarSelect.png)
+
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Needs Exception Approval```. This will return back to the user informing them it couldn't be auto-approved and escalation is needed. Click the **arrow** to close out of this window.
+
+    ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfigFalse.png)
+
+1. Now we want to fill in the approval notes. To do this, select the **Plus button** in the false condition right below the set variable you just added.
+
+    ![Yes Add](./assets/FlowApprovalOutcomeConfigPlus.png)
+
+1. Search for **variable** and select the **Set Variable** action.
+
+    ![Set Variable](./assets/FlowNoSetVarSelect.png)
+
+1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```. Click the **arrow** to close out of this window.
+
+    ![Approval Message Config](./assets/FlowFalseApprovMessageConfig.png)
+
+1. We are in the home stretch now. All that's left is to pass the data of the approval outcome back to the agent. To do that, scroll to the bottom and click to expand the **Respond to the agent** action and select the **Add an output** button
+
+    ![Variable Filled](./assets/FlowRespondOutputBtn1.png)
+
+1. Select **Text** for the output type
+
+    ![Variable Filled](./assets/FlowRespondOutput1Type.png)
+
+1. Type ```Approval Outcome``` in the left text box. Click in the right text box and select the **lightning bolt** icon
+
+    ![Variable Filled](./assets/FlowRespondOutput1Lightning.png)
+
+1. Select the **Approval Outcome** variable
+
+    ![Variable Filled](./assets/FlowResponseOutput1Outcome.png)
+
+1. Select **Add an Output** again
+
+    ![Variable Filled](./assets/FlowResponseOutput2Btn.png)
+
+1. Select **Text** as the Output Type
+
+    ![Variable Filled](./assets/FlowResponseOutput2Type.png)
+
+1. Type ```Approval Notes``` in the left text box. Click in the right text box and select the **Lightning bolt** icon.
+
+    ![Variable Filled](./assets/FlowResponseOutput2Lightning.png)
+
+1. Select the **Approval Message** variable
+
+    ![Variable Filled](./assets/FlowResponseOutput2message.png)
+
+1. Select the **Flow Checker** button to test your flow for errors and ensure no errors are found.
+
+    ![Variable Filled](./assets/FlowCheckerBtn.png)
+
+1. Select the **Save Draft** button
+
+    ![Variable Filled](./assets/FlowSaveDraft.png)
+
+1. Select the **Overview** button in the top navigation
+
+    ![Variable Filled](./assets/FlowOverview.png)
+
+1. Select the **Edit Button** in the Details section
+
+    ![Variable Filled](./assets/FlowEditBtn.png)
+
+1. Change the **Flow Name** to
+
+    ```text
+    Auto Approval Claims
+    ```
+
+1. In the **Description** input, type:
+
+    ```text
+    This agent flow evaluates a warranty claim against a condition to determine if it's eligible for auto-approval or needs escalation and returns a response to the agent.
+    ```
+
+1. Click the **Save** button.
+
+    ![Variable Filled](./assets/FlowName.png)
+
+1. Select the **Designer** tab in the top navigation to go back to the designer view.
+
+    ![Variable Filled](./assets/FlowDesignerTab.png)
+
+1. Select the **Publish** button
+
+    ![Variable Filled](./assets/FlowPublish.png)
+
+1. Select the **Agents** tab in the left hand side to get back to your agent.
+
+    ![Variable Filled](./assets/FlowAgentsTab.png)
+
+1. Select the **Zava Order Support** Agent
+
+    ![Variable Filled](./assets/SelectZavaAgent.png)
+
+1. Scroll down to the **Tools** section and select the **Add tool** button
+
+    ![Variable Filled](./assets/FlowAddTool.png)
+
+1. Select the **Flow** tab
+
+    ![Variable Filled](./assets/FlowTab.png)
+
+1. Select the **Auto Approval Claims** flow from the list
+
+    ![Variable Filled](./assets/FlowSelect.png)
+
+1. Select the **Add and Configure** button
+
+    ![Variable Filled](./assets/FlowToolAdd.png)
+
+1. Select the **Additional Details** section and select the **Agent may use this tool at any time** radio button.
+
+    ![Variable Filled](./assets/FlowToolWhen.png)
+
+1. Now we need to give additional details for how AI should pass the required inputs to the flow. To do this, scroll down to the **Inputs** section and select the **Customize** button next to the **Issue Category** input.
+
+    ![Variable Filled](./assets/FlowToolCustIssue.png)
+
+1. In the **Description** text box, type
+
+     ```text
+     Fill with the issue category extracted from the Claims Processing Tool
+     ```
+
+    ![Variable Filled](./assets/FlowToolIssDesc.png)
+
+1. Select the **Customize** button next to the **Purchase Date** input.
+
+    ![Variable Filled](./assets/FlowToolCustPurcDate.png)
+
+1. In the **Description** text box, type
+
+     ```text
+     Fill with the Purchase Date extracted from the Claims Processing Tool
+     ```
+
+    ![Variable Filled](./assets/FlowToolCustPurDateDesc.png)
+
+1. Select the **Customize** button next to the **Coverage Window Days** input.
+
+    ![Variable Filled](./assets/FlowToolCustCoverage.png)
+
+1. In the **Description** text box, type
+
+     ```text
+     Fill with the numeric (in days) value of the Coverage Window extracted from the Warranty Policy
+     ```
+
+    ![Variable Filled](./assets/FlowToolCustDesc.png)
+
+1. Scroll down to the **Completion** section and select the **Write the response with generative AI** option from the **After Running** dropdown
+
+    ![Variable Filled](./assets/FlowToolAfterRUnning.png)
+
+1. Select the **Save** button
+
+    ![Variable Filled](./assets/FlowToolSave.png)
+
+1. Select the **Overview** tab
+
+    ![Variable Filled](./assets/FlowToolOverview.png)
+
+1. Select the **Instructions** section and select the **Edit** button
+
+    ![Variable Filled](./assets/FlowInstructionsEditBtn.png)
+
+1. Remove the last line about "respond in chat...". Type ```After all of the data is extracted, call the``` and put a forward slash (/) so the tool selection screen comes up and select the **Auto Approval Claims** tool.
+
+    ![Variable Filled](./assets/InstructionsClaimApprovalToolSelection.png)
+
+1. Finish drafting the additional instructions by pasting in the following after the tool selection:
+```tool. Pass all the required info and return the approval outcome for the warranty claim and approval message to the user to finish the process. Inform the user that an approval process has been started and an answer should be given shortly while you are waiting for the approval to process.```.
+
+Select the **Save** button in the instructions section when done.
+
+![Variable Filled](./assets/FlowToolInstructionssave.png)
+
+You've just added an agent flow to handle warranty claim auto-approvals to your agent! Now all that's left to do is test.
 
 ===
 
-## 4 - Test and Publish Your Agent
+## 5 - Test Your Agent
 
-Now that you have confirmed your agent is working as expected let’s publish the agent. We'll publish to the demo website which simulates what your agent would look like if it was published to a public website.
+Now that you've got the agent fully configured, it's time to test.
 
-1. Now we need to confirm and configure some settings for our agent. To do that, select the **Settings** button in the top right hand corner
+1. Ensure that the **Test** button is selected and the Test pane shows. Type the following in the test window and press **Enter** to send in the prompt:
 
-    ![step14.png](./assets/AgentSettingsBtn.png)
+    ```Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close. Used under normal conditions.```
 
-1. In the Generative AI tab, confirm that **Generative Orchestration** is set to **Yes** and turn **Connected Agents** to **On** then select **Save**
+    ![Variable Filled](./assets/TestPrompt.png)
 
-    ![AgentTest.png](./assets/OrchestrationSettings.png)
+1. Watch the Activity Pane and notice how the agent calls the Warranty Claim Processor Prompt, pulls in knowledge and calls the flow. Since it's using generative AI, your response may vary. The important thing is to confirm you see the **Auto Approval Claims** action get called in the Activity Map and you get a response. Feel free to test a different scenario where the purchase date is not within the warranty period, say 2024-09-30, and verify that you get a different outcome.
 
-1. Select the **Security** tab in the left navigation
+![Variable Filled](./assets/TestSuccess.png)
 
-    ![AgentTest.png](./assets/SecurityTabLeftNav.png)
-
-1. Select **Authentication**
-
-    ![AgentTest.png](./assets/SelectAuthentication.png)
-
-1. Select **No Authentication** and select the **Save** button to apply the settings.
-
-    ![AgentTest.png](./assets/AuthenticationSettings.png)
-
-1. Click the **Publish** button in the top right-hand corner
-
-    ![AgentPublish.png](./assets/AgentPublish.png)
-
-1. Click the **Publish** button to publish your agent
-
-    ![publish-agent.png](./assets/publish-agent.png)
-
-    The following dialog will be displayed you can close this and your agent will finish publishing in the background
-
-    ![publishing-agent.png](./assets/publishing-agent.png)
-
-1. Now that it’s published, we need to make this available to use within Microsoft Teams. Select the **Channels** tab in the top menu
-
-   ![AgentChannels.png](./assets/AgentChannels.png)
-
-Congratulations! You’ve now built and published an agent!
+Congratulations! You’ve now built and tested a Order Management Agent in Copilot Studio that can pull from knowledge, consume and write to internal data through MCP and integrates with AI Prompts and Agent Flows.
 
 ===
 
