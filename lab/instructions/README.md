@@ -580,7 +580,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. In the **Name** field type ```Approval Outcome```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
 
-    ![Approval Outcome Varable](./assets/FlowVarApprovOutcome.png)
+    ![Approval Outcome Variable](./assets/FlowVarApprovOutcome.png)
 
 1. Select the **plus button** again below the initialize variable action you just added
 
@@ -592,23 +592,23 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. In the **Name** field type ```Approval Message```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
 
-    ![Days Since Purchase Varable](./assets/FlowVarApprovalMessage.png)
+    ![Days Since Purchase Variable](./assets/FlowVarApprovalMessage.png)
 
 1. Select the **plus button** again below the initialize variable action you just added
 
-    ![Days Since Purchase Varable](./assets/FlowVar2Plus.png)
+    ![Days Since Purchase Variable](./assets/FlowVar2Plus.png)
 
 1. Search for **variable** and select **initialize variable**
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. In the **Name** field type ```Days Since Purchase```. And in the **Type** dropdown select **Integer**. 
+1. In the **Name** field type ```Days Since Purchase```. And in the **Type** dropdown select **Integer**.
 
-    ![Days Since Purchase Varable](./assets/FlowDaysSincePurchase.png)
+    ![Days Since Purchase Variable](./assets/FlowDaysSincePurchase.png)
 
 1. In the **Value** Input of the Initialize Variable, select the **Fx** Button.
 
-    ![Days Since Purchase Varable](./assets/FlowDaysPurcFx.png)
+    ![Days Since Purchase Variable](./assets/FlowDaysPurcFx.png)
 
 1. Select the **Create Expression with Copilot** Button
 
@@ -667,7 +667,7 @@ Select **Create Expression**
 
     ![Select Coverage Window](./assets/FlowCovWindowSelect.png)
 
-1. Your condition should look like the screenshot below. We need to add one more condtion to this. To do that, select the **New item** button.
+1. Your condition should look like the screenshot below. We need to add one more condition to this. To do that, select the **New item** button.
 
     ![New Condition](./assets/FlowCondNewItem.png)
 
@@ -699,7 +699,7 @@ Select **Create Expression**
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown cateogry and are within the coverage window. Click the **arrow** to close out of this window.
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown category and are within the coverage window. Click the **arrow** to close out of this window.
 
     ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfig.png)
 
@@ -717,7 +717,7 @@ Select **Create Expression**
 
 1. Now we need to tell the flow what to do if it doesn't meet these conditions. To configure this, expand the **False** section and select the **Plus Button**
 
-    ![False Condtion Add](./assets/FlowCondFalsePlus.png)
+    ![False Condition Add](./assets/FlowCondFalsePlus.png)
 
 1. Search for **variable** and select the **Set Variable** action.
 
@@ -912,7 +912,7 @@ Now that you've got the agent fully configured, it's time to test.
 
 1. Ensure that the **Test** button is selected and the Test pane shows. Type the following in the test window and press **Enter** to send in the prompt:
 
-    ```Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close. Used under normal conditions.```
+    ```Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misaligned and the main compartment won’t close. Used under normal conditions.```
 
     ![Variable Filled](./assets/TestPrompt.png)
 
