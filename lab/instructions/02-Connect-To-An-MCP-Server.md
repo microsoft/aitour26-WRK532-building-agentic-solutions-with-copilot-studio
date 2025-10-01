@@ -133,6 +133,7 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     Inspect network activity: https<nolink>:://x-3000-inspect.x.devtunnels.ms
     Ready to accept connections for tunnel: x.x
 
+    <!-- markdownlint-disable-next-line MD033 -->
     > [!Alert] It's very important to select the URL that looks like this: https<nolink>://x-3000.x.devtunnels.ms
     >
     > The other URL - with *:3000* in the URL - will give you errors later on.

@@ -67,7 +67,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. In the **Name** field type ```Approval Outcome```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
 
-    ![Approval Outcome Varable](./assets/FlowVarApprovOutcome.png)
+    ![Approval Outcome Variable](./assets/FlowVarApprovOutcome.png)
 
 1. Select the **plus button** again below the initialize variable action you just added
 
@@ -79,11 +79,11 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. In the **Name** field type ```Approval Message```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
 
-    ![Days Since Purchase Varable](./assets/FlowVarApprovalMessage.png)
+    ![Days Since Purchase Variable](./assets/FlowVarApprovalMessage.png)
 
 1. Select the **plus button** again below the initialize variable action you just added
 
-    ![Days Since Purchase Varable](./assets/FlowVar2Plus.png)
+    ![Days Since Purchase Variable](./assets/FlowVar2Plus.png)
 
 1. Search for ```variable``` and select **initialize variable**
 
@@ -91,28 +91,29 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. In the **Name** field type ```Days Since Purchase```. And in the **Type** dropdown select **Integer**.
 
-    ![Days Since Purchase Varable](./assets/FlowDaysSincePurchase.png)
+    ![Days Since Purchase Variable](./assets/FlowDaysSincePurchase.png)
 
 1. In the **Value** Input of the Initialize Variable, select the **Fx** Button.
 
-    ![Days Since Purchase Varable](./assets/FlowDaysPurcFx.png)
+    ![Days Since Purchase Variable](./assets/FlowDaysPurcFx.png)
 
 1. Select the **Create Expression with Copilot** Button
 
     ![Expression with Copilot](./assets/FlowCreateExpressionCopilot.png)
 
-If you don't see the **Create Expression with Copilot** button you can copy and paste the following formula in the formula input.
+    If you don't see the **Create Expression with Copilot** button you can copy and paste the following formula in the formula input.
 
-```text
-sub(int(div(sub(ticks(utcNow()), ticks(triggerBody()?['text_4'])),864000000000)),0)
-```
+    ```text
+    sub(int(div(sub(ticks(utcNow()), ticks(triggerBody()?['text_4'])),864000000000)),0)
+    ```
 
 1. In the box type the following:
-```Calculate the number of days difference between the current date and the Purchase Date Input```
 
-Select **Create Expression**
+    ```Calculate the number of days difference between the current date and the Purchase Date Input```
 
-![Expression with Copilot](./assets/FlowCreateExpBtn.png)
+    Select **Create Expression**
+
+    ![Expression with Copilot](./assets/FlowCreateExpBtn.png)
 
 1. Verify the formula in the **Suggested expression** box and select the **OK** button.
 
@@ -154,7 +155,7 @@ Select **Create Expression**
 
     ![Select Coverage Window](./assets/FlowCovWindowSelect.png)
 
-1. Your condition should look like the screenshot below. We need to add one more condtion to this. To do that, select the **New item** button.
+1. Your condition should look like the screenshot below. We need to add one more condition to this. To do that, select the **New item** button.
 
     ![New Condition](./assets/FlowCondNewItem.png)
 
@@ -186,7 +187,7 @@ Select **Create Expression**
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown cateogry and are within the coverage window. Click the **arrow** to close out of this window.
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown category and are within the coverage window. Click the **arrow** to close out of this window.
 
     ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfig.png)
 
@@ -204,7 +205,7 @@ Select **Create Expression**
 
 1. Now we need to tell the flow what to do if it doesn't meet these conditions. To configure this, expand the **False** section and select the **Plus Button**
 
-    ![False Condtion Add](./assets/FlowCondFalsePlus.png)
+    ![False Condition Add](./assets/FlowCondFalsePlus.png)
 
 1. Search for ```variable``` and select the **Set Variable** action.
 
@@ -332,9 +333,9 @@ Select **Create Expression**
 
 1. In the **Description** text box, type
 
-     ```text
-     Fill with the issue category extracted from the Claims Processing Tool
-     ```
+    ```text
+    Fill with the issue category extracted from the Claims Processing Tool
+    ```
 
     ![Variable Filled](./assets/FlowToolIssDesc.png)
 
@@ -344,9 +345,9 @@ Select **Create Expression**
 
 1. In the **Description** text box, type
 
-     ```text
-     Fill with the Purchase Date extracted from the Claims Processing Tool
-     ```
+    ```text
+    Fill with the Purchase Date extracted from the Claims Processing Tool
+    ```
 
     ![Variable Filled](./assets/FlowToolCustPurDateDesc.png)
 
@@ -356,9 +357,9 @@ Select **Create Expression**
 
 1. In the **Description** text box, type
 
-     ```text
-     Fill with the numeric (in days) value of the Coverage Window extracted from the Warranty Policy
-     ```
+    ```text
+    Fill with the numeric (in days) value of the Coverage Window extracted from the Warranty Policy
+    ```
 
     ![Variable Filled](./assets/FlowToolCustDesc.png)
 
@@ -383,10 +384,11 @@ Select **Create Expression**
     ![Variable Filled](./assets/InstructionsClaimApprovalToolSelection.png)
 
 1. Finish drafting the additional instructions by pasting in the following after the tool selection:
-```tool. Pass all the required info and return the approval outcome for the warranty claim and approval message to the user to finish the process. Inform the user that an approval process has been started and an answer should be given shortly while you are waiting for the approval to process.```.
 
-Select the **Save** button in the instructions section when done.
+    ```tool. Pass all the required info and return the approval outcome for the warranty claim and approval message to the user to finish the process. Inform the user that an approval process has been started and an answer should be given shortly while you are waiting for the approval to process.```.
 
-![Variable Filled](./assets/FlowToolInstructionssave.png)
+    Select the **Save** button in the instructions section when done.
+
+    ![Variable Filled](./assets/FlowToolInstructionssave.png)
 
 You've just added an agent flow to handle warranty claim auto-approvals to your agent! Now all that's left to do is test.
