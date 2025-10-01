@@ -90,6 +90,9 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     ```
 
 1. In the pop-up that will appear, select **Work or School account** and select **Continue**
+
+    ![Work or School Account](./assets/MCP_WorkSchoolAccount.png)
+
 1. Log in with:
 
     <!-- markdownlint-disable-next-line MD034 -->
@@ -132,6 +135,8 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     <!-- markdownlint-disable-next-line MD033 -->
     Inspect network activity: https<nolink>:://x-3000-inspect.x.devtunnels.ms
     Ready to accept connections for tunnel: x.x
+
+    ![MCP](./assets/MCP_ChooseDevTunnel.png)
 
     <!-- markdownlint-disable-next-line MD033 -->
     > [!Alert] It's very important to select the URL that looks like this: https<nolink>://x-3000.x.devtunnels.ms
