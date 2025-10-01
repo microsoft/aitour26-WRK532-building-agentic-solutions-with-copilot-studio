@@ -14,4 +14,4 @@ Now that you've got the agent fully configured, it's time to test.
 
     ![Variable Filled](./assets/TestSuccess.png)
 
-Congratulations! You’ve now built and tested a Order Management Agent in Copilot Studio that can pull from knowledge, consume and write to internal data through MCP and integrates with AI Prompts and Agent Flows.
+Congratulations! You’ve now built and tested an Order Management Agent in Copilot Studio that can pull from knowledge, consume and write to internal data through MCP and integrates with AI Prompts and Agent Flows.

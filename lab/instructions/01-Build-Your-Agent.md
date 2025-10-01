@@ -32,7 +32,15 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![step6.png](./assets/step6.png)
 
-1. You should get automatically routed to a screen to create your agent. While we could use natural language to setup the agent for this exercise, we will configure it manually by selecting the **Configure** tab.
+1. In the left nav click **+ Create** button to start creating a new agent
+
+    ![create.png](./assets/CreateLeftNav.png)
+
+1. Click **New agent**
+
+    ![create-new-agent.png](./assets/NewAgent.png)
+
+1. While we could use natural language to setup the agent for this exercise, we will skip and configure it manually by selecting the **Configure** tab.
 
     ![step9.jpg](./assets/ConfigreTab.png)
 
