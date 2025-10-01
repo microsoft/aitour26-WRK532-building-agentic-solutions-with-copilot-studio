@@ -2,7 +2,7 @@
 
 Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for real time operations, we’ll give the agent additional capabilities by integrating an AI prompt to process warranty claims. In this section, we’ll add a Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields and even intelligently classify the claim.
 
-1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
+1. In your agent overview screen (select the overview tab to get to it), scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeStep3.png)
 
