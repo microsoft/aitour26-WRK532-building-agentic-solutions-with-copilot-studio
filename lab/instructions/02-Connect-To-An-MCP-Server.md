@@ -240,7 +240,28 @@ We are going to fix this error in the next steps.
     List the Zava Stores
     ```
 
-    This should show you a whole bunch of Zava Stores as an answer in the *Test your agent* panel:
+    > [!NOTE]
+    > The test pane is made to verify your agent is working from a user point of view. We added a connection when we added the MCP Server as a tool, but that one is not connected to the test pane yet.
+
+1. Select the **Open connection manager** link
+
+    ![Open Connection Manager](./assets/OpenConnectionManager.png)
+
+1. Next, in the *Manage your connections* screen, select **Connect** next to the *Zava Inventory MCP* tool
+
+    ![Connect to Zava Inventory MCP](./assets/ConnectionManagerConnect.png)
+
+1. This should open the *Create or pick a connection* screen and it will automatically use the connection you created before. Select **Submit** to confirm the connection
+
+    ![Create or pick a connection](./assets/ConnectionManagerPickConnection.png)
+
+1. Next you should see the *Manage your connections* screen again, but now the status should show *Connected*. Close the *Manage your connections* screen and go back to the *Test your agent* section
+
+1. Select the **Retry** button
+
+    ![Retry](./assets/ConnectionManagerRetry.png)
+
+    After this, the agent should show you a whole bunch of Zava Stores as an answer in the *Test your agent* panel:
 
     ![List Zava Stores test pane](./assets/ListZavaStores.png)
 
