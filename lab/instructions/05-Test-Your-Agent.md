@@ -5,7 +5,7 @@ Now that you've got the agent fully configured, it's time to test.
 1. Ensure that the **Test** button is selected and the Test pane shows. Type the following in the test window and press **Enter** to send in the prompt:
 
     ```text
-    Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close. Used under normal conditions.
+    Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misaligned and the main compartment won’t close. Used under normal conditions.
     ```
 
     ![Variable Filled](./assets/TestPrompt.png)
@@ -14,4 +14,4 @@ Now that you've got the agent fully configured, it's time to test.
 
     ![Variable Filled](./assets/TestSuccess.png)
 
-Congratulations! You’ve now built and tested a Order Management Agent in Copilot Studio that can pull from knowledge, consume and write to internal data through MCP and integrates with AI Prompts and Agent Flows.
+Congratulations! You’ve now built and tested an Order Management Agent in Copilot Studio that can pull from knowledge, consume and write to internal data through MCP and integrates with AI Prompts and Agent Flows.

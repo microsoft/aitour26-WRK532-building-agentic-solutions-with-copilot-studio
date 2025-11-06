@@ -73,7 +73,7 @@ After running the MCP Server, you're not there yet. The MCP Server is only runni
 
 To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
 
-> [!Note] A dev tunnel creates a secure connection that exposes your local development server to the internet through a public URL. This allows cloud services like Copilot Studio to access your locally running MCP server.
+> [!Note] A dev tunnel creates a secure connection that exposes your local development server to the internet through a public URL. This allows cloud services like Copilot Studio to access your locally running MCP server. We use this to test that the MCP Server is working but if you want to use this in production you would deploy the MCP server.
 
 In the terminal at the bottom of Visual Studio Code, we are going to configure a dev tunnel.
 
@@ -90,6 +90,9 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     ```
 
 1. In the pop-up that will appear, select **Work or School account** and select **Continue**
+
+    ![Work or School Account](./assets/MCP_WorkSchoolAccount.png)
+
 1. Log in with:
 
     <!-- markdownlint-disable-next-line MD034 -->
@@ -128,12 +131,15 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     This will give you the following message:  
 
     <!-- markdownlint-disable-next-line MD033 -->
-    Connect via browser: <https://x.devtunnels.ms:3000>, <https://x-3000.x.devtunnels.ms>
+    Connect via browser: https<nolink>://x.devtunnels.ms:3000, https<nolink>:://x-3000.x.devtunnels.ms
     <!-- markdownlint-disable-next-line MD033 -->
-    Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
+    Inspect network activity: https<nolink>:://x-3000-inspect.x.devtunnels.ms
     Ready to accept connections for tunnel: x.x
 
-    > [!Alert] It's very important to select the URL that looks like this: <https://x-3000.x.devtunnels.ms>
+    ![MCP](./assets/MCP_ChooseDevTunnel.png)
+
+    <!-- markdownlint-disable-next-line MD033 -->
+    > [!Alert] It's very important to select the URL that looks like this: https<nolink>://x-3000.x.devtunnels.ms
     >
     > The other URL - with *:3000* in the URL - will give you errors later on.
 
@@ -158,12 +164,26 @@ We are going to fix this error in the next steps.
 
 ## Add the MCP Server in Microsoft Copilot Studio
 
-1. Open your browser and go back to the environment where you create the agent earlier
-1. Open your agent
-1. In the top navigation, select **Tools**
+1. Select Microsoft Edge to go back to your agent in Copilot Studio.
+
+    ![Edge](./assets/Edge.png)
+
+1. Select the **Tools** tab in the top navigation of your agent. If you don't see it, select the **+7** button in the navigation then select **Tools**.  DO NOT select the Tools option in the left navigation.
+
+    ![Overview](./assets/ToolsTabSelect.png)
+
 1. Select **+ Add a tool**
+
+    ![Add Tool](./assets/AddTool1.png)
+
 1. Select **+ New tool**
+
+    ![New Tool](./assets/NewTool2.png)
+
 1. Select **Model Context Protocol**
+
+    ![New Tool MCP](./assets/ToolMCP.png)
+
 1. Enter the **Name**:
 
     ```text

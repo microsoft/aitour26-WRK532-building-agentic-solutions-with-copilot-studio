@@ -2,7 +2,7 @@
 
 Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for real time operations, we’ll give the agent additional capabilities by integrating an AI prompt to process warranty claims. In this section, we’ll add a Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields and even intelligently classify the claim.
 
-1. In your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
+1. In your agent overview screen (select the overview tab to get to it), scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeStep3.png)
 
@@ -56,10 +56,10 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     ![Input](./assets/InputType.png)
 
-1. Name this variable **Warranty Claim** and put in the following text in the **Sample data** input:
+1. Name this variable ```Warranty Claim``` and put in the following text in the **Sample data** input:
 
     ```text
-    Help me process this warranty claim from this customer: Alex Morgan (alex.morgan@example.com, +1 (555) 012-7784, prefers email). Address: 123 Maple Lane, Tulsa, OK 74104. Product is a Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misalign and the main compartment won’t close—used under normal conditions. Please evaluate against our warranty policy and advise approval/denial and next steps (including RMA if applicable).
+    Help me process this warranty claim from this customer: Alex Morgan (alex.morgan@example.com, +1 (555) 012-7784, prefers email). Address: 123 Maple Lane, Tulsa, OK 74104. Product is a Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misaligned and the main compartment won’t close—used under normal conditions. Please evaluate against our warranty policy and advise approval/denial and next steps (including RMA if applicable).
     ```
 
     Select the **close button**
@@ -82,7 +82,7 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     ![Add and Configure Button Prompt](./assets/AddConfigureBtnPrompt.png)
 
-1. Now we'll see the configuration screen where we can control specific settings for the prompt for use in our agent. The first thing we need to do is expand out the **Additional details** section and select the **Agent may use thsi tool at any time** radio button.
+1. Now we'll see the configuration screen where we can control specific settings for the prompt for use in our agent. The first thing we need to do is expand out the **Additional details** section and select the **Agent may use this tool at any time** radio button.
 
     ![Additional Details](./assets/PromptAdditionalDetails.png)
 
@@ -92,11 +92,11 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
 1. In the **Description** box, paste the following:
 
-    ```text
-    Fill with the details of the warranty claim pasted in the chat from the user.
-    ```
+```text
+Fill with the details of the warranty claim pasted in the chat from the user.
+```
 
-    ![Additional Details](./assets/PromptDescriptionSave.png)
+![Additional Details](./assets/PromptDescriptionSave.png)
 
 1. Click the **Save** button to save all of your changes.
 
@@ -117,19 +117,17 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
     
     Coverage Window
     Exceptions Allowed(Yes or No if the warranty claim has any exceptions that allow it to be approved outside the warranty period)
-    Warranty Policy (full details of the warranty policy fo rthat given product category, example: receipts required, allowed within 30 days, etc)
+    Warranty Policy (full details of the warranty policy for that given product category, example: receipts required, allowed within 30 days, etc)
     
     Respond in the chat with all relevant details that were extracted.
     ```
 
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+1. Delete the **[add prompt here]** text and replace with a **forward slash (/)**. A menu will pop up where you'll see a **Tools** section. Expand that and select the **Warranty Claims Processing** prompt.
 
-1. Delete the [add prompt here] text and replace with a forward slash (/). A menu will pop up where you'll see a **Tools** section. Expand that and select the **Warranty Claims Processing** prompt.
-
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+    ![Additional Details](./assets/PromptInstructionsRevised.png)
 
 1. Click **Save** to save your new instructions.
-1. Now it's time to test the end to end process.Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
+1. Now it's time to test the end to end process. Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
 1. Paste in the following text in the test window:
 
     ```text
@@ -138,10 +136,8 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     Press **Enter**
 
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
-
 1. Watch the Activity Panel on the left hand side to see how the agent calls the prompt and passes in the information and does the check in the Warranty Policy knowledge source to find and return the necessary information.
 
-    ![Additional Details](./assets/EditINstructionsPrompt.png)
+    ![Additional Details](./assets/WarrantyPolicyPromptTest.png)
 
 You've just successfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
