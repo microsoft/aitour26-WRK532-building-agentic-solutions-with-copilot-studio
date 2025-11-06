@@ -67,8 +67,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![Ready.png](./assets/Ready.png)
 
-> [!NOTE]
-> The process of uploading the files can take around 5 minutes to complete. You can continue on to the next steps while the files are processing.
+    > [!NOTE]
+    > The process of uploading the files can take around 5 minutes to complete. You can continue on to the next steps while the files are processing.
 
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the **Instructions** section and select the **Edit** button and paste in the following instructions:
 
