@@ -92,11 +92,11 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
 1. In the **Description** box, paste the following:
 
-```text
-Fill with the details of the warranty claim pasted in the chat from the user.
-```
+    ```text
+    Fill with the details of the warranty claim pasted in the chat from the user.
+    ```
 
-![Additional Details](./assets/PromptDescriptionSave.png)
+    ![Additional Details](./assets/PromptDescriptionSave.png)
 
 1. Click the **Save** button to save all of your changes.
 
