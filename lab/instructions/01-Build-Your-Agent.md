@@ -80,6 +80,18 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![SaveInstructions.png](./assets/SaveInstructions.png)
 
+1. Before we test to make sure the agent is following our instructions and pulling from our knowledge sources, we need to configure some settings. To do this, select the **Settings** button in the upper right hand corner.
+
+    ![SettingsBtn.png](./assets/SettingsBtn.png)
+
+1. Scroll down toward the bottom of the page to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it is using, which in our case is the GPT 4.1 default model. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. So, depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Use general knowledge** setting to **Off**.
+
+    ![GeneralKnowledge.png](./assets/GenKnowledgeOff.png)
+
+1. Click the **Save** button at the bottom of the screen and select the **X** button in the upper right hand corner to close out of the settings screen.
+
+    ![CloseSettings.png](./assets/SaveSettings.png)
+
 1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
 
     ```text
@@ -87,6 +99,9 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     ```
 
     ![TestBefore.png](./assets/TestBeforeEnter.png)
+  
+> [!NOTE]
+    > Don't forget to check that your files have finished uploading and show Ready status before testing.
 
 1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
 

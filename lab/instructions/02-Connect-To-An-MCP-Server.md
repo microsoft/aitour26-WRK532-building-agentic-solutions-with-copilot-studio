@@ -5,12 +5,12 @@ In this part, you will learn about how to run a Model Context Protocol (MCP) ser
 ## Open the MCP Server in Visual Studio Code
 
 1. Open Visual Studio Code by selecting Visual Studio Code in the taskbar
-1. Select **File > Open Folder**
-1. Navigate to **D:\LabFiles\ZavaInventoryMCP**
-1. Select **Select Folder**
-1. You might see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
-
-    ![Trust authors](./assets/TrustAuthors.png)
+1. It should automatically have the Zava InventoryMCP Server Folder open. If you don't see the folder open, follow these steps to open the folder:
+    1. Select **File > Open Folder**
+    1. Navigate to **D:\LabFiles\ZavaInventoryMCP**
+    1. Select **Select Folder**
+    1. You might see a pop up where you will be asked to trust the authors of the files in this folder. Make sure to select **Yes, I trust the authors**
+        ![Trust authors](./assets/TrustAuthors.png)
 
 This will open the Zava Inventory Management MCP server in Visual Studio Code. Let's explore the MCP Server to see what files are in there.
 
