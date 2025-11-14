@@ -65,9 +65,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. In the **Name** field type ```Approval Outcome```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
+1. In the **Name** field type ```Approval Outcome```. And in the **Type** dropdown select **String**.
 
-    ![Approval Outcome Variable](./assets/FlowVarApprovOutcome.png)
+    ![Approval Outcome Variable](./assets/FlowVarApprovOutcomeInline.png)
 
 1. Select the **plus button** again below the initialize variable action you just added
 
@@ -77,9 +77,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Initialize Variable](./assets/FlowInitializeVariable.png)
 
-1. In the **Name** field type ```Approval Message```. And in the **Type** dropdown select **String**. Click the **arrow** to close out of this panel.
+1. In the **Name** field type ```Approval Message```. And in the **Type** dropdown select **String**.
 
-    ![Days Since Purchase Variable](./assets/FlowVarApprovalMessage.png)
+    ![Days Since Purchase Variable](./assets/FlowVarApprovalMessageInline.png)
 
 1. Select the **plus button** again below the initialize variable action you just added
 
@@ -125,7 +125,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Verify the expression shows in the value input as shown below, and click the **arrow** to close out of this panel.
 
-    ![Verify and Close](./assets/FlowVarDaysConfig.png)
+    ![Verify and Close](./assets/FlowVarDaysConfigInline.png)
 
 1. Click the **Plus Button** below the initialize variable.
 
@@ -137,7 +137,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Now we need to fill out the conditions we want to check for. To do that, click in the first input and select the **lightning bolt** icon
 
-    ![Select Condition](./assets/FlowCondition1LightningBolt.png)
+    ![Select Condition](./assets/FlowCondition1LightningBoltInline.png)
 
 1. Select the **Days Since Purchase** variable
 
