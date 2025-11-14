@@ -25,6 +25,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open the *Contoso Authenticator App* by selecting it on your desktop.
 
+    ![Contoso Authenticator on the desktop](./assets/contoso-authenticator.png)
+
 1. If necessary, move the App to ensure that the QR Code is fully visible on the screen.
 
 1. Select the **Scan QR from Screen** button and then **copy** the available 6-digit code.
