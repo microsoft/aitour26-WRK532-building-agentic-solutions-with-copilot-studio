@@ -267,7 +267,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Variable Filled](./assets/FlowEditBtn.png)
 
-1. Change the **Flow Name** to
+1. Change the **Flow Name** to:
 
     ```text
     Auto Approval Claims
