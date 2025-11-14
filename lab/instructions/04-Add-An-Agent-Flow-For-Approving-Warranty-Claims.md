@@ -215,7 +215,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Set Variable](./assets/FlowNoSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```.
+1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```
 
     ![Approval Message Config](./assets/FlowFalseApprovMessageConfigInline.png)
 
@@ -377,7 +377,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Finish drafting the additional instructions by pasting in the following after the tool selection:
 
-    ```tool. Pass all the required info and return the approval outcome for the warranty claim and approval message to the user to finish the process. Inform the user that an approval process has been started and an answer should be given shortly while you are waiting for the approval to process.```.
+    ```tool. Pass all the required info and return the approval outcome for the warranty claim and approval message to the user to finish the process. Inform the user that an approval process has been started and an answer should be given shortly while you are waiting for the approval to process.```
 
     Select the **Save** button in the instructions section when done.
 
