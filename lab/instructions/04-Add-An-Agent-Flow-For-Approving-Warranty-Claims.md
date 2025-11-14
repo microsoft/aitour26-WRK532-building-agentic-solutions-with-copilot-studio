@@ -4,7 +4,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Select **Overview** to get back to the overview of the agent
 
-1. To create a new agent flow, scroll down to the Tools section and select **New Tool**
+1. To create a new agent flow, scroll down to the Tools section and select **Add Tool**
     ![New Tool](./assets/NewToolAgentFlow1.png)
 
 1. Select **New Tool** in the dialog
@@ -17,47 +17,45 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. You'll see two items on the screen, the trigger which kicks off the flow and the response which returns data back to the agent. The first thing we need to do is configure any inputs that we want to pass into our flow from the agent to use in the flow. To add these inputs, select the **When an agent calls the flow** trigger.
 
-    ![Flow](./assets/SelectFlowTrigger.png)
+    ![Flow](./assets/SelectFlowTriggerInline.png)
 
 1. Select **Add an input**
 
-    ![Add Input](./assets/FlowAddInput1.png)
+    ![Add Input](./assets/FlowAddInputInline1.png)
 
 1. Select the **Text** option
 
-    ![Text Input](./assets/FlowTriggerInputType.png)
+    ![Text Input](./assets/FlowTriggerInputTypeInline.png)
 
 1. In the Text input type ```Issue Category```
 
-    ![Issue Category](./assets/FlowIssueCat.png)
+    ![Issue Category](./assets/FlowIssueCatInline.png)
 
 1. Select **Add an input**
 
-    ![Add Input](./assets/FlowIssueCatAddInput.png)
+    ![Add Input](./assets/FlowIssueCatAddInputInline.png)
 
 1. Select the **Text** option
 
-    ![Text Input](./assets/FlowIssueCatText.png)
+    ![Text Input](./assets/FlowIssueCatTextInline.png)
 
 1. In the Text input type ```Purchase Date```
 
-    ![Product Input](./assets/FlowPurchaseDateFilled.png)
+    ![Product Input](./assets/FlowPurchaseDateFilledInline.png)
 
 1. Select **Add an input**
 
-    ![Product Input](./assets/FlowPurDateAddInput.png)
+    ![Product Input](./assets/FlowPurDateAddInputInline.png)
 
 1. Select the **Number** option
 
-    ![Text Input](./assets/FlowPurDateNumb.png)
+    ![Text Input](./assets/FlowPurDateNumbInline.png)
 
 1. In the Text input type ```Coverage Window Days```
 
-    ![Product Input](./assets/FlowCovDayInputFilled.png)
+    ![Product Input](./assets/FlowCovDayInputFilledInline.png)
 
-1. You should see three inputs as configured below. Once you confirm your inputs match the screenshot below, click the arrow to hide this panel.
-
-    ![Inputs](./assets/FlowInputsConfig.png)
+1. Select the **When an agent calls the flow** trigger again to collapse the inputs
 
 1. Select the **plus button** between the when an agent calls a flow and respond to agent to add a new action.
 
