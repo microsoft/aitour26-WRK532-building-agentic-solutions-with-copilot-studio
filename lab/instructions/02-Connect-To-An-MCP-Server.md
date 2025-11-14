@@ -280,7 +280,7 @@ We are going to fix this error in the next steps.
 
     And on the left in the *Test your agent* panel, you can see that the Zava Inventory MCP has been initialized and the *get_stores* tool has been triggered by our message. When you click on the *get_stores* tool, you're even able to see the output that the agent got from the MCP server. This means our agent made that text into the formatted output we saw in the *Test your agent* panel.
 
-    ![Activity Map after asking to list the Zava Stores.](./assets/ListZavaStoresTestPanel.png)
+    ![Test Panel after asking to list the Zava Stores.](./assets/ListZavaStoresTestPanel.png)
 
     Let's experiment a bit more with the other tools as well.
 
@@ -292,11 +292,11 @@ We are going to fix this error in the next steps.
 
     You will see the available products in the Zava Amsterdam store in the *Test your agent* panel:
 
-    ![List Available Products in the Zava Amsterdam store in the test pane](./assets/ListAvailableProductsZavaAmsterdam.png)
+    ![List Available Products in the Zava Amsterdam store in the test pane](./assets/ListAvailableProductsZavaAmsterdamResults.png)
 
-    Now you can see in the *Activity map* more tools have been triggered. The *get_stores* tool has been triggered again, because it needs it for the *list_inventory_by_store* tool. This really shows the power of MCP: when used correctly, it can do a lot of calls for you, without having to build a flow for it or to give it more instructions.
+    Now you can see in the *Test Panel* more tools have been triggered. The *get_stores* tool has been triggered again, because it needs it for the *list_inventory_by_store* tool. This really shows the power of MCP: when used correctly, it can do a lot of calls for you, without having to build a flow for it or to give it more instructions.
 
-    ![Activity Map after asking to list the available products in the Zava Amsterdam store.](./assets/ListAvailableProductsZavaAmsterdamActivityMap.png)
+    ![Test Panel after asking to list the available products in the Zava Amsterdam store.](./assets/ListAvailableProductsZavaAmsterdamTestPanel.png)
 
     But now - we only did get actions, wouldn't it be good to also add something?
 
@@ -304,14 +304,14 @@ We are going to fix this error in the next steps.
 
     ```text
     Please add the following Zava Store:
-    Zava Chicago
-    1597 Virginia Street, Chicago, Illinois, IL 60618
+    Zava San Francisco
+    2481 Mission Terrace, San Francisco, CA 94131, United States
     ```
 
     ![Add Zava store via message](./assets/AddZavaStore.png)
 
     As you can see, we didn't add United States to the message, but it automatically added that based on the details in the message.
 
-    ![Add Zava store activity map](./assets/AddZavaStoreActivityMap.png)
+    ![Add Zava store Test Panel](./assets/AddZavaStoreActivityMap.png)
 
 This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools in the MCP Server.
