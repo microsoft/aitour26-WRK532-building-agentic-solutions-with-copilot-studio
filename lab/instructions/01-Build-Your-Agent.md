@@ -21,9 +21,11 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. On the *Install Microsoft Authenticator* page, select **Setup a different authenticator** app.
 
+    ![Set up a different authentication app](./assets/SetupDifferentAuthApp.png)
+
 1. On the *Set up your account in app* page, select **Next**.
 
-1. Open the *Contoso Authenticator App* by selecting it on your desktop.
+1. Open the *Contoso Authenticator App* by selecting it on your desktop or on the task bar.
 
     ![Contoso Authenticator on the desktop](./assets/contoso-authenticator.png)
 
