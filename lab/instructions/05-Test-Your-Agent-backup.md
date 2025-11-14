@@ -2,7 +2,7 @@
 
 Now that you've got the agent fully configured, it's time to test.
 
-1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Type the following in the test window and press **Enter** to send in the prompt:
+1. Ensure that the **Test** button is selected and the Test pane shows. Type the following in the test window and press **Enter** to send in the prompt:
 
     ```text
     Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misaligned and the main compartment won’t close. Used under normal conditions.
@@ -10,7 +10,7 @@ Now that you've got the agent fully configured, it's time to test.
 
     ![Variable Filled](./assets/TestPrompt.png)
 
-1. Watch the *Test your agent* panel and notice how the agent calls the Warranty Claim Processor Prompt, pulls in knowledge and calls the flow. Since it's using generative AI, your response may vary. The important thing is to confirm you see the **Auto Approval Claims** action get called in the *Test your agent* panel and you get a response. Feel free to test a different scenario where the purchase date is not within the warranty period, say 2024-09-30, and verify that you get a different outcome.
+1. Watch the Activity Pane and notice how the agent calls the Warranty Claim Processor Prompt, pulls in knowledge and calls the flow. Since it's using generative AI, your response may vary. The important thing is to confirm you see the **Auto Approval Claims** action get called in the Activity Map and you get a response. Feel free to test a different scenario where the purchase date is not within the warranty period, say 2024-09-30, and verify that you get a different outcome.
 
     ![Variable Filled](./assets/TestSuccess.png)
 
