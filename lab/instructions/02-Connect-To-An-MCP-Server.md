@@ -300,15 +300,19 @@ We are going to fix this error in the next steps.
 
     But now - we only did get actions, wouldn't it be good to also add something?
 
-1. Send the following message to your agent via the *Test your agent* panel:
+1. Select the **New Test Session** button in the *Test your agent* panel:
+
+    ![New Test Session](./assets/NewTestSession.png)
+
+1. After that, send the following message in the *Test your agent* panel:
 
     ```text
-    Please add the following Zava Store in San Francisco:
+    Please add the following Zava Store:
     Zava San Francisco
     2481 Mission Terrace, San Francisco, CA 94131
     ```
 
-    ![Add Zava store via message](./assets/AddZavaStore.png)
+    ![Add Zava store via message](./assets/AddZavaStoreNewTestSession.png)
 
     As you can see, we didn't add United States to the message, but it automatically added that based on the details in the message.
 
