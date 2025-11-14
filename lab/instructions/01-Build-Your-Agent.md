@@ -129,7 +129,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![TestBefore.png](./assets/TestBeforeEnter.png)
   
-> [!NOTE]
+    > [!NOTE]
     > Don't forget to check that your files have finished uploading and show Ready status before testing.
 
 1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
