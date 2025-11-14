@@ -19,27 +19,31 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Select **Next** at the *Let's keep your account secure* screen
 
-1. On the *Install Microsoft Authenticator* page, select **Setup a different authenticator** app.
+1. On the *Install Microsoft Authenticator* page, select **Setup a different authenticator** app
 
     ![Set up a different authentication app](./assets/SetupDifferentAuthApp.png)
 
-1. On the *Set up your account in app* page, select **Next**.
+1. On the *Set up your account in app* page, select **Next**
 
-1. Open the *Contoso Authenticator App* by selecting it on your desktop or on the task bar.
+1. Open the *Contoso Authenticator App* by selecting it on your desktop or on the task bar
 
     ![Contoso Authenticator on the desktop](./assets/contoso-authenticator.png)
 
-1. If necessary, move the App to ensure that the QR Code is fully visible on the screen.
+1. If necessary, move the App to ensure that the QR Code is fully visible on the screen
 
-1. Select the **Scan QR from Screen** button and then **copy** the available 6-digit code.
+1. Select the **Scan QR from Screen** button and then **copy** the available 6-digit code
 
     ![Scan QR from Screen](./assets/ScanQRCode.png)
 
-1. On the web page, select **Next** and then paste the 6-digit code.
+1. Select **OK** in the *Copied - OTP copied to clipboard* page
 
-1. On the *Authenticator app added!* page, select **Done**.
+1. On the web page, select **Next** and then paste the 6-digit code
 
-1.
+    ![Enter Code](./assets/EnterCode.png)
+
+1. On the *Authenticator app added* page, select **Done**
+
+1. On the *Stay signed in* page, select **Yes**
 
 1. After logging in, you'll see a message letting you know it's configuring your developer environment. Wait until that finishes (shouldn't take more than a minute)
 
