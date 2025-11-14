@@ -227,9 +227,9 @@ We are going to fix this error in the next steps.
 
     Now it's time to test the agent with the MCP Server!
 
-1. Select the **Expand Test Pane** icon in the top right corner of the *Test your agent* panel. This will help you understand what is happening when you are sending and receiving messages in the *Test your agent* panel.
+1. Select the **Map** icon in the top right corner of the *Test your agent* panel to activate the *Activity map*. This will help you understand what is happening when you are sending and receiving messages in the *Test your agent* panel.
 
-    ![Expand Test Pane](./assets/ExpandTestPanel.png)
+    ![Activity Map](./assets/ActivityMap.png)
 
 1. Now, enter the following message and send it in the *Test your agent* panel:
 
@@ -262,9 +262,9 @@ We are going to fix this error in the next steps.
 
     ![List Zava Stores test pane](./assets/ListZavaStores.png)
 
-    And on the left in the *Test your agent* panel, you can see that the Zava Inventory MCP has been initialized and the *get_stores* tool has been triggered by our message. When you click on the *get_stores* tool, you're even able to see the output that the agent got from the MCP server. This means our agent made that text into the formatted output we saw in the *Test your agent* panel.
+    And on the left in the *Activity map*, you can see that the Zava Inventory MCP has been initialized and the *get_stores* tool has been triggered by our message. When you click on the *get_stores* tool, you're even able to see the output that the agent got from the MCP server. This means our agent made that text into the formatted output we saw in the *Test your agent* panel.
 
-    ![Activity Map after asking to list the Zava Stores.](./assets/ListZavaStoresTestPanel.png)
+    ![Activity Map after asking to list the Zava Stores.](./assets/ListZavaStoresActivityMap.png)
 
     Let's experiment a bit more with the other tools as well.
 
