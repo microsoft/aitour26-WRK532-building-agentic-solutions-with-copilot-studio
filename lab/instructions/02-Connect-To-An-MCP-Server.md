@@ -318,4 +318,8 @@ We are going to fix this error in the next steps.
 
     ![Add Zava store Test Panel](./assets/AddZavaStoreActivityMapTestYourAgent.png)
 
+If you want to check if the store really got added, you can go back to Visual Studio Code and go to **Data** > **stores.json** and look at the bottom of that file. You should see the store there!
+
+![Store added VS Code](./assets/StoreAddedVSCode.png)
+
 This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools in the MCP Server.
