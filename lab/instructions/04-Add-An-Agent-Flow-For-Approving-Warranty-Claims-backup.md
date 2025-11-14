@@ -2,8 +2,6 @@
 
 Now that we have an AI prompt that can classify warranty claims and extract key info, we’re going to wrap this process in a formal, approval path based off of certain conditions like if it's in the warranty period. This is exactly what Agent Flows are for: augmenting your agents with a configurable and predictable decision path. In this section, you’ll build an agent flow that reads the extracted fields, evaluates the policy conditions, and triggers an auto approval if those conditions are met.
 
-1. Select **Overview** to get back to the overview of the agent
-
 1. To create a new agent flow, scroll down to the Tools section and select **New Tool**
     ![New Tool](./assets/NewToolAgentFlow1.png)
 
