@@ -316,6 +316,6 @@ We are going to fix this error in the next steps.
 
     As you can see, we didn't add United States to the message, but it automatically added that based on the details in the message.
 
-    ![Add Zava store Test Panel](./assets/AddZavaStoreActivityMap.png)
+    ![Add Zava store Test Panel](./assets/AddZavaStoreActivityMapTestYourAgent.png)
 
 This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools in the MCP Server.
