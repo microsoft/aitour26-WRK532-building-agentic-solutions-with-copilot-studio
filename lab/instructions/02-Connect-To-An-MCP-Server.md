@@ -221,7 +221,7 @@ We are going to fix this error in the next steps.
 
     ![Create Connection](./assets/MCPCreateConnection.png)
 
-1. Select **Add to agent**
+1. Select **Add and configure**
 
     ![Add to agent](./assets/AddToAgent.png)
 
