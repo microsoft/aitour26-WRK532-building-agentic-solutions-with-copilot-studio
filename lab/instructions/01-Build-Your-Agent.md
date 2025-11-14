@@ -72,13 +72,13 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Name your agent +++Zava Order Support+++ and select **Save**
 
-<!-- 1. While we could use natural language to setup the agent for this exercise, we will skip and configure it manually by selecting the **Configure** tab.
-
-    ![step9.jpg](./assets/ConfigreTab.png)
-
-1. In the name field, type +++Zava Order Support+++ and then click the **Create** button
-
-    ![AgentName.png](./assets/ConfigureName.png) -->
+    <!-- 1. While we could use natural language to setup the agent for this exercise, we will skip and configure it manually by selecting the **Configure** tab.
+    
+        ![step9.jpg](./assets/ConfigreTab.png)
+    
+    1. In the name field, type +++Zava Order Support+++ and then click the **Create** button
+    
+        ![AgentName.png](./assets/ConfigureName.png) -->
 
 1. Now, you need to equip it with knowledge so it can answer questions about the company, shipping policies, etc. To do this, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
