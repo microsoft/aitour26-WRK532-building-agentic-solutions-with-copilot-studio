@@ -33,6 +33,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Select the **Scan QR from Screen** button and then **copy** the available 6-digit code.
 
+    ![Scan QR from Screen](./assets/ScanQRCode.png)
+
 1. On the web page, select **Next** and then paste the 6-digit code.
 
 1. On the *Authenticator app added!* page, select **Done**.
