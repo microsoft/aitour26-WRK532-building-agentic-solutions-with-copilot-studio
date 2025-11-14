@@ -18,7 +18,7 @@ Now that we’ve got an agent that can answer questions from knowledge and integ
 
     ![Ready.png](./assets/WarrantyKnowledgeReady.png)
 
-    Now that we have the Warranty Claim knowledge source added, we want to build our AI Prompt to extract information from the claim.
+Now that we have the Warranty Claim knowledge source added, we want to build our AI Prompt to extract information from the claim.
 
 1. Scroll down to the Tools section and select **Add tool**
 
