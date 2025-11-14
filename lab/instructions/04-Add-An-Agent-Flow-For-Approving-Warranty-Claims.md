@@ -205,15 +205,13 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Needs Exception Approval```. This will return back to the user informing them it couldn't be auto-approved and escalation is needed. Click the **arrow** to close out of this window.
-
-    ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfigFalse.png)
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Needs Exception Approval```. This will return back to the user informing them it couldn't be auto-approved and escalation is needed
 
 1. Now we want to fill in the approval notes. To do this, select the **Plus button** in the false condition right below the set variable you just added.
 
     ![Yes Add](./assets/FlowApprovalOutcomeConfigPlus.png)
 
-1. Search for ```variable``` and select the **Set Variable** action.
+1. Search for ```variable``` and select the **Set Variable** action
 
     ![Set Variable](./assets/FlowNoSetVarSelect.png)
 
