@@ -155,13 +155,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Select Coverage Window](./assets/FlowCovWindowSelect.png)
 
-1. Your condition should look like the screenshot below. We need to add one more condition to this. To do that, select the **New item** button.
+    Your condition should look like the screenshot below. We need to add one more condition to this.
 
-    ![New Condition](./assets/FlowCondNewItem.png)
-
-1. Select **Add Row**
-
-    ![Add Row](./assets/FlowCondAddRow.png)
+    ![New Condition](./assets/FlowCondNewItemInline.png)
 
 1. Select the **lightning bolt** icon in the left text input
 
