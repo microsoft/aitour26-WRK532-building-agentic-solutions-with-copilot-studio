@@ -303,9 +303,9 @@ We are going to fix this error in the next steps.
 1. Send the following message to your agent via the *Test your agent* panel:
 
     ```text
-    Please add the following Zava Store:
+    Please add the following Zava Store in San Francisco:
     Zava San Francisco
-    2481 Mission Terrace, San Francisco, CA 94131, United States
+    2481 Mission Terrace, San Francisco, CA 94131
     ```
 
     ![Add Zava store via message](./assets/AddZavaStore.png)
