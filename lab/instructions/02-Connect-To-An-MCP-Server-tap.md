@@ -101,6 +101,9 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     <!-- markdownlint-disable-next-line MD034 -->
     **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
 
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Temporary Access Password:** +++@lab.Variable(TAP)+++
+
 1. In the next screen where it asks if you want to automatically sign into all desktop apps on this device, select **No, this app only**
 
     ![Sign In Apps](./assets/SignInApps.png)
@@ -127,11 +130,11 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
 
     This will give you the following message:  
 
-    > [!NOTE]
-    > Connect via browser: <https://x.devtunnels.ms:3000>, <https://x-3000.x.devtunnels.ms>
-    >
-    > Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
-    > Ready to accept connections for tunnel: x.x
+    <!-- markdownlint-disable-next-line MD033 -->
+    Connect via browser: https<nolink>://x.devtunnels.ms:3000, https<nolink>:://x-3000.x.devtunnels.ms
+    <!-- markdownlint-disable-next-line MD033 -->
+    Inspect network activity: https<nolink>:://x-3000-inspect.x.devtunnels.ms
+    Ready to accept connections for tunnel: x.x
 
     ![MCP](./assets/MCP_ChooseDevTunnel.png)
 
