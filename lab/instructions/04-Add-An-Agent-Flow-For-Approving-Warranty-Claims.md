@@ -181,9 +181,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown category and are within the coverage window. Click the **arrow** to close out of this window.
+1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Auto-Approved```. What we're doing here is for our process, we want to auto-approve any warranty claims that aren't unknown category and are within the coverage window.
 
-    ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfig.png)
+    ![Approval Outcome Config](./assets/FlowApprovalOutcomeConfigInline.png)
 
 1. Now we want to fill in the approval notes. To do this, expand out the **True** dropdown and select the **Plus button**
 
