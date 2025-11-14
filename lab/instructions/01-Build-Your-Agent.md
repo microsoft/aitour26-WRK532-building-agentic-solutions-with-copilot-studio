@@ -17,13 +17,13 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     <!-- markdownlint-disable-next-line MD034 -->
     **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
 
-1. Select **Next** at the `Let's keep your account secure` screen
+1. Select **Next** at the *Let's keep your account secure* screen
 
-1. On the `Install Microsoft Authenticator` page, select **Setup a different authenticator** app.
+1. On the *Install Microsoft Authenticator* page, select **Setup a different authenticator** app.
 
-1. On the `Set up your account in app` page, select **Next**.
+1. On the *Set up your account in app* page, select **Next**.
 
-1. Open the **Contoso Authenticator App** by selecting it on your desktop.
+1. Open the *Contoso Authenticator App* by selecting it on your desktop.
 
 1. If necessary, move the App to ensure that the QR Code is fully visible on the screen.
 
@@ -31,7 +31,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. On the web page, select **Next** and then paste the 6-digit code.
 
-1. On the **Authenticator app added!** page, select **Done**.
+1. On the *Authenticator app added!* page, select **Done**.
 
 1.
 
