@@ -138,7 +138,7 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     <!-- markdownlint-disable-next-line MD033 -->
     > [!Alert] It's very important to select the URL that looks like this: https<nolink>://x-3000.x.devtunnels.ms
     >
-    > The other URL - with *:3000* in the URL - will give you errors later on.
+    > DO NOT USE the other URL (with *:3000* in the URL) will give you errors later on.
 
 1. Open the second URL after connect via browser by using **ctrl + click**
 
