@@ -136,8 +136,8 @@ Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, U
 
     Press **Enter**
 
-1. Watch the Activity Panel on the left hand side to see how the agent calls the prompt and passes in the information and does the check in the Warranty Policy knowledge source to find and return the necessary information.
+1. Watch the *Test your agent* panel on the left hand side to see how the agent calls the prompt and passes in the information and does the check in the Warranty Policy knowledge source to find and return the necessary information.
 
-    ![Additional Details](./assets/WarrantyPolicyPromptTest.png)
+    ![Additional Details](./assets/WarrantyPolicyPromptTestPanel.png)
 
 You've just successfully added additional functionality to your agent to handle extracting warranty claim details using an AI Prompt. Now, we'll see how to improve this warranty claim review process by adding in an approval process.
