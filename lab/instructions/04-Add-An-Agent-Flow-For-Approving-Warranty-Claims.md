@@ -169,11 +169,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Change the condition dropdown to **is not equal to**
 
-    ![Not Equal To](./assets/FlowConditionNotEqual.png)
+1. In the right text input type ```Unknown```. Verify that your Condition action matches the screenshot below.
 
-1. In the right text input type ```Unknown```. Verify that your Condition action matches the screenshot below. Click the **arrow** to close out of this panel.
-
-    ![Condition Filled](./assets/FlowConditionFilled.png)
+    ![Condition Filled](./assets/FlowConditionFilledInline.png)
 
 1. Now that we have our conditions we want to check for, we need to tell the flow what would happen if it meets those conditions and what to do if it doesn't. To do this, expand out the **True** dropdown and select the **Plus button**
 
