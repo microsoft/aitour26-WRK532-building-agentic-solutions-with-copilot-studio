@@ -215,9 +215,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Set Variable](./assets/FlowNoSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```. Click the **arrow** to close out of this window.
+1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```.
 
-    ![Approval Message Config](./assets/FlowFalseApprovMessageConfig.png)
+    ![Approval Message Config](./assets/FlowFalseApprovMessageConfigInline.png)
 
 1. We are in the home stretch now. All that's left is to pass the data of the approval outcome back to the agent. To do that, scroll to the bottom and click to expand the **Respond to the agent** action and select the **Add an output** button
 
