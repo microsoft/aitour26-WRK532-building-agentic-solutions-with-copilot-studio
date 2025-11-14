@@ -193,9 +193,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Set Variable](./assets/FlowYesSetVarSelect.png)
 
-1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and meets all requirements to be auto-approved```. Click the **arrow** to close out of this window.
+1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and meets all requirements to be auto-approved.```
 
-    ![Approval Message Config](./assets/FlowCondTrueVar2Config.png)
+    ![Approval Message Config](./assets/FlowCondTrueVar2ConfigInline.png)
 
 1. Now we need to tell the flow what to do if it doesn't meet these conditions. To configure this, expand the **False** section and select the **Plus Button**
 
