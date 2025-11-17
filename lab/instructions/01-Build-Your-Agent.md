@@ -63,6 +63,8 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Hover over the **environment icon (the globe)** in the bar at the top of your screen and see if *studentXXXDev* shows. Example: if you have student100, it should show *student100Dev*
 
+    ![Check environment](./assets/CheckEnvironment.png)
+
 1. In the left nav click **+ Create** button to start creating a new agent
 
     ![create.png](./assets/AgentsLeftNav.png)
