@@ -67,18 +67,19 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. In the left nav click **+ Create** button to start creating a new agent
 
-    ![create.png](./assets/AgentsLeftNav.png)
+    ![create.png](./assets/CreateLeftNav.png)
 
 1. Click **New agent**
 
     ![create-new-agent.png](./assets/NewAgent.png)
 
-    > [!NOTE]
-    > It could take a minute or two for the agent to fully configure. You'll see a message that says your agent is provisioned when it's ready.
+1. Select **Configure** to configure your agent
 
-1. When the agent is provisioned, select **Edit** in the details card
+    ![Configure your agent](./assets/ConfigureName.png)
 
-1. Name your agent +++Zava Order Support+++ and select **Save**
+1. Name your agent +++Zava Order Support+++ and select **Create**
+
+    ![Create button](./assets/CreateButton.png)
 
 1. Now, you need to equip it with knowledge so it can answer questions about the company, shipping policies, etc. To do this, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
