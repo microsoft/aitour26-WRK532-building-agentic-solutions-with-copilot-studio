@@ -2,25 +2,7 @@
 
 Now that we’ve got an agent that can answer questions from knowledge and integrate with our MCP server for real time operations, we’ll give the agent additional capabilities by integrating an AI prompt to process warranty claims. In this section, we’ll add a Warranty Policy knowledge source (category-based rules), then use a single AI prompt to turn messy, pasted claim text into clean fields and even intelligently classify the claim.
 
-1. In your agent overview screen (select the overview tab to get to it), scroll down to the knowledge section and select the **Add Knowledge** tab.
-
-    ![AddKnowledge.png](./assets/AddKnowledgeStep3.png)
-
-1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_warranty_policy** document.
-
-    ![DragAndDrop.png](./assets/DragAndDropFile.png)
-
-1. Verify the files are added and select **Add to Agent**
-
-    ![AddToAgent.png](./assets/WarrantyVerifyKnowledge.png)
-
-1. You'll know your files are ready to use when you see the **Ready** checkbox next to each file.
-
-    ![Ready.png](./assets/WarrantyKnowledgeReady.png)
-
-    Now that we have the Warranty Claim knowledge source added, we want to build our AI Prompt to extract information from the claim.
-
-1. Scroll down to the Tools section and select **Add tool**
+1. In your agent overview screen (select the overview tab to get to it), scroll down to the Tools section and select **Add tool**
 
     ![Add Tool](./assets/NewTool.png)
 

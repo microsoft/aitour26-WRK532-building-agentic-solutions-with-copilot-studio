@@ -85,7 +85,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![AddKnowledge.png](./assets/AddKnowledgeBtn.png)
 
-1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq** and **zava_returns_shipping_policy documents**.
+1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq**, **zava_returns_shipping_policy documents** & **zava_warranty_policy**.
 
     ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
