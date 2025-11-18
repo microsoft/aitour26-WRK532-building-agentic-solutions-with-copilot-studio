@@ -122,7 +122,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![CloseSettings.png](./assets/SaveSettings.png)
 
-1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
+1. Now we need to test the agent. Select the **Test** button in the upper right corner, type in the following and press **Enter**
 
     ```text
     What is your return policy?
