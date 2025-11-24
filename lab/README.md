@@ -6,13 +6,20 @@ These instructions are for participants of the **instructor-led** Workshop Build
 
 This hands-on session with Microsoft Copilot Studio guides you through the full agent lifecycle—from purpose-driven design to advanced capabilities. Learn how to build, integrate, automate, and deploy a fully functional agent using tools like Agent Flows and MCP. Walk away with practical skills to customize agents for real-world business needs.
 
-## Pre-Requisites
+## Pre-Requisites for AI Tour
 
-To participate in this workshop, you will need:
+To participate in this lab, you will need:
 
 1. Your own laptop.
-   * It need only be capable of running a browser and GitHub Codespaces, so almost any laptop will do.
+   * It need only be capable of running a browser, so almost any laptop will do.
    * A recent version of Edge, Chrome or Safari is recommended.
+
+## Pre-Requisites for at home
+
+If you want to run this lab by yourself, make sure to install the following software:
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Python](https://www.python.org/downloads/)
+- [DevTunnels CLI](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows)
 
 ## Get Started
 
