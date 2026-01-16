@@ -92,22 +92,4 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![CloseSettings.png](./assets/SaveSettings.png)
 
-1. Now we need to test the agent. Ensure that the test panel is open on the right hand side of the page, type in the following and press **Enter**
-
-    ```text
-    What is your return policy?
-    ```
-
-    ![TestBefore.png](./assets/TestBeforeEnter.png)
-  
-> [!NOTE]
-    > Don't forget to check that your files have finished uploading and show Ready status before testing.
-
-1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
-
-    ![TestAfter.png](./assets/TestAfter.png)
-
-    > [!TIP]
-    > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot above. That's ok and expected. The important thing here is to observe the Activity Map and how you can tell the agent is pulling from your knowledge.
-
 Congratulations! You have setup an agent that can answer questions about static data from files! We will test it out to make sure it's working in future steps to allow more time for the files to process. Next ,we'll integrate it with an MCP server.

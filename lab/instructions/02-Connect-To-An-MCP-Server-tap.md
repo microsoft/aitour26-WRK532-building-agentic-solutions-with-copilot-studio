@@ -240,17 +240,13 @@ We are going to fix this error in the next steps.
 
     ![Create Connection](./assets/MCPCreateConnection.png)
 
-1. Select **Add to agent**
+1. Select **Add and configure**
 
     ![Add to agent](./assets/AddToAgent.png)
 
     Now it's time to test the agent with the MCP Server!
 
-1. Select the **Map** icon in the top right corner of the *Test your agent* panel to activate the *Activity map*. This will help you understand what is happening when you are sending and receiving messages in the *Test your agent* panel.
-
-    ![Activity Map](./assets/ActivityMap.png)
-
-1. Now, enter the following message and send it in the *Test your agent* panel:
+1. Ensure the Test pane is open and enter the following message and send it in the *Test your agent* panel:
 
     ```text
     List the Zava Stores
@@ -316,5 +312,8 @@ We are going to fix this error in the next steps.
     As you can see, we didn't add United States to the message, but it automatically added that based on the details in the message.
 
     ![Add Zava store activity map](./assets/AddZavaStoreActivityMap.png)
+
+    > [!NOTE]
+    > You may get different results. For example, the agent might ask you for the city or country of the store. This means it wasn't able to get all the information from the message. If this happens, reply back with the information and it should continue adding the store.
 
 This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools in the MCP Server.
