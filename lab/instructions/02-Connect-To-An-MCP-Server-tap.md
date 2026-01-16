@@ -40,7 +40,13 @@ Make sure to look around in these files to see what's going on in the server. No
 ## Install dependencies
 
 1. Open the terminal by selecting **Terminal > New Terminal**
+
+    ![New terminal](./assets/02-newterminal.png)
+
 1. Make sure you are in the following folder: **D:\LabFiles\ZavaInventoryMCP**
+
+    ![Directory](./assets/02-directory.png)
+
 1. Create a new virtual environment by running the following command (press **Enter** after pasting in the terminal to run it):
 
     ```bash
@@ -59,6 +65,10 @@ Make sure to look around in these files to see what's going on in the server. No
     pip install -r src/requirements.txt
     ```
 
+1. Your terminal should look something roughly like this once done with all the commands run so far.
+
+    ![Terminal](./assets/02-terminalcheck1.png)
+
 ## Run the MCP Server
 
 1. Now it's time to run the MCP Server. Use the following command to start the Zava Inventory MCP Server.
@@ -66,6 +76,8 @@ Make sure to look around in these files to see what's going on in the server. No
     ```bash
     python src/server.py
     ```
+
+    ![Terminal](./assets/02-runmcp.png)
 
 After running the MCP Server, you're not there yet. The MCP Server is only running locally right now, so you need to make sure the MCP Server is available through a public URL. This is a requirement for Microsoft Copilot Studio. Because it's a cloud service, it's not able to reach your localhost.
 
@@ -144,6 +156,10 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     > The other URL - with *:3000* in the URL - will give you errors later on.
 
 1. Open the second URL after connect via browser by using **ctrl + click**
+
+    You may see a **connection isn't private error**. If you do, select **Advanced** and click the **Continue** link
+
+    ![Dev Tunnel Continue](./assets/02-privatecontinue.png)
 
     Now your browser will be opened and you will see a warning like this:
 

@@ -32,34 +32,34 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![step6.png](./assets/step6.png)
 
-1. In the left nav click **+ Create** button to start creating a new agent
+1. In the left nav click **Agents** button to start creating a new agent
 
-    ![create.png](./assets/CreateLeftNav.png)
+    ![create.png](./assets/01-AGentsLeftNav.png)
 
-1. Click **New agent**
+1. Select **Create blank agent**
 
-    ![create-new-agent.png](./assets/NewAgent.png)
-
-1. While we could use natural language to setup the agent for this exercise, we will skip and configure it manually by selecting the **Configure** tab.
-
-    ![step9.jpg](./assets/ConfigreTab.png)
-
-1. In the name field, type +++Zava Order Support+++ and then click the **Create** button
-
-    ![AgentName.png](./assets/ConfigureName.png)
+    ![create-new-agent.png](./assets/01-createblankagents.png)
 
     > [!NOTE]
     > It could take a minute or two for the agent to fully configure. You'll see a message that says your agent is provisioned when it's ready.
 
-1. Now that your agent is created, you need to equip it with knowledge so it can answer questions about the company, shipping policies, etc. To do this, in your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
+1. Click the **Edit** button in the Details panel.
+
+    ![AgentName.png](./assets/01-editagentname.png)
+
+1. In the name field, type +++Zava Order Support+++ and then click the **Save** button
+
+    ![AgentName.png](./assets/01-savename.png)
+
+1. Now you need to equip your agent with knowledge so it can answer questions about the company, shipping policies, etc. To do this, in your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeBtn.png)
 
-1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq** and **zava_returns_shipping_policy documents**.
+1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq**, **zava_returns_shipping_policy and warranty_policy documents**.
 
     ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
-1. Verify the files are added and select **Add to Agent**
+1. Verify the files are added then select **Add to Agent**
 
     ![AddToAgent.png](./assets/UploadedFiles.png)
 
@@ -68,7 +68,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     ![Ready.png](./assets/Ready.png)
 
     > [!NOTE]
-    > The process of uploading the files can take around 5 minutes to complete. You can continue on to the next steps while the files are processing.
+    > The process of uploading the files can take 5 - 20 minutes to complete. You can continue on to the next steps while the files are processing. The files must show **ready** status before you can properly test the agent.
 
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the **Instructions** section and select the **Edit** button and paste in the following instructions:
 
@@ -84,7 +84,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![SettingsBtn.png](./assets/SettingsBtn.png)
 
-1. Scroll down toward the bottom of the page to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it is using, which in our case is the GPT 4.1 default model. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. So, depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Use general knowledge** setting to **Off**.
+1. Scroll down to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it's using. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. Depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Use general knowledge** setting to **Off**.
 
     ![GeneralKnowledge.png](./assets/GenKnowledgeOff.png)
 
@@ -110,4 +110,4 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     > [!TIP]
     > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot above. That's ok and expected. The important thing here is to observe the Activity Map and how you can tell the agent is pulling from your knowledge.
 
-Congratulations! You have setup an agent that can answer questions about static data from files! Next ,we'll integrate it with an MCP server.
+Congratulations! You have setup an agent that can answer questions about static data from files! We will test it out to make sure it's working in future steps to allow more time for the files to process. Next ,we'll integrate it with an MCP server.
