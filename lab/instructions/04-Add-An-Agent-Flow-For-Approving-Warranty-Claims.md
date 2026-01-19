@@ -97,26 +97,10 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Days Since Purchase Variable](./assets/FlowDaysPurcFx.png)
 
-1. Select the **Create Expression with Copilot** Button
-
-    ![Expression with Copilot](./assets/FlowCreateExpressionCopilot.png)
-
-1. In the box type the following:
-
-    ```Calculate the number of days difference between the current date and the Purchase Date Input```
-
-    Select **Create Expression**
-
-    ![Expression with Copilot](./assets/FlowCreateExpBtn.png)
-
-1. Verify the formula in the **Suggested expression** box and select the **OK** button.
-
-    ![OK Button](./assets/FlowCreateExpOK.png)
-
-    If you don't see the **Create Expression with Copilot** button you can copy and paste the following formula in the formula input.
+1. In the expression textbox, paste the following expression.
 
     ```text
-    sub(int(div(sub(ticks(utcNow()), ticks(triggerBody()?['text_4'])),864000000000)),0)
+    sub(int(div(sub(ticks(utcNow()), ticks(triggerBody()?['text_1'])),864000000000)),0)
     ```
 
 1. Verify the formula is added to the expression box and select the **Add** button
