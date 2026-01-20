@@ -4,11 +4,13 @@ Now that you've got the agent fully configured, it's time to test.
 
 ## Testing the Knowledge Sources
 
+First, we are going to test those knowledge sources that we added way back at the beginning of the lab.
+
 1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Select the **New test session** button.
 
     ![New Test](./assets/05-newtestsession.png)
 
-1. First, let's test those knowledge sources we added back in the first section of the lab. Type in the following and press **Enter**
+1. To test those knowledge sources we added back in the first section of the lab. Type in the following and press **Enter**
 
     ```text
     What is your return policy?
@@ -17,18 +19,18 @@ Now that you've got the agent fully configured, it's time to test.
     ![TestBefore.png](./assets/TestBeforeEnter.png)
   
 > [!NOTE]
-    > Don't forget to check that your files have finished uploading and show Ready status before testing.
+    > Don't forget to check that your files have finished uploading and show Ready status before testing. If they don't show a **Ready** status then you won't get accurate results.
 
 1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
 
     ![TestAfter.png](./assets/TestAfter.png)
 
     > [!TIP]
-    > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot above. That's ok and expected. The important thing here is to observe the Activity Map and how you can tell the agent is pulling from your knowledge.
+    > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot. That's ok and expected. The important thing here is to observe the Activity Map and how you can tell the agent is pulling from your knowledge sources.
 
-## Testing the Warranty Claim Prompt
+## Testing a Warranty Claim that needs escalation
 
-Now we'll test the AI Prompt which helps process warranty claims.
+Now we'll test the mixture of the AI Prompt and Agent flow which helps process warranty claims. We'll start by testing if it can handle a warranty claim that needs escalation for approval.
 
 1. Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
 1. Paste in the following text in the test window:
@@ -39,27 +41,33 @@ Now we'll test the AI Prompt which helps process warranty claims.
 
     Press **Enter**
 
-1. Watch the *Test your agent* panel on the left hand side to see how the agent calls the prompt and passes in the information and does the check in the Warranty Policy knowledge source to find and return the necessary information.
+1. Watch the *Test your agent* panel on the left hand side. Notice how it first calls the Warranty Claim Processor prompt to extract all of the key information from your message. It then looks for the relevant knowledge and finally it calls the Auto Approval Claims Agent Flow.
 
-    ![Additional Details](./assets/WarrantyPolicyPromptTestPanel.png)
+    ![Additional Details](./assets/test-reject.png)
 
-## Testing the Agent Flow
+This particular item does not meet the requirements in the Agent Flow for auto-approval as you can see from the response.
 
-1. Now we'll test to make sure the Agent Flow is working. Type the following in the test window and press **Enter** to send in the prompt:
+## Testing a Warranty Claim for Auto-Approval
+
+Now we'll test to make sure that the warranty claim process is working to auto-approve a claim.
+
+1. Type the following in the test window and press **Enter** to send in the prompt:
 
     ```text
-    Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2025-08-22, order A12876. After two commutes the main zipper pull detached; the teeth misaligned and the main compartment won’t close. Used under normal conditions.
+    Help me process a warranty claim for customer Alex Morgan. Address: 123 Maple Lane, Tulsa, OK 74104. Product: Zava Backpack (SKU BP-010) purchased from Zava Online on 2026-01-15, order A12876. After two commutes the main zipper pull detached; the teeth misaligned and the main compartment won’t close. Used under normal conditions.
     ```
 
     ![Variable Filled](./assets/TestPrompt.png)
 
-1. Watch the *Test your agent* panel and notice how the agent calls the Warranty Claim Processor Prompt, pulls in knowledge and calls the flow. Since it's using generative AI, your response may vary. The important thing is to confirm you see the **Auto Approval Claims** action get called in the *Test your agent* panel and you get a response. Feel free to test a different scenario where the purchase date is not within the warranty period, say 2024-09-30, and verify that you get a different outcome.
+1. Watch the **Activity Pane** and observe how the agent calls the Warranty Claim Processor Prompt, pulls in knowledge and calls the agent flow. Notice that the message is different this time, showing that this claim meets requirements for auto-approval.
 
     ![Variable Filled](./assets/TestSuccess.png)
 
 > [!NOTE]
-    > The agent might ask you for additional information such as the warranty coverage days. That is because sometimes, it can fail to pick up the necessary context from the chat. If this happens, reply with 10.
+    > The agent might ask you for additional information such as the warranty coverage days. That happens if it fails to pick up the necessary context from the chat.
 
 Congratulations! You’ve now built and tested an Order Management Agent in Copilot Studio that can pull from knowledge, consume and write to internal data through MCP and integrates with AI Prompts and Agent Flows.
 
-Your work here is done! If there's time left feel free to play around with your agent and test other capabilities. Click **Next** and **Submit** and **Yes** if it asks about submitting for grading to close out of the lab. Don't worry - nothing is graded, if you finish the lab you get a gold star!
+Your work here is done! If there's time left feel free to play around with your agent and test other capabilities.
+
+Click **Next** and **Submit** and **Yes** if it asks about submitting for grading to close out of the lab. Don't worry - nothing is graded, if you finish the lab you get a gold star!

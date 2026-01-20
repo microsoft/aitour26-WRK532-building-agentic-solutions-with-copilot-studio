@@ -304,7 +304,7 @@ We are going to fix this error in the next steps.
     ```text
     Please add the following Zava Store:
     Zava Chicago
-    1597 Virginia Street, Chicago, Illinois, IL 60618
+    1597 Virginia Street, Chicago, Illinois, IL 60618, US
     ```
 
     ![Add Zava store via message](./assets/AddZavaStore.png)

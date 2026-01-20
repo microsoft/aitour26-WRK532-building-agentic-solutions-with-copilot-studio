@@ -3,5 +3,6 @@
         "agentic",
         "venv",
         "Zava"
-    ]
+    ],
+    "codeQL.githubDatabase.download": "never"
 }
