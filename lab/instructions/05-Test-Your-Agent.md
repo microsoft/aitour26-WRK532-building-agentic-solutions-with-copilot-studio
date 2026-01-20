@@ -18,8 +18,8 @@ First, we are going to test those knowledge sources that we added way back at th
 
     ![TestBefore.png](./assets/TestBeforeEnter.png)
   
-> [!NOTE]
-    > Don't forget to check that your files have finished uploading and show Ready status before testing. If they don't show a **Ready** status then you won't get accurate results.
+    > [!NOTE]
+        > Don't forget to check that your files have finished uploading and show Ready status before testing. If they don't show a **Ready** status then you won't get accurate results.
 
 1. Review the output and notice the Activity Pane that displays on the left hand side showing where it pulled the answer from.
 
@@ -28,9 +28,9 @@ First, we are going to test those knowledge sources that we added way back at th
     > [!TIP]
     > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot. That's ok and expected. The important thing here is to observe the Activity Map and how you can tell the agent is pulling from your knowledge sources.
 
-## Testing a Warranty Claim that needs escalation
+## Testing a Warranty Claim Not Eligible for Auto-Approval
 
-Now we'll test the mixture of the AI Prompt and Agent flow which helps process warranty claims. We'll start by testing if it can handle a warranty claim that needs escalation for approval.
+Now we'll test the mixture of the AI Prompt and Agent flow which helps process warranty claims. We'll start by testing if it can handle a warranty claim that doesn't meet auto-approval requirements.
 
 1. Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
 1. Paste in the following text in the test window:
@@ -45,7 +45,7 @@ Now we'll test the mixture of the AI Prompt and Agent flow which helps process w
 
     ![Additional Details](./assets/test-reject.png)
 
-This particular item does not meet the requirements in the Agent Flow for auto-approval as you can see from the response.
+This particular item doesn't meet the requirements in the Agent Flow for auto-approval as you can see from the response.
 
 ## Testing a Warranty Claim for Auto-Approval
 
