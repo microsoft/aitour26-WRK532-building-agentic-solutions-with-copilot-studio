@@ -6,7 +6,7 @@ Now that you've got the agent fully configured, it's time to test.
 
 First, we are going to test those knowledge sources that we added way back at the beginning of the lab.
 
-1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Select the **New test session** button.
+1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Start a new test session by clicking on the **+ icon** in the test pane. Depending on your screen resolution, you may either see only the **+ icon** or **+ New test session**.
 
     ![New Test](./assets/05-newtestsession.png)
 
@@ -32,7 +32,10 @@ First, we are going to test those knowledge sources that we added way back at th
 
 Now we'll test the mixture of the AI Prompt and Agent flow which helps process warranty claims. We'll start by testing if it can handle a warranty claim that doesn't meet auto-approval requirements.
 
-1. Click on the **Test** button in the upper right hand corner to open the Test Panel (if it isn't already open)
+1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Start a new test session by clicking on the **+ icon** in the test pane. Depending on your screen resolution, you may either see only the **+ icon** or **+ New test session**.
+
+    ![New Test](./assets/05-newtestsession.png)
+
 1. Paste in the following text in the test window:
 
     ```text
@@ -50,6 +53,10 @@ This particular item doesn't meet the requirements in the Agent Flow for auto-ap
 ## Testing a Warranty Claim for Auto-Approval
 
 Now we'll test to make sure that the warranty claim process is working to auto-approve a claim.
+
+1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Start a new test session by clicking on the **+ icon** in the test pane. Depending on your screen resolution, you may either see only the **+ icon** or **+ New test session**.
+
+    ![New Test](./assets/05-newtestsession.png)
 
 1. Type the following in the test window and press **Enter** to send in the prompt:
 

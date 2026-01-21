@@ -2,6 +2,65 @@
 
 In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management that provides tools for managing products (like get_products and add_product), stores (such as get_stores and add_store), and inventory operations (including list_inventory_by_store). The MCP server is available on **D:\LabFiles\ZavaInventoryMCP**.
 
+## What is Model Context Protocol (MCP) and why are we using it?
+
+Model Context Protocol (MCP) provides a way to let an AI agent safely use tools that live outside of Copilot Studio.
+
+Instead of you telling the agent exactly *which* API to call and *when* to call it, MCP lets you describe **what the system can do**, and the agent figures out how to use those capabilities based on the user’s request.
+
+You can think of an MCP server like a menu:
+
+- It lists what actions are available (for example: get products, add a store, check inventory)
+- Each action has a clear name and expected inputs
+- The agent chooses the right action when it needs it
+
+---
+
+### Why not just use flows or custom connectors?
+
+Traditional integrations usually require you to:
+
+- Build a flow for each scenario
+- Decide ahead of time which API is called
+- Manually manage multi-step logic
+
+With MCP, you don’t build a flow for every path.  
+You expose **capabilities**, and the agent decides how to use them.
+
+This means:
+
+- Fewer flows to design and maintain
+- Less hard-coded logic
+- More flexible conversations
+
+---
+
+### Why MCP is a good fit for agents
+
+Agents don’t just respond once, they can:
+
+- Ask follow-up questions
+- Decide what information is missing
+- Call multiple tools to complete a task
+
+MCP supports this by allowing the agent to:
+
+- Discover available tools
+- Call more than one tool if needed
+- Use the results to decide the next step
+
+In this lab, you’ll see the agent automatically:
+
+- List stores
+- Look up inventory
+- Add new records
+
+All without you building a flow or explicitly telling it each step.
+
+That’s the main value MCP brings.
+
+Now, onto the lab!
+
 ## Open the MCP Server in Visual Studio Code
 
 1. Open Visual Studio Code by selecting Visual Studio Code in the taskbar
@@ -35,7 +94,9 @@ Expand the **Data** folder to see what's in this folder.
 - **data/stores.json**: Sample store data with store locations
 - **data/inventory.json**: Sample inventory records with stock entries
 
-Make sure to look around in these files to see what's going on in the server. Now, let's install the dependencies so that we can run the server locally.
+These files are the sample “database” for the lab, the server reads and writes to them. Feel free to look around in these files to see what's going on in the server.
+
+Now, let's install the dependencies so that we can run the server locally.
 
 ## Install dependencies
 
@@ -308,8 +369,6 @@ We are going to fix this error in the next steps.
     ```
 
     ![Add Zava store via message](./assets/AddZavaStore.png)
-
-    As you can see, we didn't add United States to the message, but it automatically added that based on the details in the message.
 
     ![Add Zava store activity map](./assets/AddZavaStoreActivityMap.png)
 
