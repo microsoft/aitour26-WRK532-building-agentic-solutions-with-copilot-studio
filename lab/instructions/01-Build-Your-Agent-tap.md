@@ -15,13 +15,10 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     **Username:** +++@lab.CloudCredential(CSBatch1).Username+++
 
     <!-- markdownlint-disable-next-line MD034 -->
-    **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
-
-    <!-- markdownlint-disable-next-line MD034 -->
     **Temporary Access Password:** +++@lab.Variable(TAP)+++
 
     > [!NOTE]
-    > If the Temporary Access Password isn’t showing up, try refreshing the browser to reload the VM. If it still doesn’t appear, select **Use your password instead**. This may require you to set up MFA. If MFA setup is required, you’ll unfortunately be blocked from completing the lab.
+    > If the Temporary Access Password isn’t showing up, try refreshing the browser to reload the VM. If it still doesn’t appear, you’ll unfortunately be blocked from completing the lab.
 
 1. After logging in, you'll see a message letting you know it's configuring your developer environment. Wait until that finishes (shouldn't take more than a minute)
 
