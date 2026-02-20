@@ -253,13 +253,9 @@ We are going to fix this error in the next steps.
 
     ![Add Tool](./assets/AddTool1.png)
 
-1. Select **+ New tool**
-
-    ![New Tool](./assets/NewTool2.png)
-
 1. Select **Model Context Protocol**
 
-    ![New Tool MCP](./assets/ToolMCP.png)
+    ![New Tool](./assets/MCP-create.png)
 
 1. Enter the **Name**:
 
