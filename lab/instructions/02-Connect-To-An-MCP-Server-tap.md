@@ -301,6 +301,9 @@ We are going to fix this error in the next steps.
 
     ![Add to agent](./assets/AddToAgent.png)
 
+    > [!NOTE]
+    > Now the MCP server is added to the agent. You will land on the Zava Inventory MCP page where you can see and explore all the tools in this server.    
+
     Now it's time to test the agent with the MCP Server!
 
 1. Ensure the Test pane is open and enter the following message and send it in the *Test your agent* panel:
