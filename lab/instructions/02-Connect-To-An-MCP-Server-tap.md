@@ -257,13 +257,13 @@ We are going to fix this error in the next steps.
 
     ![New Tool](./assets/MCP-create.png)
 
-1. Enter the **Name**:
+1. Enter the **Server name**:
 
     ```text
     Zava Inventory MCP
     ```
 
-1. Enter the **Description**:
+1. Enter the **Server description**:
 
     ```text
     MCP server that provides tools for managing Zava's product inventory, store locations, and stock operations across multiple retail locations.
