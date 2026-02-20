@@ -20,19 +20,19 @@ Now that we’ve got an agent that can answer questions from knowledge and integ
 
 1. Paste the following instructions into the instructions panel of the prompt:
 
-```text
-Review the [add input here] and extract this key information:
-Product Name
-SKU
-Purchase Date
-Order Number
-Claimant Name
-Product Category (Group into either Electronics, Furniture, Home & Garden, Sports & Fitness, Kitchen, Accessories)
-Issue Summary
-Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, Unknown)
-```
+    ```text
+    Review the [add input here] and extract this key information:
+    Product Name
+    SKU
+    Purchase Date
+    Order Number
+    Claimant Name
+    Product Category (Group into either Electronics, Furniture, Home & Garden, Sports & Fitness, Kitchen, Accessories)
+    Issue Summary
+    Issue Category (i.e., Physical Damage, Wear and Tear, Misuse, Dead On Arrival, Unknown)
+    ```
 
-![Instructions](./assets/InstructionsPasted.png)
+    ![Instructions](./assets/InstructionsPasted.png)
 
 1. Delete the **[add input here]** text and type a **forward slash (/)** and select **text** to add a new variable
 
