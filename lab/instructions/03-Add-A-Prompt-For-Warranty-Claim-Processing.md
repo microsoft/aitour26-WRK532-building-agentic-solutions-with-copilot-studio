@@ -6,13 +6,9 @@ Now that we’ve got an agent that can answer questions from knowledge and integ
 
     ![Add Tool](./assets/NewTool.png)
 
-1. Select **New Tool**
+1. Select **Prompt** in the *Create new* section
 
-    ![New Tool](./assets/NewTool3.png)
-
-1. Select **Prompt**
-
-    ![Prompt Selection](./assets/PromptSelection.png)
+    ![New Tool](./assets/add-prompt.png)
 
 1. Click in the top bar next to the icon and rename the prompt to  ```Warranty Claim Processor```
 
