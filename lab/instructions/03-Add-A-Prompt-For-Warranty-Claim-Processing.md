@@ -74,8 +74,6 @@ Now that we’ve got an agent that can answer questions from knowledge and integ
     Fill with the details of the warranty claim pasted in the chat from the user.
     ```
 
-    ![Additional Details](./assets/PromptDescriptionSave.png)
-
 1. Click the **Save** button to save all of your changes.
 
     ![Additional Details](./assets/PromptDescriptionSave.png)
