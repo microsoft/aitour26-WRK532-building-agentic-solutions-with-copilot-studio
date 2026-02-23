@@ -8,6 +8,8 @@ You are a solutions engineer tasked with building a retail agent for Zava, a com
 
 Finally, you’ll extend the agent to handle warranty claims end-to-end. By layering in AI prompts and a guided approval flow, the agent will be able to take unstructured customer input, extract the right details, and decide whether a claim qualifies for automatic approval or needs escalation. The end result is a single agent that combines knowledge, live system access, and structured decision making to streamline Zava’s customer and store operations.
 
+## Log into the machine
+
 <!-- markdownlint-disable-next-line MD034 -->
 The green text with the +++icon+++ can be clicked on and will be typed automatically into the VM, For example, please click in the password text box and then click the password: +++@lab.VirtualMachine(WRK532).Password+++
 
