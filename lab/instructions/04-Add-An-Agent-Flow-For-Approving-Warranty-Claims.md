@@ -7,13 +7,9 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 1. To create a new agent flow, scroll down to the Tools section and select **Add Tool**
     ![New Tool](./assets/NewToolAgentFlow1.png)
 
-1. Select **New Tool** in the dialog
-
-    ![New Tool](./assets/NewTool2.png)
-
 1. Select **Agent Flow**. This will route you to a new agent flow that you'll need to configure.
 
-    ![Agent Flow](./assets/AgentFlowBtn.png)
+    ![Agent Flow](./assets/add-agent-flow.png)
 
 1. You'll see two items on the screen, the trigger which kicks off the flow and the response which returns data back to the agent. The first thing we need to do is configure any inputs that we want to pass into our flow from the agent to use in the flow. To add these inputs, select the **When an agent calls the flow** trigger.
 
