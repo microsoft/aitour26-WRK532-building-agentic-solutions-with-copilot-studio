@@ -70,6 +70,10 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     > [!NOTE]
     > The process of uploading the files can take 5 - 20 minutes to complete. You can continue on to the next steps while the files are processing. The files must show **ready** status before you can properly test the agent.
 
+    Don't worry if it looks like the following screenshot. Please continue the lab, we'll come back to this later.
+
+    ![In progress](./assets/in-progress.png)
+
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the **Instructions** section and select the **Edit** button and paste in the following instructions:
 
     ```text
