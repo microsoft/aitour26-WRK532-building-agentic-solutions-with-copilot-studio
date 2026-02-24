@@ -183,7 +183,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Search for ```variable``` and select the **Set Variable** action.
 
-    ![Set Variable](./assets/FlowYesSetVarSelect.png)
+    ![Set Variable](./assets/FlowNoSetVarSelect.png)
 
 1. In the **Name** Dropdown select the **Approval Outcome** variable.  In the **Value** input type ```Needs Exception Approval```. This will return back to the user informing them it couldn't be auto-approved and escalation is needed
 
@@ -193,7 +193,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Search for ```variable``` and select the **Set Variable** action
 
-    ![Set Variable](./assets/FlowNoSetVarSelect.png)
+    ![Set Variable](./assets/FlowSetVarSelect.png)
 
 1. In the **Name** Dropdown select the **Approval Message** variable.  In the **Value** input type ```The Warranty Claim has been reviewed and it is not within the approved warranty policy guidelines. You can request a review for an exception if you'd like.```
 
