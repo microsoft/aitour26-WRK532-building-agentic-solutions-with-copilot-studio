@@ -1,7 +1,5 @@
 # 1 - Build your agent
 
-
-
 To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open Microsoft Edge and navigate to
@@ -20,7 +18,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     **Temporary Access Password:** +++@lab.Variable(TAP)+++
 
     > [!NOTE]
-    > If the Temporary Access Password isn’t showing up, select the button on the top of this page that says **Refresh your credentials**
+    > If the Temporary Access Password isn’t showing up, select the button on the top of this page that says **Refresh Credentials**
 
 1. After logging in, you'll see a message letting you know it's configuring your developer environment. Wait until that finishes (shouldn't take more than a minute)
 
