@@ -1,5 +1,7 @@
 # 1 - Build your agent
 
+
+
 To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open Microsoft Edge and navigate to
@@ -15,35 +17,10 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     **Username:** +++@lab.CloudCredential(CSBatch1).Username+++
 
     <!-- markdownlint-disable-next-line MD034 -->
-    **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
+    **Temporary Access Password:** +++@lab.Variable(TAP)+++
 
-1. Select **Next** at the *Let's keep your account secure* screen
-
-1. On the *Install Microsoft Authenticator* page, select **Setup a different authenticator** app
-
-    ![Set up a different authentication app](./assets/SetupDifferentAuthApp.png)
-
-1. On the *Set up your account in app* page, select **Next**
-
-1. Open the *Contoso Authenticator App* by selecting it on your desktop or on the task bar
-
-    ![Contoso Authenticator on the desktop](./assets/contoso-authenticator.png)
-
-1. If necessary, move the App to ensure that the QR Code is fully visible on the screen
-
-1. Select the **Scan QR from Screen** button and then **copy** the available 6-digit code
-
-    ![Scan QR from Screen](./assets/ScanQRCode.png)
-
-1. Select **OK** in the *Copied - OTP copied to clipboard* page
-
-1. On the web page, select **Next** and then paste the 6-digit code
-
-    ![Enter Code](./assets/EnterCode.png)
-
-1. On the *Authenticator app added* page, select **Done**
-
-1. On the *Stay signed in* page, select **Yes**
+    > [!NOTE]
+    > If the Temporary Access Password isn’t showing up, select the button on the top of this page that says **Refresh your credentials**
 
 1. After logging in, you'll see a message letting you know it's configuring your developer environment. Wait until that finishes (shouldn't take more than a minute)
 
@@ -57,39 +34,34 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![step6.png](./assets/step6.png)
 
-1. It might be that you will have a blue empty bar at the top of your screen. If you encounter that (like in the screenshot below), **refresh the page**
+1. In the left nav click **Agents** button to start creating a new agent
 
-    ![Missing environment](./assets/MissingEnvironment.png)
+    ![create.png](./assets/01-AGentsLeftNav.png)
 
-1. Hover over the **environment icon (the globe)** in the bar at the top of your screen and see if *studentXXXDev* shows. Example: if you have student100, it should show *student100Dev*
+1. Select **Create blank agent**
 
-    ![Check environment](./assets/CheckEnvironment.png)
+    ![create-new-agent.png](./assets/01-createblankagents.png)
 
-1. In the left nav click **+ Create** button to start creating a new agent
+    > [!NOTE]
+    > It could take a minute or two for the agent to fully configure. You'll see a message that says your agent is provisioned when it's ready.
 
-    ![create.png](./assets/CreateLeftNav.png)
+1. Click the **Edit** button in the Details panel.
 
-1. Click **New agent**
+    ![AgentName.png](./assets/01-editagentname.png)
 
-    ![create-new-agent.png](./assets/NewAgent.png)
+1. In the name field, type +++Zava Order Support+++ and then click the **Save** button
 
-1. Select **Configure** to configure your agent
+    ![AgentName.png](./assets/01-savename.png)
 
-    ![Configure your agent](./assets/ConfigureName.png)
-
-1. Name your agent +++Zava Order Support+++ and select **Create**
-
-    ![Create button](./assets/CreateButton.png)
-
-1. Now, you need to equip it with knowledge so it can answer questions about the company, shipping policies, etc. To do this, scroll down to the knowledge section and select the **Add Knowledge** tab.
+1. Now you need to equip your agent with knowledge so it can answer questions about the company, shipping policies, etc. To do this, in your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
     ![AddKnowledge.png](./assets/AddKnowledgeBtn.png)
 
-1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq**, **zava_returns_shipping_policy documents** & **zava_warranty_policy**.
+1. Click the **select to browse** button and navigate to **D:\LabFiles\KnowledgeDocuments**. Select the **zava_faq**, **zava_returns_shipping_policy and warranty_policy documents**.
 
     ![DragAndDrop.png](./assets/DragAndDropFile.png)
 
-1. Verify the files are added and select **Add to Agent**
+1. Verify the files are added then select **Add to Agent**
 
     ![AddToAgent.png](./assets/UploadedFiles.png)
 
@@ -98,12 +70,16 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     ![Ready.png](./assets/Ready.png)
 
     > [!NOTE]
-    > The process of uploading the files can take around 5 minutes to complete. You can continue on to the next steps while the files are processing.
+    > The process of uploading the files can take 5 - 20 minutes to complete. You can continue on to the next steps while the files are processing. The files must show **ready** status before you can properly test the agent.
+
+    Don't worry if it looks like the following screenshot. Please continue the lab, we'll come back to this later.
+
+    ![In progress](./assets/in-progress.png)
 
 1. Now we need to tell the agent what it's supposed to do. To do this, scroll up to the **Instructions** section and select the **Edit** button and paste in the following instructions:
 
     ```text
-    Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents. Your behavior: Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains. When you answer, provide a citation (which document and section) whenever possible. If the user asks about something not in the knowledge bases, reply with: "I'm sorry, I don't have that info yet. Can I help with something in our policy or FAQ?". Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them. Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
+    Your job is to help customers with Zava’s policies, product FAQs, shipping, returns, and general company info. Use only the supplied knowledge documents. Your behavior: Always consult the Knowledge sources (FAQ, Returns & Shipping Policy) for answers to customer questions in those domains. When you answer, provide a citation (which document and section) whenever possible. If the user asks about something not in the knowledge bases, reply with: “I’m sorry, I don’t have that info yet. Can I help with something in our policy or FAQ?” Use a friendly, professional tone. Be clear but avoid any technical jargon unless user knows them. Keep answers focused and concise. Break up longer responses with bullet lists or numbered steps if helpful.
     ```
 
     Click **Save**
@@ -114,7 +90,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![SettingsBtn.png](./assets/SettingsBtn.png)
 
-1. Scroll down toward the bottom of the page to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it is using, which in our case is the GPT 4.1 default model. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. So, depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Use general knowledge** setting to **Off**.
+1. Scroll down to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it's using. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. Depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Use general knowledge** setting to **Off**.
 
     ![GeneralKnowledge.png](./assets/GenKnowledgeOff.png)
 
@@ -122,22 +98,4 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![CloseSettings.png](./assets/SaveSettings.png)
 
-1. Now we need to test the agent. Select the **Test** button in the upper right corner, type in the following and press **Enter**
-
-    ```text
-    What is your return policy?
-    ```
-
-    ![TestBefore.png](./assets/TestBeforeEnter.png)
-  
-    > [!NOTE]
-    > Don't forget to check that your files have finished uploading and show Ready status before testing.
-
-1. Review the output and notice the Test Pane that displays on the left hand side showing where it pulled the answer from.
-
-    ![TestAfter.png](./assets/TestAfter.png)
-
-    > [!TIP]
-    > Given the nature of generative AI, your answer might differ from the answer shown in the screenshot above. That's ok and expected. The important thing here is to observe the Test Pane and how you can tell the agent is pulling from your knowledge.
-
-Congratulations! You have setup an agent that can answer questions about static data from files! Next ,we'll integrate it with an MCP server.
+Congratulations! You have setup an agent that can answer questions about static data from files! We will test it out to make sure it's working in future steps to allow more time for the files to process. Next ,we'll integrate it with an MCP server.

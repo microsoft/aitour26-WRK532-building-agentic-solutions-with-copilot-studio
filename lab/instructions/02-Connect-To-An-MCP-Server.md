@@ -2,21 +2,64 @@
 
 In this part, you will learn about how to run a Model Context Protocol (MCP) server and how to connect it to Microsoft Copilot Studio. Zava has created an MCP server for inventory management that provides tools for managing products (like get_products and add_product), stores (such as get_stores and add_store), and inventory operations (including list_inventory_by_store). The MCP server is available on **D:\LabFiles\ZavaInventoryMCP**.
 
-## What is the benefit of an MCP Server?
+## What is Model Context Protocol (MCP) and why are we using it?
 
-Model Context Protocol (MCP) servers provide a standardized way to connect AI agents to various data sources and tools, offering several key benefits:
+Model Context Protocol (MCP) provides a way to let an AI agent safely use tools that live outside of Copilot Studio.
 
-**Simplified Integration**: MCP servers act as a bridge between your AI agent and backend systems, eliminating the need to build custom integrations for each data source. Instead of creating multiple point-to-point connections, you can use a single protocol to access different systems.
+Instead of you telling the agent exactly *which* API to call and *when* to call it, MCP lets you describe **what the system can do**, and the agent figures out how to use those capabilities based on the user’s request.
 
-**Reusability**: Once you create an MCP server, it can be used across multiple agents and applications. The Zava Inventory MCP server you'll work with in this lab can be shared with any agent that needs inventory management capabilities.
+You can think of an MCP server like a menu:
 
-**Contextual Intelligence**: MCP servers provide structured access to relevant context and tools, allowing AI agents to make informed decisions and take actions. For example, the Zava Inventory MCP server provides tools for querying products, managing stores, and tracking inventory - giving the agent everything it needs to handle inventory-related tasks.
+- It lists what actions are available (for example: get products, add a store, check inventory)
+- Each action has a clear name and expected inputs
+- The agent chooses the right action when it needs it
 
-**Security and Control**: MCP servers can implement authentication and authorization, ensuring that agents only access data and perform actions they're permitted to. This centralized approach makes it easier to maintain security policies across your AI applications.
+---
 
-**Flexibility**: MCP servers can expose multiple tools and capabilities in one place. As you'll see, the Zava Inventory MCP server provides tools for products, stores, and inventory operations - all accessible through a single connection.
+### Why not just use flows or custom connectors?
 
-By using MCP servers, you can build more capable agents faster while maintaining better control over how they interact with your business systems.
+Traditional integrations usually require you to:
+
+- Build a flow for each scenario
+- Decide ahead of time which API is called
+- Manually manage multi-step logic
+
+With MCP, you don’t build a flow for every path.  
+You expose **capabilities**, and the agent decides how to use them.
+
+This means:
+
+- Fewer flows to design and maintain
+- Less hard-coded logic
+- More flexible conversations
+
+---
+
+### Why MCP is a good fit for agents
+
+Agents don’t just respond once, they can:
+
+- Ask follow-up questions
+- Decide what information is missing
+- Call multiple tools to complete a task
+
+MCP supports this by allowing the agent to:
+
+- Discover available tools
+- Call more than one tool if needed
+- Use the results to decide the next step
+
+In this lab, you’ll see the agent automatically:
+
+- List stores
+- Look up inventory
+- Add new records
+
+All without you building a flow or explicitly telling it each step.
+
+That’s the main value MCP brings.
+
+Now, onto the lab!
 
 ## Open the MCP Server in Visual Studio Code
 
@@ -51,12 +94,20 @@ Expand the **Data** folder to see what's in this folder.
 - **data/stores.json**: Sample store data with store locations
 - **data/inventory.json**: Sample inventory records with stock entries
 
-Make sure to look around in these files to see what's going on in the server. Now, let's install the dependencies so that we can run the server locally.
+These files are the sample “database” for the lab, the server reads and writes to them. Feel free to look around in these files to see what's going on in the server.
+
+Now, let's install the dependencies so that we can run the server locally.
 
 ## Install dependencies
 
 1. Open the terminal by selecting **Terminal > New Terminal**
+
+    ![New terminal](./assets/02-newterminal.png)
+
 1. Make sure you are in the following folder: **D:\LabFiles\ZavaInventoryMCP**
+
+    ![Directory](./assets/02-directory.png)
+
 1. Create a new virtual environment by running the following command (press **Enter** after pasting in the terminal to run it):
 
     ```bash
@@ -75,6 +126,10 @@ Make sure to look around in these files to see what's going on in the server. No
     pip install -r src/requirements.txt
     ```
 
+1. Your terminal should look something roughly like this once done with all the commands run so far.
+
+    ![Terminal](./assets/02-terminalcheck1.png)
+
 ## Run the MCP Server
 
 1. Now it's time to run the MCP Server. Use the following command to start the Zava Inventory MCP Server.
@@ -82,6 +137,8 @@ Make sure to look around in these files to see what's going on in the server. No
     ```bash
     python src/server.py
     ```
+
+    ![Terminal](./assets/02-runmcp.png)
 
 After running the MCP Server, you're not there yet. The MCP Server is only running locally right now, so you need to make sure the MCP Server is available through a public URL. This is a requirement for Microsoft Copilot Studio. Because it's a cloud service, it's not able to reach your localhost.
 
@@ -117,6 +174,9 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
     <!-- markdownlint-disable-next-line MD034 -->
     **Password:** +++@lab.CloudCredential(CSBatch1).Password+++
 
+    <!-- markdownlint-disable-next-line MD034 -->
+    **Temporary Access Password:** +++@lab.Variable(TAP)+++
+
 1. In the next screen where it asks if you want to automatically sign into all desktop apps on this device, select **No, this app only**
 
     ![Sign In Apps](./assets/SignInApps.png)
@@ -143,20 +203,24 @@ In the terminal at the bottom of Visual Studio Code, we are going to configure a
 
     This will give you the following message:  
 
-    > [!NOTE]
-    > Connect via browser: <https://x.devtunnels.ms:3000>, <https://x-3000.x.devtunnels.ms>
-    >
-    > Inspect network activity: <https://x-3000-inspect.x.devtunnels.ms>
-    > Ready to accept connections for tunnel: x.x
+    <!-- markdownlint-disable-next-line MD033 -->
+    Connect via browser: https<nolink>://x.devtunnels.ms:3000, https<nolink>:://x-3000.x.devtunnels.ms
+    <!-- markdownlint-disable-next-line MD033 -->
+    Inspect network activity: https<nolink>:://x-3000-inspect.x.devtunnels.ms
+    Ready to accept connections for tunnel: x.x
 
     ![MCP](./assets/MCP_ChooseDevTunnel.png)
 
     <!-- markdownlint-disable-next-line MD033 -->
     > [!Alert] It's very important to select the URL that looks like this: https<nolink>://x-3000.x.devtunnels.ms
     >
-    > DO NOT USE the other URL (with *:3000* in the URL) will give you errors later on.
+    > The other URL - with *:3000* in the URL - will give you errors later on.
 
 1. Open the second URL after connect via browser by using **ctrl + click**
+
+    You may see a **connection isn't private error**. If you do, select **Advanced** and click the **Continue** link
+
+    ![Dev Tunnel Continue](./assets/02-privatecontinue.png)
 
     Now your browser will be opened and you will see a warning like this:
 
@@ -189,21 +253,17 @@ We are going to fix this error in the next steps.
 
     ![Add Tool](./assets/AddTool1.png)
 
-1. Select **+ New tool**
-
-    ![New Tool](./assets/NewTool2.png)
-
 1. Select **Model Context Protocol**
 
-    ![New Tool MCP](./assets/ToolMCP.png)
+    ![New Tool](./assets/MCP-create.png)
 
-1. Enter the **Name**:
+1. Enter the **Server name**:
 
     ```text
     Zava Inventory MCP
     ```
 
-1. Enter the **Description**:
+1. Enter the **Server description**:
 
     ```text
     MCP server that provides tools for managing Zava's product inventory, store locations, and stock operations across multiple retail locations.
@@ -241,13 +301,12 @@ We are going to fix this error in the next steps.
 
     ![Add to agent](./assets/AddToAgent.png)
 
+    > [!NOTE]
+    > Now the MCP server is added to the agent. You will land on the Zava Inventory MCP page where you can see and explore all the tools in this server.    
+
     Now it's time to test the agent with the MCP Server!
 
-1. Select the **Expand Test Pane** icon in the top right corner of the *Test your agent* panel. This will help you understand what is happening when you are sending and receiving messages in the *Test your agent* panel.
-
-    ![Expand Test Pane](./assets/ExpandTestPanel.png)
-
-1. Now, enter the following message and send it in the *Test your agent* panel:
+1. Ensure the Test pane is open and enter the following message and send it in the *Test your agent* panel:
 
     ```text
     List the Zava Stores
@@ -278,9 +337,9 @@ We are going to fix this error in the next steps.
 
     ![List Zava Stores test pane](./assets/ListZavaStores.png)
 
-    And on the left in the *Test your agent* panel, you can see that the Zava Inventory MCP has been initialized and the *get_stores* tool has been triggered by our message. When you click on the *get_stores* tool, you're even able to see the output that the agent got from the MCP server. This means our agent made that text into the formatted output we saw in the *Test your agent* panel.
+    And on the left in the *Activity map*, you can see that the Zava Inventory MCP has been initialized and the *get_stores* tool has been triggered by our message. When you click on the *get_stores* tool, you're even able to see the output that the agent got from the MCP server. This means our agent made that text into the formatted output we saw in the *Test your agent* panel.
 
-    ![Test Panel after asking to list the Zava Stores.](./assets/ListZavaStoresTestPanel.png)
+    ![Activity Map after asking to list the Zava Stores.](./assets/ListZavaStoresActivityMap.png)
 
     Let's experiment a bit more with the other tools as well.
 
@@ -292,34 +351,27 @@ We are going to fix this error in the next steps.
 
     You will see the available products in the Zava Amsterdam store in the *Test your agent* panel:
 
-    ![List Available Products in the Zava Amsterdam store in the test pane](./assets/ListAvailableProductsZavaAmsterdamResults.png)
+    ![List Available Products in the Zava Amsterdam store in the test pane](./assets/ListAvailableProductsZavaAmsterdam.png)
 
-    Now you can see in the *Test Panel* more tools have been triggered. The *get_stores* tool has been triggered again, because it needs it for the *list_inventory_by_store* tool. This really shows the power of MCP: when used correctly, it can do a lot of calls for you, without having to build a flow for it or to give it more instructions.
+    Now you can see in the *Activity map* more tools have been triggered. The *get_stores* tool has been triggered again, because it needs it for the *list_inventory_by_store* tool. This really shows the power of MCP: when used correctly, it can do a lot of calls for you, without having to build a flow for it or to give it more instructions.
 
-    ![Test Panel after asking to list the available products in the Zava Amsterdam store.](./assets/ListAvailableProductsZavaAmsterdamTestPanel.png)
+    ![Activity Map after asking to list the available products in the Zava Amsterdam store.](./assets/ListAvailableProductsZavaAmsterdamActivityMap.png)
 
     But now - we only did get actions, wouldn't it be good to also add something?
 
-1. Select the **New Test Session** button in the *Test your agent* panel:
-
-    ![New Test Session](./assets/NewTestSession.png)
-
-1. After that, send the following message in the *Test your agent* panel:
+1. Send the following message to your agent via the *Test your agent* panel:
 
     ```text
     Please add the following Zava Store:
-    Zava San Francisco
-    2481 Mission Terrace, San Francisco, CA 94131
+    Zava Chicago
+    1597 Virginia Street, Chicago, Illinois, IL 60618, US
     ```
 
-    ![Add Zava store via message](./assets/AddZavaStoreNewTestSession.png)
+    ![Add Zava store via message](./assets/AddZavaStore.png)
 
-    As you can see, we didn't add United States to the message, but it automatically added that based on the details in the message.
+    ![Add Zava store activity map](./assets/AddZavaStoreActivityMap.png)
 
-    ![Add Zava store Test Panel](./assets/AddZavaStoreActivityMapTestYourAgent.png)
-
-If you want to check if the store really got added, you can go back to Visual Studio Code and go to **Data** > **stores.json** and look at the bottom of that file. You should see the store there!
-
-![Store added VS Code](./assets/StoreAddedVSCode.png)
+    > [!NOTE]
+    > You may get different results. For example, the agent might ask you for the city or country of the store. This means it wasn't able to get all the information from the message. If this happens, reply back with the information and it should continue adding the store.
 
 This section was to help you understand how to use MCP in a Copilot Studio agent. If you have time left at the end of this workshop, feel free to play around with the other tools in the MCP Server.
