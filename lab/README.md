@@ -25,12 +25,12 @@ If you want to run this lab by yourself, make sure to install the following soft
 
 The lab consist of multiple sections:
 
-- [Introduction](./instructions/00-Introduction.md)
-- [Build Your Agent](./instructions/01-Build-Your-Agent.md)
-- [Connect To An MCP Server](./instructions/02-Connect-To-An-MCP-Server.md)
-- [Add A Prompt For Warranty Claim Processing](./instructions/03-Add-A-Prompt-For-Warranty-Claim-Processing.md)
-- [Add An Agent Flow For Approving Warranty Claims](./instructions/04-Add-An-Agent-Flow-For-Approving-Warranty-Claims.md)
-- [Test Your Agent](./instructions/05-Test-Your-Agent.md)
+- [00-Introduction](./instructions/00-Introduction.md)
+- [01-Build Your Agent](./instructions/01-Build-Your-Agent.md)
+- [02-Connect To An MCP Server](./instructions/02-Connect-To-An-MCP-Server.md)
+- [03-Add A Prompt For Warranty Claim Processing](./instructions/03-Add-A-Prompt-For-Warranty-Claim-Processing.md)
+- [04-Add An Agent Flow For Approving Warranty Claims](./instructions/04-Add-An-Agent-Flow-For-Approving-Warranty-Claims.md)
+- [05-Test Your Agent](./instructions/05-Test-Your-Agent.md)
 
 ## Source code
 
