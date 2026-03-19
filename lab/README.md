@@ -21,6 +21,9 @@ If you want to run this lab by yourself, make sure to install the following soft
 - [Python](https://www.python.org/downloads/)
 - [DevTunnels CLI](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows)
 
+> [!ALERT]
+> In the instructions you will see some content that has +++ around them, in the Skillable environment that transforms to clickable text that will autotype in the VM. That will not work when you work at home. Also, variables will resolve in the Skillable environment, but not when you run it at home. Those will be shown as the variable name. For instance +++@lab.CloudCredential(CSBatch1).Username+++ will show in the home version and in the Skillable environment this will show as an autotype field for the username. When you run this at home, use your own username for that. This will also apply to TAP / Password fields and other variables.
+
 ## Get Started
 
 The lab consist of multiple sections:
