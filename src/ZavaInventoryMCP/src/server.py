@@ -728,10 +728,11 @@ def create_inventory_record(product_id: int, store_id: int, quantity: int) -> Di
 
 # region Custom routes
 
-@app.route("/")
 async def root(request) -> PlainTextResponse:
     """Root endpoint with custom message"""
     return PlainTextResponse("The Zava Inventory 📦 MCP Server 🧠 is running")
+
+app.add_route("/", root)
 
 # endregion
 
