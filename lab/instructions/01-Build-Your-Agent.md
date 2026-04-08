@@ -1,7 +1,5 @@
 # 1 - Build your agent
 
-@lab.Activity(Automated3)
-
 To start, you're going to setup the foundation for your agent in Copilot Studio.
 
 1. Open Microsoft Edge and navigate to
