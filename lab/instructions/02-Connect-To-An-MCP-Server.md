@@ -142,6 +142,9 @@ Now, let's install the dependencies so that we can run the server locally.
 
 After running the MCP Server, you're not there yet. The MCP Server is only running locally right now, so you need to make sure the MCP Server is available through a public URL. This is a requirement for Microsoft Copilot Studio. Because it's a cloud service, it's not able to reach your localhost.
 
+> [!NOTE]
+> If you run into an error about Starlette, make sure to go to the following [link](https://github.com/microsoft/aitour26-WRK532-building-agentic-solutions-with-copilot-studio/blob/main/src/ZavaInventoryMCP/src/server.py), download that server.py file and replace it in the following folder: **D:\LabFiles\ZavaInventoryMCP\src\**
+
 ## Configure a dev tunnel
 
 To make sure we can reach the MCP Server from Microsoft Copilot Studio, we'll add a dev tunnel. During these steps, you will be prompted to log in. Use the Entra ID account from this workshop when you are prompted to log in.
@@ -302,7 +305,7 @@ We are going to fix this error in the next steps.
     ![Add to agent](./assets/AddToAgent.png)
 
     > [!NOTE]
-    > Now the MCP server is added to the agent. You will land on the Zava Inventory MCP page where you can see and explore all the tools in this server.    
+    > Now the MCP server is added to the agent. You will land on the Zava Inventory MCP page where you can see and explore all the tools in this server.
 
     Now it's time to test the agent with the MCP Server!
 
