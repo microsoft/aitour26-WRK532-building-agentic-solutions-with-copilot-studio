@@ -45,9 +45,13 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
     > [!NOTE]
     > It could take a minute or two for the agent to fully configure. You'll see a message that says your agent is provisioned when it's ready.
 
-1. In the name field, type +++Zava Order Support+++ and then click the **Create** button
+1. Click the **Edit** button in the Details panel.
 
-    ![AgentName.png](./assets/01-AgentName.png)
+    ![AgentName.png](./assets/01-editagentname.png)
+
+1. In the name field, type +++Zava Order Support+++ and then click the **Save** button
+
+    ![AgentName.png](./assets/01-savename.png)
 
 1. Now you need to equip your agent with knowledge so it can answer questions about the company, shipping policies, etc. To do this, in your agent overview screen, scroll down to the knowledge section and select the **Add Knowledge** tab.
 
@@ -86,12 +90,12 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![SettingsBtn.png](./assets/SettingsBtn.png)
 
-1. Scroll down to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it's using. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. Depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Use general knowledge** setting to **Off**.
+1. Scroll down to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it's using. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. Depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Allow ungrounded responses** setting and the **Use information from the Web** to **Off**.
 
-    ![GeneralKnowledge.png](./assets/GenKnowledgeOff.png)
+    ![GeneralKnowledge.png](./assets/01-UpdateKnowledgeSettings.png)
 
 1. Click the **Save** button at the bottom of the screen and select the **X** button in the upper right hand corner to close out of the settings screen.
 
-    ![CloseSettings.png](./assets/SaveSettings.png)
+    ![CloseSettings.png](./assets/01-SaveKnowledgeSettings.png)
 
 Congratulations! You have setup an agent that can answer questions about static data from files! We will test it out to make sure it's working in future steps to allow more time for the files to process. Next ,we'll integrate it with an MCP server.
