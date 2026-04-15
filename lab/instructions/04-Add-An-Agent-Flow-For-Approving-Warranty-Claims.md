@@ -105,7 +105,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
 1. Verify the expression shows in the value input as shown below.
 
-    ![Verify and Close](./assets/FlowVarDaysConfigInline.png)
+    ![Expression filled](./assets/FlowVarDaysConfigInline.png)
 
 1. Click the **Plus Button** below the initialize variable.
 

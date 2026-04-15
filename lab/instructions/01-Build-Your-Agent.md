@@ -86,7 +86,7 @@ To start, you're going to setup the foundation for your agent in Copilot Studio.
 
     ![SettingsBtn.png](./assets/SettingsBtn.png)
 
-1. Scroll down to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it's using. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having this setting on could potentially lead to hallucinations. Depending on your use case, you might want to disable this setting. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Allow ungrounded responses** setting and the **Use information from the Web** to **Off**.
+1. Scroll down to find the **Knowledge** section. The default behavior for all agents created in Copilot Studio is to allow the agent to use general knowledge from the model that it's using and information from the Web. While this is great if you want your agent to be able to handle chit-chat type scenarios, if you only want your agent to use the knowledge sources and tools you provide it with to answer questions, having these settings on could potentially lead to hallucinations. Depending on your use case, you might want to disable these settings. Since we want our agent to only use data from the knowledge sources we provide to answer questions, we will toggle the **Allow ungrounded responses** setting and the **Use information from the Web** to **Off**.
 
     ![GeneralKnowledge.png](./assets/01-UpdateKnowledgeSettings.png)
 
