@@ -103,7 +103,7 @@ Now that we have an AI prompt that can classify warranty claims and extract key 
 
     ![Add Button](./assets/FlowCreateExpAdd.png)
 
-1. Verify the expression shows in the value input as shown below, and click the **arrow** to close out of this panel.
+1. Verify the expression shows in the value input as shown below.
 
     ![Verify and Close](./assets/FlowVarDaysConfigInline.png)
 

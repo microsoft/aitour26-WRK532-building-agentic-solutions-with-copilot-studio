@@ -248,9 +248,9 @@ We are going to fix this error in the next steps.
 
     ![Edge](./assets/Edge.png)
 
-1. Select the **Tools** tab in the top navigation of your agent. If you don't see it, select the **+7** button in the navigation then select **Tools**.  DO NOT select the Tools option in the left navigation.
+1. Select the **Tools** tab in the top navigation of your agent. If you don't see it, select the **+8** tab in the navigation then select **Tools**.  DO NOT select the Tools option in the left navigation.
 
-    ![Overview](./assets/ToolsTabSelect.png)
+    ![Overview](./assets/02-ToolsTabSelect.png)
 
 1. Select **+ Add a tool**
 
