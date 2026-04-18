@@ -8,7 +8,7 @@ First, we are going to test those knowledge sources that we added way back at th
 
 1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Start a new test session by clicking on the **+ icon** in the test pane. Depending on your screen resolution, you may either see only the **+ icon** or **+ New test session**.
 
-    ![New Test](./assets/05-newtestsession.png)
+    ![New Test](./assets/newtestsession.png)
 
 1. To test those knowledge sources we added back in the first section of the lab. Type in the following and press **Enter**
 
@@ -34,7 +34,7 @@ Now we'll test the mixture of the AI Prompt and Agent flow which helps process w
 
 1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Start a new test session by clicking on the **+ icon** in the test pane. Depending on your screen resolution, you may either see only the **+ icon** or **+ New test session**.
 
-    ![New Test](./assets/05-newtestsession.png)
+    ![New Test](./assets/newtestsession.png)
 
 1. Paste in the following text in the test window:
 
@@ -56,7 +56,7 @@ Now we'll test to make sure that the warranty claim process is working to auto-a
 
 1. Ensure that the **Test** button is selected and the *Test your agent* panel shows. Start a new test session by clicking on the **+ icon** in the test pane. Depending on your screen resolution, you may either see only the **+ icon** or **+ New test session**.
 
-    ![New Test](./assets/05-newtestsession.png)
+    ![New Test](./assets/newtestsession.png)
 
 1. Type the following in the test window and press **Enter** to send in the prompt:
 
